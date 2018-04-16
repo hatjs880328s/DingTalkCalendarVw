@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <!--Real Class -->
+  <bean id="defaultBean" class="DefaultBean"></bean>
+  <bean id="workBenchIns" class="WorkBench"></bean>
+  <bean id="workEventCalendarIns" class="WorkBenchEventCalendar"></bean>
+</beans>
+

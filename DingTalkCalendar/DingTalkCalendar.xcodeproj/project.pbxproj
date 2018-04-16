@@ -1,0 +1,1119 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56D92B792084C01A00379402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B782084C01A00379402 /* AppDelegate.swift */; };
+		56D92B7B2084C01A00379402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B7A2084C01A00379402 /* ViewController.swift */; };
+		56D92B7E2084C01A00379402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B7C2084C01A00379402 /* Main.storyboard */; };
+		56D92B802084C01B00379402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B7F2084C01B00379402 /* Assets.xcassets */; };
+		56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B812084C01B00379402 /* LaunchScreen.storyboard */; };
+		56D92B8E2084C01B00379402 /* DingTalkCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */; };
+		56D92B9B2084C05300379402 /* empty.c in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9A2084C05300379402 /* empty.c */; };
+		56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9E2084C0B000379402 /* XMLFactory.swift */; };
+		56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9F2084C0B000379402 /* BeanDicCenter.swift */; };
+		56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */ = {isa = PBXBuildFile; fileRef = 56D92BA12084C0B000379402 /* SourceBean.xml */; };
+		56D92C002084C0B100379402 /* BeanFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA22084C0B000379402 /* BeanFactory.swift */; };
+		56D92C012084C0B100379402 /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */; };
+		56D92C022084C0B100379402 /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA52084C0B000379402 /* IWorkBench.swift */; };
+		56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */; };
+		56D92C042084C0B100379402 /* DingTalkCalanderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */; };
+		56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */; };
+		56D92C062084C0B100379402 /* WorkBencehViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */; };
+		56D92C072084C0B100379402 /* DingTalkCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAF2084C0B000379402 /* DingTalkCalenderView.swift */; };
+		56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB02084C0B000379402 /* DingTalkCalenderWeekdayView.swift */; };
+		56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB12084C0B000379402 /* WorkBenchBannerVw.swift */; };
+		56D92C0A2084C0B100379402 /* DingTalkCalanderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB22084C0B000379402 /* DingTalkCalanderCollectionView.swift */; };
+		56D92C0B2084C0B100379402 /* WorkBenchBotTbVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB32084C0B000379402 /* WorkBenchBotTbVw.swift */; };
+		56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB42084C0B000379402 /* WorkBenchTopVw.swift */; };
+		56D92C0D2084C0B100379402 /* DingTalkCalenderRectLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB52084C0B000379402 /* DingTalkCalenderRectLabelView.swift */; };
+		56D92C0E2084C0B100379402 /* DingTalkGetEventCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB82084C0B000379402 /* DingTalkGetEventCalender.swift */; };
+		56D92C0F2084C0B100379402 /* DingTalkCalanderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BBB2084C0B100379402 /* DingTalkCalanderModel.swift */; };
+		56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BBC2084C0B100379402 /* DingTalkCalendarEventModel.swift */; };
+		56D92C112084C0B100379402 /* AOPEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BBF2084C0B100379402 /* AOPEvents.swift */; };
+		56D92C122084C0B100379402 /* AOPMemCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC02084C0B100379402 /* AOPMemCache.swift */; };
+		56D92C132084C0B100379402 /* AOPEventFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC12084C0B100379402 /* AOPEventFilter.swift */; };
+		56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC22084C0B100379402 /* AOPSwiftExtension.swift */; };
+		56D92C152084C0B100379402 /* AOPMemCacheV20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC32084C0B100379402 /* AOPMemCacheV20.swift */; };
+		56D92C162084C0B100379402 /* AOPCoreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC42084C0B100379402 /* AOPCoreExtension.swift */; };
+		56D92C172084C0B100379402 /* AOPCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC52084C0B100379402 /* AOPCore.swift */; };
+		56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC62084C0B100379402 /* AOPNotificationCenter.swift */; };
+		56D92C192084C0B100379402 /* AOPGCDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC72084C0B100379402 /* AOPGCDExtension.swift */; };
+		56D92C1A2084C0B100379402 /* AOPNotificationCenterProgressCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC82084C0B100379402 /* AOPNotificationCenterProgressCenter.swift */; };
+		56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC92084C0B100379402 /* AOPDiskCache.swift */; };
+		56D92C1C2084C0B100379402 /* AOPEventsUploadCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */; };
+		56D92C1D2084C0B100379402 /* GCDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCC2084C0B100379402 /* GCDUtility.swift */; };
+		56D92C1E2084C0B100379402 /* IICoreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCE2084C0B100379402 /* IICoreExtension.swift */; };
+		56D92C1F2084C0B100379402 /* IIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCF2084C0B100379402 /* IIViewExtension.swift */; };
+		56D92C202084C0B100379402 /* IIDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD02084C0B100379402 /* IIDateExtension.swift */; };
+		56D92C212084C0B100379402 /* IIStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD12084C0B100379402 /* IIStringExtension.swift */; };
+		56D92C222084C0B100379402 /* IITaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD32084C0B100379402 /* IITaskModel.swift */; };
+		56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD42084C0B100379402 /* IISlinkManager.swift */; };
+		56D92C242084C0B100379402 /* IIMergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD62084C0B100379402 /* IIMergeSort.swift */; };
+		56D92C252084C0B100379402 /* IIBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD82084C0B100379402 /* IIBaseView.swift */; };
+		56D92C262084C0B100379402 /* SQLite3Go.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BDB2084C0B100379402 /* SQLite3Go.swift */; };
+		56D92C272084C0B100379402 /* SQLite3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BDD2084C0B100379402 /* SQLite3.swift */; };
+		56D92C282084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BE32084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m */; };
+		56D92C292084C0B100379402 /* FMDatabase+FTS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BE52084C0B100379402 /* FMDatabase+FTS3.m */; };
+		56D92C2A2084C0B100379402 /* FMTokenizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BE72084C0B100379402 /* FMTokenizers.m */; };
+		56D92C2B2084C0B100379402 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BEC2084C0B100379402 /* FMDatabaseQueue.m */; };
+		56D92C2C2084C0B100379402 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BEF2084C0B100379402 /* FMDatabaseAdditions.m */; };
+		56D92C2D2084C0B100379402 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BF02084C0B100379402 /* FMDatabase.m */; };
+		56D92C2E2084C0B100379402 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BF42084C0B100379402 /* FMDatabasePool.m */; };
+		56D92C2F2084C0B100379402 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BF52084C0B100379402 /* FMResultSet.m */; };
+		56D92C302084C0B100379402 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BF82084C0B100379402 /* XMLDictionary.m */; };
+		56D92C312084C0B100379402 /* WorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BFB2084C0B100379402 /* WorkBenchEventCalendar.swift */; };
+		56D92C322084C0B100379402 /* WorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BFC2084C0B100379402 /* WorkBench.swift */; };
+		56D92C342084C0D500379402 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92C332084C0D500379402 /* TabbarViewController.swift */; };
+		EFBA065423BA5E86198BA223 /* Pods_DingTalkCalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9718DFA710653A1BD448F56B /* Pods_DingTalkCalendarTests.framework */; };
+		F854F27F8E1F8C4729CEC2F2 /* Pods_DingTalkCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56D92B8A2084C01B00379402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56D92B6D2084C01A00379402 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56D92B742084C01A00379402;
+			remoteInfo = DingTalkCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		46A6CC10F27F308B044CF525 /* Pods-DingTalkCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D92B752084C01A00379402 /* DingTalkCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DingTalkCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D92B782084C01A00379402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56D92B7A2084C01A00379402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		56D92B7D2084C01A00379402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56D92B7F2084C01B00379402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56D92B822084C01B00379402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56D92B842084C01B00379402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D92B892084C01B00379402 /* DingTalkCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DingTalkCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTests.swift; sourceTree = "<group>"; };
+		56D92B8F2084C01B00379402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D92B982084C05200379402 /* DingTalkCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DingTalkCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
+		56D92B992084C05300379402 /* empty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = empty.h; sourceTree = "<group>"; };
+		56D92B9A2084C05300379402 /* empty.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = empty.c; sourceTree = "<group>"; };
+		56D92B9E2084C0B000379402 /* XMLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLFactory.swift; sourceTree = "<group>"; };
+		56D92B9F2084C0B000379402 /* BeanDicCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanDicCenter.swift; sourceTree = "<group>"; };
+		56D92BA12084C0B000379402 /* SourceBean.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SourceBean.xml; sourceTree = "<group>"; };
+		56D92BA22084C0B000379402 /* BeanFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanFactory.swift; sourceTree = "<group>"; };
+		56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
+		56D92BA52084C0B000379402 /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
+		56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVModel.swift; sourceTree = "<group>"; };
+		56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVM.swift; sourceTree = "<group>"; };
+		56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCEventVModel.swift; sourceTree = "<group>"; };
+		56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBencehViewController.swift; sourceTree = "<group>"; };
+		56D92BAF2084C0B000379402 /* DingTalkCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalenderView.swift; sourceTree = "<group>"; };
+		56D92BB02084C0B000379402 /* DingTalkCalenderWeekdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalenderWeekdayView.swift; sourceTree = "<group>"; };
+		56D92BB12084C0B000379402 /* WorkBenchBannerVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBenchBannerVw.swift; sourceTree = "<group>"; };
+		56D92BB22084C0B000379402 /* DingTalkCalanderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderCollectionView.swift; sourceTree = "<group>"; };
+		56D92BB32084C0B000379402 /* WorkBenchBotTbVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBenchBotTbVw.swift; sourceTree = "<group>"; };
+		56D92BB42084C0B000379402 /* WorkBenchTopVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBenchTopVw.swift; sourceTree = "<group>"; };
+		56D92BB52084C0B000379402 /* DingTalkCalenderRectLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalenderRectLabelView.swift; sourceTree = "<group>"; };
+		56D92BB82084C0B000379402 /* DingTalkGetEventCalender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkGetEventCalender.swift; sourceTree = "<group>"; };
+		56D92BBB2084C0B100379402 /* DingTalkCalanderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderModel.swift; sourceTree = "<group>"; };
+		56D92BBC2084C0B100379402 /* DingTalkCalendarEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarEventModel.swift; sourceTree = "<group>"; };
+		56D92BBF2084C0B100379402 /* AOPEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPEvents.swift; sourceTree = "<group>"; };
+		56D92BC02084C0B100379402 /* AOPMemCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPMemCache.swift; sourceTree = "<group>"; };
+		56D92BC12084C0B100379402 /* AOPEventFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPEventFilter.swift; sourceTree = "<group>"; };
+		56D92BC22084C0B100379402 /* AOPSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPSwiftExtension.swift; sourceTree = "<group>"; };
+		56D92BC32084C0B100379402 /* AOPMemCacheV20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPMemCacheV20.swift; sourceTree = "<group>"; };
+		56D92BC42084C0B100379402 /* AOPCoreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPCoreExtension.swift; sourceTree = "<group>"; };
+		56D92BC52084C0B100379402 /* AOPCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPCore.swift; sourceTree = "<group>"; };
+		56D92BC62084C0B100379402 /* AOPNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPNotificationCenter.swift; sourceTree = "<group>"; };
+		56D92BC72084C0B100379402 /* AOPGCDExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPGCDExtension.swift; sourceTree = "<group>"; };
+		56D92BC82084C0B100379402 /* AOPNotificationCenterProgressCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPNotificationCenterProgressCenter.swift; sourceTree = "<group>"; };
+		56D92BC92084C0B100379402 /* AOPDiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPDiskCache.swift; sourceTree = "<group>"; };
+		56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPEventsUploadCenter.swift; sourceTree = "<group>"; };
+		56D92BCC2084C0B100379402 /* GCDUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDUtility.swift; sourceTree = "<group>"; };
+		56D92BCE2084C0B100379402 /* IICoreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IICoreExtension.swift; sourceTree = "<group>"; };
+		56D92BCF2084C0B100379402 /* IIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIViewExtension.swift; sourceTree = "<group>"; };
+		56D92BD02084C0B100379402 /* IIDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIDateExtension.swift; sourceTree = "<group>"; };
+		56D92BD12084C0B100379402 /* IIStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIStringExtension.swift; sourceTree = "<group>"; };
+		56D92BD32084C0B100379402 /* IITaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IITaskModel.swift; sourceTree = "<group>"; };
+		56D92BD42084C0B100379402 /* IISlinkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IISlinkManager.swift; sourceTree = "<group>"; };
+		56D92BD62084C0B100379402 /* IIMergeSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIMergeSort.swift; sourceTree = "<group>"; };
+		56D92BD82084C0B100379402 /* IIBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIBaseView.swift; sourceTree = "<group>"; };
+		56D92BDB2084C0B100379402 /* SQLite3Go.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite3Go.swift; sourceTree = "<group>"; };
+		56D92BDC2084C0B100379402 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		56D92BDD2084C0B100379402 /* SQLite3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite3.swift; sourceTree = "<group>"; };
+		56D92BDE2084C0B100379402 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		56D92BE22084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		56D92BE32084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		56D92BE52084C0B100379402 /* FMDatabase+FTS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+FTS3.m"; sourceTree = "<group>"; };
+		56D92BE62084C0B100379402 /* FMTokenizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTokenizers.h; sourceTree = "<group>"; };
+		56D92BE72084C0B100379402 /* FMTokenizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTokenizers.m; sourceTree = "<group>"; };
+		56D92BE82084C0B100379402 /* FMDatabase+FTS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+FTS3.h"; sourceTree = "<group>"; };
+		56D92BE92084C0B100379402 /* fts3_tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		56D92BEB2084C0B100379402 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		56D92BEC2084C0B100379402 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		56D92BED2084C0B100379402 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		56D92BEE2084C0B100379402 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		56D92BEF2084C0B100379402 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		56D92BF02084C0B100379402 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		56D92BF12084C0B100379402 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		56D92BF22084C0B100379402 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		56D92BF32084C0B100379402 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		56D92BF42084C0B100379402 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		56D92BF52084C0B100379402 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		56D92BF72084C0B100379402 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		56D92BF82084C0B100379402 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		56D92BFB2084C0B100379402 /* WorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBenchEventCalendar.swift; sourceTree = "<group>"; };
+		56D92BFC2084C0B100379402 /* WorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBench.swift; sourceTree = "<group>"; };
+		56D92C332084C0D500379402 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		5A61C8614A22EE0B0D339380 /* Pods-DingTalkCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		7ECA3B5D7C8D4299C7298614 /* Pods-DingTalkCalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendarTests/Pods-DingTalkCalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		8BB10B9CB26E03D6BB9BD7CF /* Pods-DingTalkCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendarTests/Pods-DingTalkCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9718DFA710653A1BD448F56B /* Pods_DingTalkCalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56D92B722084C01A00379402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F854F27F8E1F8C4729CEC2F2 /* Pods_DingTalkCalendar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D92B862084C01B00379402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFBA065423BA5E86198BA223 /* Pods_DingTalkCalendarTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56D92B6C2084C01A00379402 = {
+			isa = PBXGroup;
+			children = (
+				56D92BF92084C0B100379402 /* BLL */,
+				56D92BB62084C0B000379402 /* DAL */,
+				56D92B9C2084C0B000379402 /* IBLL */,
+				56D92BD92084C0B100379402 /* Lib */,
+				56D92BB92084C0B100379402 /* MODEL */,
+				56D92BA62084C0B000379402 /* USL */,
+				56D92BBD2084C0B100379402 /* Utility */,
+				56D92B772084C01A00379402 /* DingTalkCalendar */,
+				56D92B8C2084C01B00379402 /* DingTalkCalendarTests */,
+				56D92B762084C01A00379402 /* Products */,
+				B14CFC68BB46C6E0708F1790 /* Pods */,
+				FFB8BD794DCD367C35488FF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		56D92B762084C01A00379402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56D92B752084C01A00379402 /* DingTalkCalendar.app */,
+				56D92B892084C01B00379402 /* DingTalkCalendarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56D92B772084C01A00379402 /* DingTalkCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				56D92C332084C0D500379402 /* TabbarViewController.swift */,
+				56D92B782084C01A00379402 /* AppDelegate.swift */,
+				56D92B7A2084C01A00379402 /* ViewController.swift */,
+				56D92B992084C05300379402 /* empty.h */,
+				56D92B9A2084C05300379402 /* empty.c */,
+				56D92B7C2084C01A00379402 /* Main.storyboard */,
+				56D92B7F2084C01B00379402 /* Assets.xcassets */,
+				56D92B812084C01B00379402 /* LaunchScreen.storyboard */,
+				56D92B842084C01B00379402 /* Info.plist */,
+				56D92B982084C05200379402 /* DingTalkCalendar-Bridging-Header.h */,
+			);
+			path = DingTalkCalendar;
+			sourceTree = "<group>";
+		};
+		56D92B8C2084C01B00379402 /* DingTalkCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */,
+				56D92B8F2084C01B00379402 /* Info.plist */,
+			);
+			path = DingTalkCalendarTests;
+			sourceTree = "<group>";
+		};
+		56D92B9C2084C0B000379402 /* IBLL */ = {
+			isa = PBXGroup;
+			children = (
+				56D92B9D2084C0B000379402 /* IBLLFactory */,
+			);
+			path = IBLL;
+			sourceTree = "<group>";
+		};
+		56D92B9D2084C0B000379402 /* IBLLFactory */ = {
+			isa = PBXGroup;
+			children = (
+				56D92B9E2084C0B000379402 /* XMLFactory.swift */,
+				56D92B9F2084C0B000379402 /* BeanDicCenter.swift */,
+				56D92BA02084C0B000379402 /* xmls */,
+				56D92BA22084C0B000379402 /* BeanFactory.swift */,
+				56D92BA32084C0B000379402 /* WorkBench */,
+			);
+			path = IBLLFactory;
+			sourceTree = "<group>";
+		};
+		56D92BA02084C0B000379402 /* xmls */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BA12084C0B000379402 /* SourceBean.xml */,
+			);
+			path = xmls;
+			sourceTree = "<group>";
+		};
+		56D92BA32084C0B000379402 /* WorkBench */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */,
+				56D92BA52084C0B000379402 /* IWorkBench.swift */,
+			);
+			path = WorkBench;
+			sourceTree = "<group>";
+		};
+		56D92BA62084C0B000379402 /* USL */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BA72084C0B000379402 /* Workbench */,
+			);
+			path = USL;
+			sourceTree = "<group>";
+		};
+		56D92BA72084C0B000379402 /* Workbench */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BA82084C0B000379402 /* VM */,
+				56D92BAC2084C0B000379402 /* C */,
+				56D92BAE2084C0B000379402 /* V */,
+			);
+			path = Workbench;
+			sourceTree = "<group>";
+		};
+		56D92BA82084C0B000379402 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */,
+				56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */,
+				56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		56D92BAC2084C0B000379402 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		56D92BAE2084C0B000379402 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BAF2084C0B000379402 /* DingTalkCalenderView.swift */,
+				56D92BB02084C0B000379402 /* DingTalkCalenderWeekdayView.swift */,
+				56D92BB12084C0B000379402 /* WorkBenchBannerVw.swift */,
+				56D92BB22084C0B000379402 /* DingTalkCalanderCollectionView.swift */,
+				56D92BB32084C0B000379402 /* WorkBenchBotTbVw.swift */,
+				56D92BB42084C0B000379402 /* WorkBenchTopVw.swift */,
+				56D92BB52084C0B000379402 /* DingTalkCalenderRectLabelView.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		56D92BB62084C0B000379402 /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BB72084C0B000379402 /* WorkBench */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+		56D92BB72084C0B000379402 /* WorkBench */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BB82084C0B000379402 /* DingTalkGetEventCalender.swift */,
+			);
+			path = WorkBench;
+			sourceTree = "<group>";
+		};
+		56D92BB92084C0B100379402 /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BBA2084C0B100379402 /* WorkBench */,
+			);
+			path = MODEL;
+			sourceTree = "<group>";
+		};
+		56D92BBA2084C0B100379402 /* WorkBench */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BBB2084C0B100379402 /* DingTalkCalanderModel.swift */,
+				56D92BBC2084C0B100379402 /* DingTalkCalendarEventModel.swift */,
+			);
+			path = WorkBench;
+			sourceTree = "<group>";
+		};
+		56D92BBD2084C0B100379402 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BBE2084C0B100379402 /* AOPNBPCore */,
+				56D92BCB2084C0B100379402 /* GCDUtility */,
+				56D92BCD2084C0B100379402 /* CoreExtension */,
+				56D92BD22084C0B100379402 /* IIRQueue */,
+				56D92BD52084C0B100379402 /* IIMergeSort */,
+				56D92BD72084C0B100379402 /* BaseComponent */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		56D92BBE2084C0B100379402 /* AOPNBPCore */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BBF2084C0B100379402 /* AOPEvents.swift */,
+				56D92BC02084C0B100379402 /* AOPMemCache.swift */,
+				56D92BC12084C0B100379402 /* AOPEventFilter.swift */,
+				56D92BC22084C0B100379402 /* AOPSwiftExtension.swift */,
+				56D92BC32084C0B100379402 /* AOPMemCacheV20.swift */,
+				56D92BC42084C0B100379402 /* AOPCoreExtension.swift */,
+				56D92BC52084C0B100379402 /* AOPCore.swift */,
+				56D92BC62084C0B100379402 /* AOPNotificationCenter.swift */,
+				56D92BC72084C0B100379402 /* AOPGCDExtension.swift */,
+				56D92BC82084C0B100379402 /* AOPNotificationCenterProgressCenter.swift */,
+				56D92BC92084C0B100379402 /* AOPDiskCache.swift */,
+				56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */,
+			);
+			path = AOPNBPCore;
+			sourceTree = "<group>";
+		};
+		56D92BCB2084C0B100379402 /* GCDUtility */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BCC2084C0B100379402 /* GCDUtility.swift */,
+			);
+			path = GCDUtility;
+			sourceTree = "<group>";
+		};
+		56D92BCD2084C0B100379402 /* CoreExtension */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BCE2084C0B100379402 /* IICoreExtension.swift */,
+				56D92BCF2084C0B100379402 /* IIViewExtension.swift */,
+				56D92BD02084C0B100379402 /* IIDateExtension.swift */,
+				56D92BD12084C0B100379402 /* IIStringExtension.swift */,
+			);
+			path = CoreExtension;
+			sourceTree = "<group>";
+		};
+		56D92BD22084C0B100379402 /* IIRQueue */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BD32084C0B100379402 /* IITaskModel.swift */,
+				56D92BD42084C0B100379402 /* IISlinkManager.swift */,
+			);
+			path = IIRQueue;
+			sourceTree = "<group>";
+		};
+		56D92BD52084C0B100379402 /* IIMergeSort */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BD62084C0B100379402 /* IIMergeSort.swift */,
+			);
+			path = IIMergeSort;
+			sourceTree = "<group>";
+		};
+		56D92BD72084C0B100379402 /* BaseComponent */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BD82084C0B100379402 /* IIBaseView.swift */,
+			);
+			path = BaseComponent;
+			sourceTree = "<group>";
+		};
+		56D92BD92084C0B100379402 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BDA2084C0B100379402 /* IISQLite3.2 */,
+				56D92BF62084C0B100379402 /* IIXML */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		56D92BDA2084C0B100379402 /* IISQLite3.2 */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BDB2084C0B100379402 /* SQLite3Go.swift */,
+				56D92BDC2084C0B100379402 /* sqlite3.h */,
+				56D92BDD2084C0B100379402 /* SQLite3.swift */,
+				56D92BDE2084C0B100379402 /* sqlite3ext.h */,
+				56D92BDF2084C0B100379402 /* src */,
+			);
+			path = IISQLite3.2;
+			sourceTree = "<group>";
+		};
+		56D92BDF2084C0B100379402 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BE02084C0B100379402 /* extra */,
+				56D92BEA2084C0B100379402 /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		56D92BE02084C0B100379402 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BE12084C0B100379402 /* InMemoryOnDiskIO */,
+				56D92BE42084C0B100379402 /* fts3 */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		56D92BE12084C0B100379402 /* InMemoryOnDiskIO */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BE22084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.h */,
+				56D92BE32084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = InMemoryOnDiskIO;
+			sourceTree = "<group>";
+		};
+		56D92BE42084C0B100379402 /* fts3 */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BE52084C0B100379402 /* FMDatabase+FTS3.m */,
+				56D92BE62084C0B100379402 /* FMTokenizers.h */,
+				56D92BE72084C0B100379402 /* FMTokenizers.m */,
+				56D92BE82084C0B100379402 /* FMDatabase+FTS3.h */,
+				56D92BE92084C0B100379402 /* fts3_tokenizer.h */,
+			);
+			path = fts3;
+			sourceTree = "<group>";
+		};
+		56D92BEA2084C0B100379402 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BEB2084C0B100379402 /* FMDatabase.h */,
+				56D92BEC2084C0B100379402 /* FMDatabaseQueue.m */,
+				56D92BED2084C0B100379402 /* FMResultSet.h */,
+				56D92BEE2084C0B100379402 /* FMDatabasePool.h */,
+				56D92BEF2084C0B100379402 /* FMDatabaseAdditions.m */,
+				56D92BF02084C0B100379402 /* FMDatabase.m */,
+				56D92BF12084C0B100379402 /* FMDatabaseQueue.h */,
+				56D92BF22084C0B100379402 /* FMDB.h */,
+				56D92BF32084C0B100379402 /* FMDatabaseAdditions.h */,
+				56D92BF42084C0B100379402 /* FMDatabasePool.m */,
+				56D92BF52084C0B100379402 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		56D92BF62084C0B100379402 /* IIXML */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BF72084C0B100379402 /* XMLDictionary.h */,
+				56D92BF82084C0B100379402 /* XMLDictionary.m */,
+			);
+			path = IIXML;
+			sourceTree = "<group>";
+		};
+		56D92BF92084C0B100379402 /* BLL */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BFA2084C0B100379402 /* WorkBench */,
+			);
+			path = BLL;
+			sourceTree = "<group>";
+		};
+		56D92BFA2084C0B100379402 /* WorkBench */ = {
+			isa = PBXGroup;
+			children = (
+				56D92BFB2084C0B100379402 /* WorkBenchEventCalendar.swift */,
+				56D92BFC2084C0B100379402 /* WorkBench.swift */,
+			);
+			path = WorkBench;
+			sourceTree = "<group>";
+		};
+		B14CFC68BB46C6E0708F1790 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A61C8614A22EE0B0D339380 /* Pods-DingTalkCalendar.debug.xcconfig */,
+				46A6CC10F27F308B044CF525 /* Pods-DingTalkCalendar.release.xcconfig */,
+				8BB10B9CB26E03D6BB9BD7CF /* Pods-DingTalkCalendarTests.debug.xcconfig */,
+				7ECA3B5D7C8D4299C7298614 /* Pods-DingTalkCalendarTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FFB8BD794DCD367C35488FF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */,
+				9718DFA710653A1BD448F56B /* Pods_DingTalkCalendarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56D92B742084C01A00379402 /* DingTalkCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D92B922084C01B00379402 /* Build configuration list for PBXNativeTarget "DingTalkCalendar" */;
+			buildPhases = (
+				A307154E66BE3156B383292C /* [CP] Check Pods Manifest.lock */,
+				56D92B712084C01A00379402 /* Sources */,
+				56D92B722084C01A00379402 /* Frameworks */,
+				56D92B732084C01A00379402 /* Resources */,
+				C62C453B8DC6387186F9FD8E /* [CP] Embed Pods Frameworks */,
+				574223CA94381949F5D627B8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DingTalkCalendar;
+			productName = DingTalkCalendar;
+			productReference = 56D92B752084C01A00379402 /* DingTalkCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56D92B882084C01B00379402 /* DingTalkCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D92B952084C01B00379402 /* Build configuration list for PBXNativeTarget "DingTalkCalendarTests" */;
+			buildPhases = (
+				F498FF5406BE1E6BE9BF0DEE /* [CP] Check Pods Manifest.lock */,
+				56D92B852084C01B00379402 /* Sources */,
+				56D92B862084C01B00379402 /* Frameworks */,
+				56D92B872084C01B00379402 /* Resources */,
+				9FDF5BBF62D7C7CFAEF56B08 /* [CP] Embed Pods Frameworks */,
+				8089139E2F55322F944F47CE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56D92B8B2084C01B00379402 /* PBXTargetDependency */,
+			);
+			name = DingTalkCalendarTests;
+			productName = DingTalkCalendarTests;
+			productReference = 56D92B892084C01B00379402 /* DingTalkCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56D92B6D2084C01A00379402 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Inspur;
+				TargetAttributes = {
+					56D92B742084C01A00379402 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					56D92B882084C01B00379402 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 56D92B742084C01A00379402;
+					};
+				};
+			};
+			buildConfigurationList = 56D92B702084C01A00379402 /* Build configuration list for PBXProject "DingTalkCalendar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56D92B6C2084C01A00379402;
+			productRefGroup = 56D92B762084C01A00379402 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56D92B742084C01A00379402 /* DingTalkCalendar */,
+				56D92B882084C01B00379402 /* DingTalkCalendarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56D92B732084C01A00379402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */,
+				56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */,
+				56D92B802084C01B00379402 /* Assets.xcassets in Resources */,
+				56D92B7E2084C01A00379402 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D92B872084C01B00379402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		574223CA94381949F5D627B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8089139E2F55322F944F47CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendarTests/Pods-DingTalkCalendarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FDF5BBF62D7C7CFAEF56B08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendarTests/Pods-DingTalkCalendarTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendarTests/Pods-DingTalkCalendarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A307154E66BE3156B383292C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DingTalkCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C62C453B8DC6387186F9FD8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F498FF5406BE1E6BE9BF0DEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DingTalkCalendarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56D92B712084C01A00379402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D92C0B2084C0B100379402 /* WorkBenchBotTbVw.swift in Sources */,
+				56D92C262084C0B100379402 /* SQLite3Go.swift in Sources */,
+				56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */,
+				56D92C2B2084C0B100379402 /* FMDatabaseQueue.m in Sources */,
+				56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */,
+				56D92C322084C0B100379402 /* WorkBench.swift in Sources */,
+				56D92C1A2084C0B100379402 /* AOPNotificationCenterProgressCenter.swift in Sources */,
+				56D92C012084C0B100379402 /* IWorkBenchEventCalendar.swift in Sources */,
+				56D92C112084C0B100379402 /* AOPEvents.swift in Sources */,
+				56D92C242084C0B100379402 /* IIMergeSort.swift in Sources */,
+				56D92C0D2084C0B100379402 /* DingTalkCalenderRectLabelView.swift in Sources */,
+				56D92C002084C0B100379402 /* BeanFactory.swift in Sources */,
+				56D92C2A2084C0B100379402 /* FMTokenizers.m in Sources */,
+				56D92C2F2084C0B100379402 /* FMResultSet.m in Sources */,
+				56D92C292084C0B100379402 /* FMDatabase+FTS3.m in Sources */,
+				56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */,
+				56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */,
+				56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */,
+				56D92C062084C0B100379402 /* WorkBencehViewController.swift in Sources */,
+				56D92C172084C0B100379402 /* AOPCore.swift in Sources */,
+				56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */,
+				56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */,
+				56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */,
+				56D92C2D2084C0B100379402 /* FMDatabase.m in Sources */,
+				56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */,
+				56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */,
+				56D92C212084C0B100379402 /* IIStringExtension.swift in Sources */,
+				56D92C312084C0B100379402 /* WorkBenchEventCalendar.swift in Sources */,
+				56D92C202084C0B100379402 /* IIDateExtension.swift in Sources */,
+				56D92C1C2084C0B100379402 /* AOPEventsUploadCenter.swift in Sources */,
+				56D92C282084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				56D92C152084C0B100379402 /* AOPMemCacheV20.swift in Sources */,
+				56D92C1D2084C0B100379402 /* GCDUtility.swift in Sources */,
+				56D92C2C2084C0B100379402 /* FMDatabaseAdditions.m in Sources */,
+				56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */,
+				56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */,
+				56D92B9B2084C05300379402 /* empty.c in Sources */,
+				56D92C302084C0B100379402 /* XMLDictionary.m in Sources */,
+				56D92C122084C0B100379402 /* AOPMemCache.swift in Sources */,
+				56D92C272084C0B100379402 /* SQLite3.swift in Sources */,
+				56D92B7B2084C01A00379402 /* ViewController.swift in Sources */,
+				56D92B792084C01A00379402 /* AppDelegate.swift in Sources */,
+				56D92C0E2084C0B100379402 /* DingTalkGetEventCalender.swift in Sources */,
+				56D92C072084C0B100379402 /* DingTalkCalenderView.swift in Sources */,
+				56D92C1F2084C0B100379402 /* IIViewExtension.swift in Sources */,
+				56D92C2E2084C0B100379402 /* FMDatabasePool.m in Sources */,
+				56D92C042084C0B100379402 /* DingTalkCalanderVM.swift in Sources */,
+				56D92C342084C0D500379402 /* TabbarViewController.swift in Sources */,
+				56D92C252084C0B100379402 /* IIBaseView.swift in Sources */,
+				56D92C0F2084C0B100379402 /* DingTalkCalanderModel.swift in Sources */,
+				56D92C0A2084C0B100379402 /* DingTalkCalanderCollectionView.swift in Sources */,
+				56D92C222084C0B100379402 /* IITaskModel.swift in Sources */,
+				56D92C022084C0B100379402 /* IWorkBench.swift in Sources */,
+				56D92C1E2084C0B100379402 /* IICoreExtension.swift in Sources */,
+				56D92C132084C0B100379402 /* AOPEventFilter.swift in Sources */,
+				56D92C192084C0B100379402 /* AOPGCDExtension.swift in Sources */,
+				56D92C162084C0B100379402 /* AOPCoreExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D92B852084C01B00379402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D92B8E2084C01B00379402 /* DingTalkCalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56D92B8B2084C01B00379402 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56D92B742084C01A00379402 /* DingTalkCalendar */;
+			targetProxy = 56D92B8A2084C01B00379402 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56D92B7C2084C01A00379402 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56D92B7D2084C01A00379402 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		56D92B812084C01B00379402 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56D92B822084C01B00379402 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56D92B902084C01B00379402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56D92B912084C01B00379402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56D92B932084C01B00379402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A61C8614A22EE0B0D339380 /* Pods-DingTalkCalendar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P466F9M6G6;
+				INFOPLIST_FILE = DingTalkCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DingTalkCalendar/DingTalkCalendar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56D92B942084C01B00379402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A6CC10F27F308B044CF525 /* Pods-DingTalkCalendar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P466F9M6G6;
+				INFOPLIST_FILE = DingTalkCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DingTalkCalendar/DingTalkCalendar-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56D92B962084C01B00379402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BB10B9CB26E03D6BB9BD7CF /* Pods-DingTalkCalendarTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P466F9M6G6;
+				INFOPLIST_FILE = DingTalkCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DingTalkCalendar.app/DingTalkCalendar";
+			};
+			name = Debug;
+		};
+		56D92B972084C01B00379402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ECA3B5D7C8D4299C7298614 /* Pods-DingTalkCalendarTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P466F9M6G6;
+				INFOPLIST_FILE = DingTalkCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DingTalkCalendar.app/DingTalkCalendar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56D92B702084C01A00379402 /* Build configuration list for PBXProject "DingTalkCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D92B902084C01B00379402 /* Debug */,
+				56D92B912084C01B00379402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56D92B922084C01B00379402 /* Build configuration list for PBXNativeTarget "DingTalkCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D92B932084C01B00379402 /* Debug */,
+				56D92B942084C01B00379402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56D92B952084C01B00379402 /* Build configuration list for PBXNativeTarget "DingTalkCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D92B962084C01B00379402 /* Debug */,
+				56D92B972084C01B00379402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56D92B6D2084C01A00379402 /* Project object */;
+}

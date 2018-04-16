@@ -1,0 +1,6 @@
+framework module Pods_DingTalkCalendarTests {
+  umbrella header "Pods-DingTalkCalendarTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

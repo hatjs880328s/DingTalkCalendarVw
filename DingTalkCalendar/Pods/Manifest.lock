@@ -1,0 +1,15 @@
+PODS:
+  - Aspects (1.4.1)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Aspects (~> 1.4.1)
+  - SnapKit (~> 4.0.0)
+
+SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 9c51d0973e078607fbf757756d902c8a1b1e0024
+
+COCOAPODS: 1.4.0
