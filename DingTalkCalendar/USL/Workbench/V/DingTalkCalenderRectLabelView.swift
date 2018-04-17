@@ -26,6 +26,7 @@ class DingTalkCalenderRectLabelView: UIView {
     init(fatherView: UIView) {
         super.init(frame: CGRect.zero)
         fatherView.addSubview(self)
+        self.backgroundColor = UIColor.yellow
         createView()
         self.tapActionsGesture {[weak self]() in
             self?.selectOneItem()

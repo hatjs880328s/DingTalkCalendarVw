@@ -11,6 +11,18 @@ import EventKit
 
 typealias dingTalkTrupleViewModel = (dayArr: [DingTalkCalanderVModel],headerCount:Int,footerCount:Int)
 
+enum ModelPosition: String {
+    case middle
+    case left
+    case right
+}
+
+/// hidden middle vw || show middle vw
+enum CalendarUIState: String {
+    case hidden
+    case show
+}
+
 class DingTalkCalanderVM: NSObject {
     
     var savedDingVMModel: [dingTalkTrupleKey:dingTalkTrupleModel] = [:]
@@ -23,7 +35,15 @@ class DingTalkCalanderVM: NSObject {
     
     var leftDate: dingTalkTrupleModel!
     
+    var middleVMDate: DingTalkCalendarTrupleVModel!
+    
+    var leftVMDate: DingTalkCalendarTrupleVModel!
+    
+    var rightVMDate: DingTalkCalendarTrupleVModel!
+    
     var eventCalendarIns: IWorkBenchEventCalendar!
+    
+    var uiContainerState: CalendarUIState = .hidden
     
     /// swipe - change topvw text closure
     var swipeChangeTopTitleTxt: ((_ txt: String)->Void)!
@@ -34,14 +54,29 @@ class DingTalkCalanderVM: NSObject {
         self.eventCalendarIns = BeanFactory().create(with: "workEventCalendarIns") as! IWorkBenchEventCalendar
     }
     
+    /// follow postition return dingVm
+    func getDingVModel(with position: ModelPosition)->DingTalkCalendarTrupleVModel {
+        switch position {
+        case .left:
+            return leftVMDate
+        case .right:
+            return rightVMDate
+        case .middle:
+            return middleVMDate
+        }
+    }
+    
     // MARK: - get dates info
     func changeDingModelToDingVM(left:dingTalkTrupleModel,middle: dingTalkTrupleModel,right:dingTalkTrupleModel)->(left:dingTalkTrupleViewModel,middle: dingTalkTrupleViewModel,right:dingTalkTrupleViewModel){
         let leftResult = changeTrupleModelToTrupleVModel(model: left)
         self.leftDate = left
+        self.leftVMDate = DingTalkCalendarTrupleVModel(with: leftResult)
         let middleResult = changeTrupleModelToTrupleVModel(model: middle)
         self.middleDate = middle
+        self.middleVMDate = DingTalkCalendarTrupleVModel(with: middleResult)
         let rightResult = changeTrupleModelToTrupleVModel(model: right)
         self.rightDate = right
+        self.rightVMDate = DingTalkCalendarTrupleVModel(with: rightResult)
         
         return (leftResult,middleResult,rightResult)
     }
@@ -64,8 +99,6 @@ class DingTalkCalanderVM: NSObject {
         
         return self.changeDingModelToDingVM(left: leftInfo, middle: currentMiddleInfo, right: rightInfo)
     }
-    
-    
     
     /// change truple model - truple vmodel
     private func changeTrupleModelToTrupleVModel(model: dingTalkTrupleModel)->dingTalkTrupleViewModel {
@@ -166,6 +199,18 @@ extension DingTalkCalanderVM {
     func getLineNumWithVModel(dates: DingTalkCalenderView)->Int {
         let selectedItem = dates.beSelectedTag
         return selectedItem/7 + 1
+    }
+    
+    /// get selected item in which line [1 - 6]
+    func getLineNumberWithTrupleModel(position: ModelPosition)->Int {
+        switch position {
+        case .left:
+            return self.leftVMDate.beSelectedTag / 7 + 1
+        case .middle:
+            return self.middleVMDate.beSelectedTag / 7 + 1
+        case .right:
+            return self.rightVMDate.beSelectedTag / 7 + 1
+        }
     }
     
 }

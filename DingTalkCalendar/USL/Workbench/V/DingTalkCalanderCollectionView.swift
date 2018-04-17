@@ -11,7 +11,7 @@ import SnapKit
 
 class DingTalkCalanderCollectionView: UIView {
     
-    let weekLineHeight: CGFloat = 35.0
+    //let weekLineHeight: CGFloat = 35.0
     
     let normalDayLineHeight: CGFloat = 46
     
@@ -62,10 +62,8 @@ extension DingTalkCalanderCollectionView {
             make.top.equalTo(topView.snp.bottom)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(weekLineHeight + normalDayLineHeight * 6)
+            make.height.equalTo(normalDayLineHeight * 6)
         }
-        //create weekday view
-        createWeekDay(fatherVw: self)
         //create month days view
         middleDateView = DingTalkCalenderView()
         leftDateView = DingTalkCalenderView()
@@ -97,7 +95,7 @@ extension DingTalkCalanderCollectionView {
             make.left.equalTo(5)
             make.width.equalTo(picVwHeight)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         }
         self.createSamllVw(fatherVw: middleDateView, dateArr: self.middleDateView.dateInfo)
         self.addSubview(leftDateView)
@@ -105,7 +103,7 @@ extension DingTalkCalanderCollectionView {
             make.width.equalTo(picVwHeight)
             make.right.equalTo(-UIScreen.main.bounds.width + 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         }
         self.createSamllVw(fatherVw: leftDateView, dateArr: self.leftDateView.dateInfo)
         self.addSubview(rightDateView)
@@ -113,7 +111,7 @@ extension DingTalkCalanderCollectionView {
             make.width.equalTo(picVwHeight)
             make.left.equalTo(UIScreen.main.bounds.width - 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         }
         self.createSamllVw(fatherVw: rightDateView, dateArr: self.rightDateView.dateInfo)
     }
@@ -131,17 +129,6 @@ extension DingTalkCalanderCollectionView {
         let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDownAction))
         downGesture.direction = .down
         dateVw.addGestureRecognizer(downGesture)
-    }
-    
-    /// weekday create once [three view use one]
-    func createWeekDay(fatherVw: UIView) {
-        let weekVw = DingTalkCalenderWeekdayView(added: fatherVw)
-        weekVw.snp.makeConstraints { (make) in
-            make.left.equalTo(5)
-            make.right.equalTo(-5)
-            make.height.equalTo(weekLineHeight)
-            make.top.equalTo(0)
-        }
     }
     
     ///create each Month vw (42 small vw)
@@ -271,20 +258,20 @@ extension DingTalkCalanderCollectionView {
             make.width.equalTo(self.picVwHeight)
             make.right.equalTo(-UIScreen.main.bounds.width + 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         self.logicRightVw.snp.remakeConstraints({ (make) in
             make.left.equalTo(5)
             make.width.equalTo(self.picVwHeight)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         self.logicLeftVw.alpha = 0
         self.logicLeftVw.snp.remakeConstraints({ (make) in
             make.width.equalTo(self.picVwHeight)
             make.left.equalTo(UIScreen.main.bounds.width - 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         UIView.animate(withDuration: 0.5, animations: {
             self.layoutIfNeeded()
@@ -311,20 +298,20 @@ extension DingTalkCalanderCollectionView {
             make.width.equalTo(self.picVwHeight)
             make.left.equalTo(UIScreen.main.bounds.width - 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         self.logicLeftVw.snp.remakeConstraints({ (make) in
             make.left.equalTo(5)
             make.width.equalTo(self.picVwHeight)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         self.logicRightVw.alpha = 0
         self.logicRightVw.snp.remakeConstraints({ (make) in
             make.width.equalTo(self.picVwHeight)
             make.right.equalTo(-UIScreen.main.bounds.width + 5)
             make.bottom.equalTo(0)
-            make.top.equalTo(weekLineHeight)
+            make.top.equalTo(0)
         })
         UIView.animate(withDuration: 0.5, animations: {
             self.layoutIfNeeded()

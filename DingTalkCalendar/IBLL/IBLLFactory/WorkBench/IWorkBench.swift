@@ -27,6 +27,12 @@ protocol IWorkBench {
     /// - Returns: str-key
     func getDicKey(with dateInfo: dingTalkTrupleModel)->dingTalkTrupleKey
     
+    /// folow dingTalkTrupleViewModel create a key [string]
+    ///
+    /// - Parameter dateInfo: dingTalkTrupleModel
+    /// - Returns: str-key
+    func getDicKey(with dingTalkTrupleInfo: dingTalkTrupleViewModel)->dingTalkTrupleKey
+    
     /// get gtm8 time
     ///
     /// - Parameter date: date

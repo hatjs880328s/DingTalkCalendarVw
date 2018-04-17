@@ -18,16 +18,19 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var topLength: CGFloat = 10
     
+    let normalDayLineHeight: CGFloat = 46
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = APPDelStatic.lightGray
+        tabVw.backgroundColor = UIColor.white
     }
     
     func createVw(topView:UIView,fatherView:UIView) {
         self.topView = topView
         fatherView.addSubview(self)
         self.snp.makeConstraints { (make) in
-            make.top.equalTo(topView.snp.bottom).offset(topLength)
+            make.top.equalTo(topView.snp.bottom)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(-0)
@@ -35,7 +38,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         self.addSubview(tabVw)
         tabVw.snp.makeConstraints { (make) in
             make.left.equalTo(0)
-            make.top.equalTo(0)
+            make.top.equalTo(0).offset(topLength)
             make.bottom.equalTo(0)
             make.right.equalTo(0)
         }
@@ -79,6 +82,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
         let count = (self.viewController() as! WorkBencehViewController).calendarVw.getCellModelsCount()
         changeHeight(cellCount: count)
         return count
@@ -108,14 +112,27 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
-//    func changeHeightWhenSwipeUp() {
-//        self.snp.remakeConstraints { (make) in
-//            make.top.equalTo().offset(10)
-//            make.left.equalTo(0)
-//            make.right.equalTo(0)
-//            make.height.equalTo(self.frame.height)
-//        }
-//    }
+    /// swipe up
+    func changeHeightWhenSwipeUp(with lineNumber: Int) {
+        let topDistance: CGFloat = CGFloat(6 - lineNumber) * normalDayLineHeight
+        //self.layoutIfNeeded()
+        self.snp.remakeConstraints { (make) in
+            make.top.equalTo(self.topView.snp.bottom).offset(-topDistance)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(0)
+        }
+    }
+    
+    /// swipe down
+    func swipeDown() {
+        self.snp.remakeConstraints { (make) in
+            make.top.equalTo(topView.snp.bottom)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(-0)
+        }
+    }
 }
 
 class WorkBenchTBCell: UITableViewCell {

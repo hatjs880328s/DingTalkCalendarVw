@@ -26,7 +26,7 @@ class WorkBenchBannerVw: UIView {
     }
     
     func createVw(with fatherVw: UIView,top topVw: UIView) {
-        fatherVw.addSubview(self)
+        fatherVw.insertSubview(self, belowSubview: topVw)
         self.snp.makeConstraints { (make) in
             make.top.equalTo(topVw.snp.bottom)
             make.left.equalTo(0)

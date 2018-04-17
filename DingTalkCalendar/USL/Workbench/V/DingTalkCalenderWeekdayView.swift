@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class DingTalkCalenderWeekdayView: UIView {
@@ -15,9 +16,21 @@ class DingTalkCalenderWeekdayView: UIView {
     
     let eachItemWidth: CGFloat =  (UIScreen.main.bounds.width - 10) / 7.0
     
-    init(added fatherView: UIView) {
-        super.init(frame: CGRect.zero)
-        fatherView.addSubview(self)
+    let heightNormal: CGFloat = 30
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.white
+    }
+    
+    func createView(added fatherView: UIView,topView: UIView) {
+        fatherView.insertSubview(self, belowSubview: topView)
+        self.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.right.equalTo(-0)
+            make.height.equalTo(heightNormal)
+            make.top.equalTo(topView.snp.bottom)
+        }
         createView()
     }
     

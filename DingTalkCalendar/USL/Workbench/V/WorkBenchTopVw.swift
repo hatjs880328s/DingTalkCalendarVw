@@ -29,7 +29,7 @@ class WorkBenchTopVw: UIView {
     }
     
     func createView(fatherView: UIView) {
-        fatherView.addSubview(self)
+        fatherView.insertSubview(self, at: 100)
         self.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.top.equalTo(0)

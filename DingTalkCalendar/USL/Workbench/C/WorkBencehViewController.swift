@@ -20,6 +20,8 @@ import UIKit
     
     let bannerVw: WorkBenchBannerVw = WorkBenchBannerVw(frame: CGRect.zero)
     
+    let weekDayVw: DingTalkCalenderWeekdayView = DingTalkCalenderWeekdayView(frame: CGRect.zero)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = APPDelStatic.lightGray
@@ -27,6 +29,7 @@ import UIKit
             
         createTopView()
         createBannerVw()
+        createWeekDay()
         createDingTalkCalender()
         createBotTBVw()
         
@@ -57,6 +60,11 @@ extension WorkBencehViewController {
         botVw.createVw(topView: calendarVw, fatherView: self.view)
     }
     
+    /// weak day vw
+    func createWeekDay() {
+        weekDayVw.createView(added: self.view, topView: self.bannerVw)
+    }
+    
     
 }
 
@@ -65,7 +73,7 @@ extension WorkBencehViewController {
     
     /// create calendar view
     func createDingTalkCalender() {
-        calendarVw.initDTCView(with: self.view,topView: self.bannerVw)
+        calendarVw.initDTCView(with: self.view,topView: self.weekDayVw)
         let currentDateTrupleInfo = self.vm.getCurrentMonthDays()
         calendarVw.create3ChildView(leftDate: currentDateTrupleInfo.left, rightDate: currentDateTrupleInfo.right, middleDate: currentDateTrupleInfo.middle)
         calendarVw.swipeGetDateInfo = {[weak self]dirction in

@@ -10,7 +10,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
     //工作台
-    let workbench = UINavigationController(rootViewController: WorkBencehViewController())
+    let workbench = UINavigationController(rootViewController: WorkBenchViewControllerV2())
     //我的
     let myInfo = UINavigationController(rootViewController: ViewController())
     

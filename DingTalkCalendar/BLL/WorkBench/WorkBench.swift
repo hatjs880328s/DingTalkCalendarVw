@@ -174,6 +174,16 @@ extension WorkBench {
         return getDicKey(with: currentMonthDay!)
     }
     
+    /// folow dingTalkTrupleViewModel create a key [string]
+    ///
+    /// - Parameter dateInfo: dingTalkTrupleModel
+    /// - Returns: str-key
+    func getDicKey(with dingTalkTrupleInfo: dingTalkTrupleViewModel)->dingTalkTrupleKey {
+        let currentMonthDay = dingTalkTrupleInfo.dayArr[dingTalkTrupleInfo.headerCount + 1].dateInfo
+        if currentMonthDay == nil { return "" }
+        return getDicKey(with: currentMonthDay!)
+    }
+    
     /// follow date create a key [string]
     ///
     /// - Parameter dateInfo: date info
