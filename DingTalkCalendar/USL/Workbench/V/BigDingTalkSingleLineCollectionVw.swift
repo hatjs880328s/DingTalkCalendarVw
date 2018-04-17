@@ -9,7 +9,7 @@
 import Foundation
 
 
-class DingTalkSingleLineChildVw: UIView {
+class BigDingTalkSingleLineCollectionVw: UIView {
     
     var childsVwArr: [DingTalkCalenderRectLabelView] = []
     
@@ -81,11 +81,9 @@ class DingTalkSingleLineChildVw: UIView {
     }
     
     @objc func swipeLeftAction() {
-        
     }
     
     @objc func swipeRightAction() {
-        
     }
     
     @objc func swipeTopAction() {

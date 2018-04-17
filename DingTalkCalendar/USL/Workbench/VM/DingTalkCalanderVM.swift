@@ -25,9 +25,15 @@ enum CalendarUIState: String {
 
 class DingTalkCalanderVM: NSObject {
     
+    /// big pic cache
     var savedDingVMModel: [dingTalkTrupleKey:dingTalkTrupleModel] = [:]
     
+    /// small pic cache
+    var savedDingLineVMModel: [dingTalkTrupleKey:DingTalkCalendarTrupleVModel] = [:]
+    
     var workBench: IWorkBench!
+    
+    /// big pic parameters
     
     var rightDate: dingTalkTrupleModel!
     
@@ -40,6 +46,16 @@ class DingTalkCalanderVM: NSObject {
     var leftVMDate: DingTalkCalendarTrupleVModel!
     
     var rightVMDate: DingTalkCalendarTrupleVModel!
+    
+    /// small pic parameters
+    
+    var smallMiddleDate: [DingTalkCalanderVModel]!
+    
+    var smallLeftDate: [DingTalkCalanderVModel]!
+    
+    var smallRightDate: [DingTalkCalanderVModel]!
+    
+    // events & state
     
     var eventCalendarIns: IWorkBenchEventCalendar!
     
@@ -112,14 +128,7 @@ class DingTalkCalanderVM: NSObject {
         return vmResult
     }
     
-    /// swipe - change topvw text closure
-    private func swipeChangeTopVwTxt(dateInfo: dingTalkTrupleModel) {
-        if self.swipeChangeTopTitleTxt == nil { return }
-        let realDate = dateInfo.dayArr[dateInfo.headerCount].dateInfo
-        if realDate == nil { self.swipeChangeTopTitleTxt("") }
-        let txt: String = "\(realDate!.year)年\(realDate!.month)月"
-        self.swipeChangeTopTitleTxt(txt)
-    }
+    
 }
 
 // MARK: - global queue progress events
@@ -153,8 +162,9 @@ extension DingTalkCalanderVM {
     }
 }
 
-// MARK: - swipe left right & up down
+// MARK: - swipe left right & up down BIG VW
 extension DingTalkCalanderVM {
+    
     /// swipe to left [vm progress date]
     func swipeLeft()->dingTalkTrupleViewModel {
         //change date
@@ -195,6 +205,15 @@ extension DingTalkCalanderVM {
         return self.changeTrupleModelToTrupleVModel(model: self.leftDate)
     }
     
+    /// swipe - change topvw text closure
+    private func swipeChangeTopVwTxt(dateInfo: dingTalkTrupleModel) {
+        if self.swipeChangeTopTitleTxt == nil { return }
+        let realDate = dateInfo.dayArr[dateInfo.headerCount].dateInfo
+        if realDate == nil { self.swipeChangeTopTitleTxt("") }
+        let txt: String = "\(realDate!.year)年\(realDate!.month)月"
+        self.swipeChangeTopTitleTxt(txt)
+    }
+    
     /// get selected item in which line [ 1 ~ 6 ]
     func getLineNumWithVModel(dates: DingTalkCalenderView)->Int {
         let selectedItem = dates.beSelectedTag
@@ -212,5 +231,116 @@ extension DingTalkCalanderVM {
             return self.rightVMDate.beSelectedTag / 7 + 1
         }
     }
+    
+}
+
+// MARK: - swipe left & right SMALL VW
+extension DingTalkCalanderVM {
+    
+    private func getDistanceFirstDayIntValueByWeekDay(with strInfo: String)->(distanceFist: Int,distanceLast: Int) {
+        if strInfo == "日" {
+            return (0,6)
+        }
+        if strInfo == "一" {
+            return (1,5)
+        }
+        if strInfo == "二" {
+            return (2,4)
+        }
+        if strInfo == "三" {
+            return (3,3)
+        }
+        if strInfo == "四" {
+            return (4,2)
+        }
+        if strInfo == "五" {
+            return (5,1)
+        }
+        if strInfo == "六" {
+            return (6,0)
+        }
+        return (0,0)
+    }
+    
+    /// get line firstday & lastday follow current-month selected day
+    private func getTheLineFirstDayAndLastDay()->(lineFistDay: Date,lineLastDay: Date) {
+        let selectedDay = self.middleVMDate.trupleVM.dayArr[self.middleVMDate.beSelectedTag - 1]
+        let itemDay = selectedDay.dateInfo.week
+        let distanceFirstDay = self.getDistanceFirstDayIntValueByWeekDay(with: itemDay)
+        let lineFirstDay = selectedDay.dateInfo.beforeDate(distanceFirstDay.distanceFist)
+        let lineLastDay = selectedDay.dateInfo.nextDate(distanceFirstDay.distanceLast)
+        
+        return (lineFirstDay,lineLastDay)
+    }
+    
+    /// get left & middle & right modelArr by big middle dates
+    func getCurrentline7Days() {
+        let trupleInfo = self.getTheLineFirstDayAndLastDay()
+        let firstDay = trupleInfo.lineFistDay
+        let lastDay = trupleInfo.lineLastDay
+        
+        let models =  workBench.get7Days(with: firstDay.beforeDate(1), is: true)
+        var results = [DingTalkCalanderVModel]()
+        for eachItem in models {
+            let ins = DingTalkCalanderVModel(with: eachItem)
+            results.append(ins)
+        }
+        self.smallMiddleDate = results
+        
+        let leftModels = workBench.get7Days(with: firstDay, is: false)
+        var leftResults = [DingTalkCalanderVModel]()
+        for eachItem in leftModels {
+            let ins = DingTalkCalanderVModel(with: eachItem)
+            leftResults.append(ins)
+        }
+        self.smallLeftDate = leftResults
+        
+        let rightModels = workBench.get7Days(with: lastDay, is: true)
+        var rightResults = [DingTalkCalanderVModel]()
+        for eachItem in rightModels {
+            let ins = DingTalkCalanderVModel(with: eachItem)
+            rightResults.append(ins)
+        }
+        self.smallRightDate = rightResults
+    }
+    
+    /// swipe left - get new right dates
+    func smallSwipeleft()->[DingTalkCalanderVModel] {
+        // logic dates change
+        self.smallLeftDate = self.smallMiddleDate
+        self.smallMiddleDate = self.smallRightDate
+        
+        
+        let lastDay = self.smallRightDate[6].dateInfo!
+        let models =  workBench.get7Days(with: lastDay, is: true)
+        var results = [DingTalkCalanderVModel]()
+        for eachItem in models {
+            let ins = DingTalkCalanderVModel(with: eachItem)
+            results.append(ins)
+        }
+        self.smallRightDate = results
+        
+        return results
+    }
+    
+    /// swipe right - get new left dates
+    func smallSwipeRight()->[DingTalkCalanderVModel] {
+        // logic dates change
+        self.smallRightDate = self.smallMiddleDate
+        self.smallMiddleDate = self.smallLeftDate
+       
+        
+        let lastDay = self.smallLeftDate[0].dateInfo!
+        let models =  workBench.get7Days(with: lastDay, is: false)
+        var results = [DingTalkCalanderVModel]()
+        for eachItem in models {
+            let ins = DingTalkCalanderVModel(with: eachItem)
+            results.append(ins)
+        }
+        self.smallLeftDate = results
+        
+        return results
+    }
+    
     
 }

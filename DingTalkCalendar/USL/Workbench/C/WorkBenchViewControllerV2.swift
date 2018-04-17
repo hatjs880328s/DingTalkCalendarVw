@@ -20,6 +20,8 @@ class WorkBenchViewControllerV2: UIViewController {
     
     let calendarVw: DingTalkSingleLineCalendarVw = DingTalkSingleLineCalendarVw(frame: CGRect.zero)
     
+    let smallCalendarVw: SmallDingTalkSingleLineCollectionVw =  SmallDingTalkSingleLineCollectionVw(frame: CGRect.zero)
+    
     let vm = DingTalkCalanderVM()
     
     override func viewDidLoad() {
@@ -32,10 +34,12 @@ class WorkBenchViewControllerV2: UIViewController {
         createBannerVw()
         createWeekDay()
         createCalendarVw()
+        createSmallCalendarVw()
         createBotTBVw()
         
         
         getMiddleDate()
+        getSmallCalendarDate()
         hiddenMiddleCalendarVw()
     }
 
@@ -63,6 +67,11 @@ extension WorkBenchViewControllerV2 {
         calendarVw.createView(fatherView: self.view, topView: weekDayVw)
     }
     
+    /// small calendar vw
+    func createSmallCalendarVw() {
+        smallCalendarVw.createView(fatherView: self.view, topView: weekDayVw)
+    }
+    
     /// create tb vw
     func createBotTBVw() {
         self.botVw.createVw(topView: calendarVw, fatherView: self.view)
@@ -84,23 +93,25 @@ extension WorkBenchViewControllerV2 {
         self.calendarVw.showTopAndeBotVw()
         self.vm.uiContainerState = .show
     }
-    
-    func swipeLeft() {
-        
-    }
-    
-    func swipeRight(){
-        
-    }
 }
 
 // MARK: - calendar progress date
 extension WorkBenchViewControllerV2 {
     
+    /// big middle calendar date
     func getMiddleDate() {
-        /// [truple infos]
         vm.getCurrentMonthDays()
         let middleVM = self.vm.getDingVModel(with: .middle).trupleVM!
         self.calendarVw.setDates(with: middleVM.dayArr, which: calendarVw.middleChildVw)
     }
+    
+    /// small left & right calendar date
+    func getSmallCalendarDate() {
+        self.vm.getCurrentline7Days()
+        self.smallCalendarVw.setDates(date: self.vm.smallMiddleDate, position: .middle)
+        self.smallCalendarVw.setDates(date: self.vm.smallLeftDate, position: .left)
+        self.smallCalendarVw.setDates(date: self.vm.smallRightDate, position: .right)
+    }
+    
+    
 }

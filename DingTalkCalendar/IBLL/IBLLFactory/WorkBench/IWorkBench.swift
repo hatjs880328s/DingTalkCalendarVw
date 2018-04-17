@@ -68,4 +68,12 @@ protocol IWorkBench {
     /// - Parameter date: vmodel
     /// - Returns: date
     func getAfterMonthFirstDay(with date: dingTalkTrupleViewModel)->Date
+    
+    /// get 7 days [before or next]
+    ///
+    /// - Parameters:
+    ///   - dateInfo: first day || last day in this line
+    ///   - lastDays: true : rights ; false : left[before]
+    /// - Returns: values
+    func get7Days(with dateInfo: Date,is lastDays:Bool)->[DingTalkCalanderModel]
 }

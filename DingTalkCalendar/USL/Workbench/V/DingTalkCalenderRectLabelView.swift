@@ -93,14 +93,24 @@ class DingTalkCalenderRectLabelView: UIView {
             self.lunarDayLb.textColor = UIColor.gray
         }
         //current day
-        if item.isCurrentDay {
-            self.gregorionDayLb.textColor = UIColor.blue
-            self.lunarDayLb.textColor = UIColor.blue
-        }
+//        if item.isCurrentDay {
+//            self.gregorionDayLb.textColor = UIColor.blue
+//            self.lunarDayLb.textColor = UIColor.blue
+//        }
         //first day this month
-        if item.isFirstDayCurrentMonth {
-            beSelectedItem()
-            changeToFirstDay(true)
+        if item.isCurrentMonthDay {
+            let dateInfo = Date().dateFormate("yyyy-MM-dd")
+            if item.dateInfo.year == dateInfo.year && item.dateInfo.month == dateInfo.month {
+                if item.dateInfo.days == dateInfo.days {
+                    beSelectedItem()
+                    changeToFirstDay(true)
+                }else{
+                    // donothing
+                }
+            }else{
+                beSelectedItem()
+                changeToFirstDay(true)
+            }
         }
     }
     

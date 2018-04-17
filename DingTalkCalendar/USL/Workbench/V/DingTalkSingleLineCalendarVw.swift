@@ -13,11 +13,11 @@ class DingTalkSingleLineCalendarVw: UIView {
     
     let normalDayLineHeight: CGFloat = 46
     
-    var middleChildVw =  DingTalkSingleLineChildVw(frame: CGRect.zero)
+    var middleChildVw =  BigDingTalkSingleLineCollectionVw(frame: CGRect.zero)
     
-    var leftChildVw: DingTalkSingleLineChildVw!
+    var leftChildVw: BigDingTalkSingleLineCollectionVw!
     
-    var rightChildVw: DingTalkSingleLineChildVw!
+    var rightChildVw: BigDingTalkSingleLineCollectionVw!
     
     var topVw: UIView!
     
@@ -72,7 +72,7 @@ class DingTalkSingleLineCalendarVw: UIView {
     
     /// show self all
     func showTopAndeBotVw() {
-        self.snp.makeConstraints { (make) in
+        self.snp.remakeConstraints { (make) in
             make.top.equalTo(self.topVw.snp.bottom)
             make.left.equalTo(0)
             make.right.equalTo(0)
@@ -83,7 +83,7 @@ class DingTalkSingleLineCalendarVw: UIView {
     }
     
     /// DingTalkCalanderModel
-    func setDates(with dates: [DingTalkCalanderVModel],which vw: DingTalkSingleLineChildVw) {
+    func setDates(with dates: [DingTalkCalanderVModel],which vw: BigDingTalkSingleLineCollectionVw) {
         //use vmodels set value to self.
         vw.setDates(with: dates)
     }

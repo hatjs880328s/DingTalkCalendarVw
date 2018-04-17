@@ -241,3 +241,38 @@ extension WorkBench {
         return self.getCurrent42Days(with: with)
     }
 }
+
+extension WorkBench {
+    
+    /// get 7 days [before or next]
+    ///
+    /// - Parameters:
+    ///   - dateInfo: first day || last day in this line
+    ///   - lastDays: true : rights ; false : left[before]
+    /// - Returns: values
+    func get7Days(with dateInfo: Date,is lastDays:Bool)->[DingTalkCalanderModel] {
+        var results = [DingTalkCalanderModel]()
+        for eachItem in 1 ... 7 {
+            var day:Date!
+            if lastDays {
+                day = dateInfo.nextDate(eachItem)
+            }else{
+                day = dateInfo.beforeDate(eachItem)
+            }
+            let dingIns = DingTalkCalanderModel()
+            let curentDayIndex = getCurrentData(Date())
+            let isCurrentMonthFirstDay = day.days == 1 ? true : false
+            if day.days == curentDayIndex.days && day.year == curentDayIndex.year && day.month == curentDayIndex.month{
+                dingIns.setParameters(gregorionDay: day.days, weekDay: day.weekday, lunarDay: 3, isCurrentDay: true, isFirstDayCurrentMonty: isCurrentMonthFirstDay,dateInfo: day,isCurrentMonthDay: true)
+            }else{
+                dingIns.setParameters(gregorionDay: day.days, weekDay: day.weekday, lunarDay: 3, isCurrentDay: false, isFirstDayCurrentMonty: isCurrentMonthFirstDay,dateInfo: day,isCurrentMonthDay: true)
+            }
+            if lastDays {
+                results.append(dingIns)
+            }else{
+                results.insert(dingIns, at: 0)
+            }
+        }
+        return results
+    }
+}
