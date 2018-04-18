@@ -67,13 +67,14 @@ class WorkBenchTopVw: UIView {
         todayLb.textColor = UIColor.white
         todayLb.backgroundColor = APPDelStatic.dingtalkBlue
         todayLb.font = UIFont.systemFont(ofSize: 10)
+        todayLb.alpha = 0
     }
     
     func setData(ifCalendar: Bool, titleTxt: String) {
         if ifCalendar && titleTxt == self.todayTxt {
-            self.todayLb.alpha = 1
-        }else{
             self.todayLb.alpha = 0
+        }else{
+            self.todayLb.alpha = 1
         }
         self.titleLb.text = titleTxt
     }

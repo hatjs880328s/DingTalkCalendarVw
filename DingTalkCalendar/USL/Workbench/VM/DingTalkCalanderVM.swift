@@ -62,7 +62,7 @@ class DingTalkCalanderVM: NSObject {
     var uistate: UIState = .single
     
     /// swipe - change topvw text closure
-    var swipeChangeTopTitleTxt: ((_ txt: String)->Void)!
+    var swipeChangeTopTitleTxt: ((_ txt: String,_ isCurrentMonth: Bool)->Void)!
     
     override init() {
         super.init()
@@ -201,9 +201,9 @@ extension DingTalkCalanderVM {
             let newRightDate = workBench.getDate(position: DingTalkPosition.right, middleDates: self.middleDate,middleFollowDate: nil)
             self.rightDate = newRightDate
         }
+        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         //change top txt
         swipeChangeTopVwTxt()
-        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.rightDate)
     }
@@ -222,9 +222,9 @@ extension DingTalkCalanderVM {
             let newLeftDate = workBench.getDate(position: DingTalkPosition.left, middleDates: self.middleDate,middleFollowDate: nil)
             self.leftDate = newLeftDate
         }
+        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         //change top txt
         swipeChangeTopVwTxt()
-        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.leftDate)
     }
@@ -234,13 +234,23 @@ extension DingTalkCalanderVM {
         if self.swipeChangeTopTitleTxt == nil { return }
         var text = ""
         var dateInfo:Date!
+        var currentMonth:Bool = false
+        let currentDay = Date().dateFormate("yyyy-MM-dd")
         if self.uistate == .all {
             dateInfo = self.middleDate.dayArr[self.middleDate.headerCount].dateInfo
+            if (self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month == currentDay.month
+                && self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.year == currentDay.year) {
+                currentMonth = true
+            }
         }else{
             dateInfo = self.smallMiddleDate[0].dateInfo
+            if (self.smallMiddleDate[0].dateInfo.month == currentDay.month
+                && self.smallMiddleDate[0].dateInfo.year == currentDay.year) {
+                currentMonth = true
+            }
         }
         text = "\(dateInfo!.year)年\(dateInfo!.month)月"
-        self.swipeChangeTopTitleTxt(text)
+        self.swipeChangeTopTitleTxt(text,currentMonth)
     }
     
     /// get selected item in which line [ 1 ~ 6 ]

@@ -40,6 +40,7 @@ class WorkBenchViewControllerV2: UIViewController {
         getMiddleDate()
         hiddenMiddleCalendarVw()
         getTodayEvents()
+        topTxtChange()
     }
 
 }
@@ -114,8 +115,8 @@ extension WorkBenchViewControllerV2 {
     }
     
     func topTxtChange() {
-        self.vm.swipeChangeTopTitleTxt = { [weak self]text in
-            //self?.topView.
+        self.vm.swipeChangeTopTitleTxt = { [weak self]text,isCurrentMonth in
+            self?.topView.setData(ifCalendar: isCurrentMonth, titleTxt: text)
         }
     }
 }

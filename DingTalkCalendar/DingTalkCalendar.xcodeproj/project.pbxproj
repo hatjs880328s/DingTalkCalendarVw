@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
 		566B72982085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */; };
 		566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		46A6CC10F27F308B044CF525 /* Pods-DingTalkCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
 		566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				56D92C332084C0D500379402 /* TabbarViewController.swift */,
 				56D92B782084C01A00379402 /* AppDelegate.swift */,
 				56D92B7A2084C01A00379402 /* ViewController.swift */,
+				561EEE9120875E8E0006F513 /* survey.png */,
 				56D92B992084C05300379402 /* empty.h */,
 				56D92B9A2084C05300379402 /* empty.c */,
 				56D92B7C2084C01A00379402 /* Main.storyboard */,
@@ -668,6 +671,7 @@
 			files = (
 				56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */,
 				56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */,
+				561EEE9220875E8E0006F513 /* survey.png in Resources */,
 				56D92B802084C01B00379402 /* Assets.xcassets in Resources */,
 				56D92B7E2084C01A00379402 /* Main.storyboard in Resources */,
 			);

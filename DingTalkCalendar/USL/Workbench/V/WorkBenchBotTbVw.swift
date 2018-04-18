@@ -217,6 +217,7 @@ class WorkBenchTBCell: UITableViewCell {
             make.height.equalTo(14)
         }
         imagePic.backgroundColor = UIColor.gray
+        imagePic.image = UIImage(named: "survey.png")
         //title
         titleLb.snp.makeConstraints { (make) in
             make.left.equalTo(imagePic.snp.right).offset(10)
@@ -256,7 +257,7 @@ class WorkBenchTBCell: UITableViewCell {
         self.titleLb.text = model.title
         self.dateStart.text = model.startTime
         self.dateEnd.text = model.endTime
-        self.imagePic.image = UIImage(named: "")
+        self.imagePic.image = UIImage(named: "survey.png")
     }
     
 }
