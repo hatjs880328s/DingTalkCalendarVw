@@ -22,10 +22,10 @@ import Foundation
 /// dispatch - once function
 extension DispatchQueue {
     static var onceDic: [String: String] = [:]
-    static func once(action:()->Void) {
+    static func once(withUUID:String,action:()->Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        let taskID: String = NSUUID().uuidString
+        let taskID: String = withUUID
         if onceDic[taskID] != nil {
             return
         }else{

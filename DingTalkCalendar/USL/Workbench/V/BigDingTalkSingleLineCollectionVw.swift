@@ -31,6 +31,8 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     var fatherVw: UIView!
     
+    var onceUUID = NSUUID().uuidString
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -55,7 +57,7 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     /// 2 other big child view
     public func createOther2ChildVw() {
-        DispatchQueue.once {
+        DispatchQueue.once(withUUID: onceUUID) {
             self.leftChildVw = BigDingTalkSingleLineChildVw(frame: CGRect.zero)
             self.rightChildVw = BigDingTalkSingleLineChildVw(frame: CGRect.zero)
             self.leftChildVw.createView(fatherView: self, position: .left)

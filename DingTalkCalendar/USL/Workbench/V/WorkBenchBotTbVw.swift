@@ -223,7 +223,7 @@ class WorkBenchTBCell: UITableViewCell {
         botLine.snp.makeConstraints { (make) in
             make.left.equalTo(imagePic.snp.left)
             make.right.equalTo(0)
-            make.bottom.equalTo(0.5)
+            make.bottom.equalTo(-0.5)
             make.height.equalTo(0.5)
         }
         botLine.backgroundColor = APPDelStatic.lightGray

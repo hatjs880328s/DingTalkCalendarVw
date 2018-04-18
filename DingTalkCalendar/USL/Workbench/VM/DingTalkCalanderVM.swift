@@ -58,6 +58,7 @@ class DingTalkCalanderVM: NSObject {
     
     var eventCalendarIns: IWorkBenchEventCalendar!
     
+    /// default is .single [could't change default value]
     var uistate: UIState = .single
     
     /// swipe - change topvw text closure
@@ -307,8 +308,13 @@ extension DingTalkCalanderVM {
     }
     
     /// get line firstday & lastday follow current-month selected day
-    private func getTheLineFirstDayAndLastDay()->(lineFistDay: Date,lineLastDay: Date) {
-        let selectedDay = self.middleVMDate.trupleVM.dayArr[self.middleVMDate.beSelectedTag - 1]
+    private func getTheLineFirstDayAndLastDay(followDate:DingTalkCalanderVModel? = nil)->(lineFistDay: Date,lineLastDay: Date) {
+        var selectedDay:DingTalkCalanderVModel!
+        if followDate == nil {
+            selectedDay = self.middleVMDate.trupleVM.dayArr[self.middleVMDate.beSelectedTag]
+        }else{
+            selectedDay = followDate!
+        }
         let itemDay = selectedDay.dateInfo.week
         let distanceFirstDay = self.getDistanceFirstDayIntValueByWeekDay(with: itemDay)
         let lineFirstDay = selectedDay.dateInfo.beforeDate(distanceFirstDay.distanceFist)
@@ -318,8 +324,8 @@ extension DingTalkCalanderVM {
     }
     
     /// get left & middle & right modelArr by big middle dates
-    func getCurrentline7Days() {
-        let trupleInfo = self.getTheLineFirstDayAndLastDay()
+    func getCurrentline7Days(followDate:DingTalkCalanderVModel? = nil) {
+        let trupleInfo = self.getTheLineFirstDayAndLastDay(followDate: followDate)
         let firstDay = trupleInfo.lineFistDay
         let lastDay = trupleInfo.lineLastDay
         

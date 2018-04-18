@@ -38,7 +38,7 @@ class WorkBenchViewControllerV2: UIViewController {
         createBotTBVw()
         
         getMiddleDate()
-        getSmallCalendarDate()
+        
         hiddenMiddleCalendarVw()
         getTodayEvents()
     }
@@ -85,6 +85,7 @@ extension WorkBenchViewControllerV2 {
     func hiddenMiddleCalendarVw() {
         self.botVw.swipeUp()
         self.smallCalendarVw.alpha = 1
+        getSmallCalendarDate()
         self.vm.uistate = .single
     }
     
@@ -119,7 +120,11 @@ extension WorkBenchViewControllerV2 {
     
     /// small left & right calendar date
     func getSmallCalendarDate() {
-        self.vm.getCurrentline7Days()
+        if self.vm.uistate == .single {
+            self.vm.getCurrentline7Days()
+        }else{
+            self.vm.getCurrentline7Days(followDate: self.calendarVw.logicMiddleVw.vms[self.calendarVw.logicMiddleVw.beselectedItemIndex])
+        }
         self.smallCalendarVw.setDates(date: self.vm.smallMiddleDate, position: .middle)
         self.smallCalendarVw.setDates(date: self.vm.smallLeftDate, position: .left)
         self.smallCalendarVw.setDates(date: self.vm.smallRightDate, position: .right)

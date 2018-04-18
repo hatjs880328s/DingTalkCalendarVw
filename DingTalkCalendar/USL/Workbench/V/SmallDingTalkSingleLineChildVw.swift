@@ -29,8 +29,6 @@ class SmallDingTalkSingleLineChildVw: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.borderColor = UIColor.red
-//        self.borderWidth = 0.6
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -86,11 +86,11 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
     func setDates(date: [DingTalkCalanderVModel],position: ModelPosition) {
         switch position {
         case .middle:
-            self.smallMiddleCalendarVw.setDate(models: date)
+            self.smallMiddleLogicVw.setDate(models: date)
         case .left:
-            self.smallLeftCalendarVw.setDate(models: date)
+            self.smallLeftLogicVw.setDate(models: date)
         case .right:
-            self.smallRightCalendarVw.setDate(models: date)
+            self.smallRightLogicVw.setDate(models: date)
         }
     }
     
