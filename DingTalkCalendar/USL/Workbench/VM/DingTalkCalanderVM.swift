@@ -91,9 +91,9 @@ class DingTalkCalanderVM: NSObject {
     
     /// first get dateinfo
     @discardableResult
-    func getCurrentMonthDays()->(left:dingTalkTrupleViewModel,middle: dingTalkTrupleViewModel,right:dingTalkTrupleViewModel) {
+    func getCurrentMonthDays(currentMonthDay: Date)->(left:dingTalkTrupleViewModel,middle: dingTalkTrupleViewModel,right:dingTalkTrupleViewModel) {
         //middle
-        let currentMiddleInfo: dingTalkTrupleModel = self.workBench.getDate(position: .middle, middleDates: nil,middleFollowDate: Date())
+        let currentMiddleInfo: dingTalkTrupleModel = self.workBench.getDate(position: .middle, middleDates: nil,middleFollowDate: currentMonthDay)
         let middleKey = workBench.getDicKey(with: currentMiddleInfo)
         self.savedDingVMModel[middleKey] = currentMiddleInfo
         //right
@@ -156,6 +156,15 @@ extension DingTalkCalanderVM {
 
 // MARK: - swipe left right & up down BIG VW
 extension DingTalkCalanderVM {
+    
+    /// when small calendar vw swipe hor - big calendar vw dates should change also [true: should change false: shouldn't]
+    @discardableResult
+    func smallCalendarCollectionSwipeChangeBigDates(withDate: Date)->Bool {
+        let progressDate = withDate.dateFormate("yyyy-MM-dd")
+        if progressDate.month == self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month { return false }
+        self.getCurrentMonthDays(currentMonthDay: progressDate)
+        return true
+    }
     
     /// swipe to left [vm progress date]
     func swipeLeft()->dingTalkTrupleViewModel {
@@ -312,6 +321,7 @@ extension DingTalkCalanderVM {
             results.append(ins)
         }
         self.smallRightDate = results
+        self.smallCalendarCollectionSwipeChangeBigDates(withDate: self.smallMiddleDate[0].dateInfo)
         
         return results
     }
@@ -331,6 +341,7 @@ extension DingTalkCalanderVM {
             results.append(ins)
         }
         self.smallLeftDate = results
+        self.smallCalendarCollectionSwipeChangeBigDates(withDate: self.smallMiddleDate[0].dateInfo)
         
         return results
     }

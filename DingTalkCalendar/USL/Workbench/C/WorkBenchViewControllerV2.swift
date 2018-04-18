@@ -37,7 +37,6 @@ class WorkBenchViewControllerV2: UIViewController {
         createSmallCalendarVw()
         createBotTBVw()
         
-        
         getMiddleDate()
         getSmallCalendarDate()
         hiddenMiddleCalendarVw()
@@ -93,6 +92,14 @@ extension WorkBenchViewControllerV2 {
         self.botVw.swipeDown()
         self.smallCalendarVw.alpha = 0
     }
+    
+    /// small calendar hor swipe - big calendar dates change
+    func smallCalendarSwipeHor() {
+        self.calendarVw.setDates(with: self.vm.getDingVModel(with: .middle).trupleVM!.dayArr, which: self.calendarVw.middleChildVw)
+        if self.calendarVw.leftChildVw == nil { return }
+        self.calendarVw.setDates(with: self.vm.getDingVModel(with: .left).trupleVM!.dayArr, which: self.calendarVw.leftChildVw)
+        self.calendarVw.setDates(with: self.vm.getDingVModel(with: .right).trupleVM!.dayArr, which: self.calendarVw.rightChildVw)
+    }
 }
 
 // MARK: - calendar progress date
@@ -100,7 +107,7 @@ extension WorkBenchViewControllerV2 {
     
     /// big middle calendar date
     func getMiddleDate() {
-        vm.getCurrentMonthDays()
+        vm.getCurrentMonthDays(currentMonthDay: Date())
         let middleVM = self.vm.getDingVModel(with: .middle).trupleVM!
         self.calendarVw.setDates(with: middleVM.dayArr, which: calendarVw.middleChildVw)
     }

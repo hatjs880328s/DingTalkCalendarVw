@@ -33,6 +33,8 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
     
     var smallRightLogicVw: SmallDingTalkSingleLineChildVw!
     
+    var smallCalendarCollectionSwipeHorEndAction: ((_ singleLineFirstDay: Date)->Void)!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -113,6 +115,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallRightLogicVw = self.smallLeftLogicVw
                 self.smallLeftLogicVw = changeMiddleParameter
                 self.smallRightLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeleft())
+                (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
             }
         }
     }
@@ -133,6 +136,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallLeftLogicVw = self.smallRightLogicVw
                 self.smallRightLogicVw = changeMiddleParameter
                 self.smallLeftLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeRight())
+                (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
             }
         }
     }

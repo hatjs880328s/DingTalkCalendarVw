@@ -74,7 +74,7 @@ extension WorkBencehViewController {
     /// create calendar view
     func createDingTalkCalender() {
         calendarVw.initDTCView(with: self.view,topView: self.weekDayVw)
-        let currentDateTrupleInfo = self.vm.getCurrentMonthDays()
+        let currentDateTrupleInfo = self.vm.getCurrentMonthDays(currentMonthDay: Date())
         calendarVw.create3ChildView(leftDate: currentDateTrupleInfo.left, rightDate: currentDateTrupleInfo.right, middleDate: currentDateTrupleInfo.middle)
         calendarVw.swipeGetDateInfo = {[weak self]dirction in
             if dirction == UISwipeGestureRecognizerDirection.left {
