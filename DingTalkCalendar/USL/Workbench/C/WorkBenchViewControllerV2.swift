@@ -115,7 +115,7 @@ extension WorkBenchViewControllerV2 {
     
     func topTxtChange() {
         self.vm.swipeChangeTopTitleTxt = { [weak self]text in
-            self?.topView.
+            //self?.topView.
         }
     }
 }
