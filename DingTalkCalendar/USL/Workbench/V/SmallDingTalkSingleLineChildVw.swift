@@ -25,6 +25,8 @@ class SmallDingTalkSingleLineChildVw: UIView {
     
     var selectedItemIndex: Int = 0
     
+    var vms:[DingTalkCalanderVModel]!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        self.borderColor = UIColor.red
@@ -66,6 +68,7 @@ class SmallDingTalkSingleLineChildVw: UIView {
     }
     
     func setDate(models :[DingTalkCalanderVModel]) {
+        self.vms = models
         for i in 0 ... self.childsVwArr.count - 1 {
             if i == 0 { models[i].smallCalendarSingleFirstItem = true }
             self.childsVwArr[i].setParameters(item: models[i], bigCalendarOrSamll: .single)

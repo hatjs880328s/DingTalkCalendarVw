@@ -23,6 +23,8 @@ class BigDingTalkSingleLineChildVw: UIView {
     
     var firstDayItemIndex = 0
     
+    var vms: [DingTalkCalanderVModel]!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -67,6 +69,7 @@ class BigDingTalkSingleLineChildVw: UIView {
     }
     
     func setDates(with : [DingTalkCalanderVModel]) {
+        self.vms = with
         let firstOf42DayMonth = with[0].dateInfo.month
         var changed:Bool = false
         for i in 0 ... self.childsVwArr.count - 1 {

@@ -124,6 +124,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallRightLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeleft())
                 (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
                 self.whenSwipeTapFistItem()
+                (self.viewController() as! WorkBenchViewControllerV2).getTodayEvents()
             }
         }
     }
@@ -146,6 +147,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallLeftLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeRight())
                 (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
                 self.whenSwipeTapFistItem()
+                (self.viewController() as! WorkBenchViewControllerV2).getTodayEvents()
             }
         }
     }
@@ -158,5 +160,25 @@ extension SmallDingTalkSingleLineCollectionVw {
     @objc func swipeDownAction() {
         self.alpha = 0
         (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw()
+    }
+}
+
+extension SmallDingTalkSingleLineCollectionVw {
+    
+    //set events info with kcevent just in logicMiddlePic
+    func setEvents(with: [DingTalkCalanderVModel]) {
+        var resultArr = [Int: Bool]()
+        let middleLogic = self.smallMiddleLogicVw
+        GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
+            for eachItem in 0 ..< with.count - 1 {
+                if with[eachItem].isFireDay {
+                    resultArr[eachItem] = true
+                }
+            }
+        }) {
+            for eachItem in resultArr {
+                middleLogic?.childsVwArr[eachItem.key].setEventDay()
+            }
+        }
     }
 }

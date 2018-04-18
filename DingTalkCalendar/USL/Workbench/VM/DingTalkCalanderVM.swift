@@ -58,6 +58,8 @@ class DingTalkCalanderVM: NSObject {
     
     var eventCalendarIns: IWorkBenchEventCalendar!
     
+    var uistate: UIState = .single
+    
     /// swipe - change topvw text closure
     var swipeChangeTopTitleTxt: ((_ txt: String)->Void)!
     
@@ -80,6 +82,7 @@ class DingTalkCalanderVM: NSObject {
     }
     
     // MARK: - get dates info
+    @discardableResult
     func changeDingModelToDingVM(left:dingTalkTrupleModel,middle: dingTalkTrupleModel,right:dingTalkTrupleModel)->(left:dingTalkTrupleViewModel,middle: dingTalkTrupleViewModel,right:dingTalkTrupleViewModel){
         let leftResult = changeTrupleModelToTrupleVModel(model: left)
         self.leftDate = left
@@ -157,6 +160,39 @@ extension DingTalkCalanderVM {
             }
         }
     }
+    
+    func getEventsFromVmDate(action: @escaping ()->Void) {
+        var trupleInfo:(startDate: Date,endDate: Date)!
+        if self.uistate == .single {
+            trupleInfo = (self.smallMiddleDate.first!.dateInfo,self.smallMiddleDate.last!.dateInfo)
+        }else{
+            trupleInfo = (self.middleVMDate.trupleVM.dayArr.first!.dateInfo,middleVMDate.trupleVM.dayArr.last!.dateInfo)
+        }
+        self.eventCalendarIns.getEventsInGlobalQueue(from: trupleInfo.startDate, to: trupleInfo.endDate) { (events) in
+            for eachItem in events {
+                GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
+                    let dingTalkEvent = DingTalkCEvent(with: eachItem)
+                    if self.uistate == .single {
+                        eventsLoop:for eachItemVM in self.smallMiddleDate {
+                            if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
+                                eachItemVM.setEventDay(with: dingTalkEvent)
+                                break eventsLoop
+                            }
+                        }
+                    }else{
+                        eventsLoop:for eachItemVM in self.middleVMDate.trupleVM.dayArr {
+                            if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
+                                eachItemVM.setEventDay(with: dingTalkEvent)
+                                break eventsLoop
+                            }
+                        }
+                    }
+                }, endMainDispatchFunc: {
+                    action()
+                })
+            }
+        }
+    }
 }
 
 // MARK: - swipe left right & up down BIG VW
@@ -187,7 +223,7 @@ extension DingTalkCalanderVM {
         }
         //change top txt
         swipeChangeTopVwTxt(dateInfo: middleDate)
-        
+        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.rightDate)
     }
@@ -208,6 +244,7 @@ extension DingTalkCalanderVM {
         }
         //change top txt
         swipeChangeTopVwTxt(dateInfo: middleDate)
+        self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.leftDate)
     }

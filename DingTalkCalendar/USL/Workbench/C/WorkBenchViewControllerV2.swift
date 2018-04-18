@@ -40,6 +40,7 @@ class WorkBenchViewControllerV2: UIViewController {
         getMiddleDate()
         getSmallCalendarDate()
         hiddenMiddleCalendarVw()
+        getTodayEvents()
     }
 
 }
@@ -84,6 +85,7 @@ extension WorkBenchViewControllerV2 {
     func hiddenMiddleCalendarVw() {
         self.botVw.swipeUp()
         self.smallCalendarVw.alpha = 1
+        self.vm.uistate = .single
     }
     
     // show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
@@ -91,6 +93,9 @@ extension WorkBenchViewControllerV2 {
         self.calendarVw.createOther2ChildVw()
         self.botVw.swipeDown()
         self.smallCalendarVw.alpha = 0
+        self.vm.uistate = .all
+        // events gets [special invoking..]
+        self.getTodayEvents()
     }
     
     /// small calendar hor swipe - big calendar dates change
@@ -118,5 +123,20 @@ extension WorkBenchViewControllerV2 {
         self.smallCalendarVw.setDates(date: self.vm.smallMiddleDate, position: .middle)
         self.smallCalendarVw.setDates(date: self.vm.smallLeftDate, position: .left)
         self.smallCalendarVw.setDates(date: self.vm.smallRightDate, position: .right)
+    }
+}
+
+// MARK: - eventProgress
+extension WorkBenchViewControllerV2 {
+    
+    func getTodayEvents() {
+        self.vm.getEventsFromVmDate {[weak self]() in
+            if self?.vm.uistate == .all {
+                self?.calendarVw.setEvents(with: self!.vm.middleVMDate.trupleVM.dayArr)
+            }else{
+                self?.smallCalendarVw.setEvents(with: self!.vm.smallMiddleDate)
+            }
+            self?.botVw.tabVw.reloadData()
+        }
     }
 }
