@@ -112,6 +112,12 @@ extension WorkBenchViewControllerV2 {
         self.calendarVw.setDates(with: self.vm.getDingVModel(with: .left).trupleVM!.dayArr, which: self.calendarVw.leftChildVw)
         self.calendarVw.setDates(with: self.vm.getDingVModel(with: .right).trupleVM!.dayArr, which: self.calendarVw.rightChildVw)
     }
+    
+    func topTxtChange() {
+        self.vm.swipeChangeTopTitleTxt = { [weak self]text in
+            self?.topView.
+        }
+    }
 }
 
 // MARK: - calendar progress date

@@ -202,7 +202,7 @@ extension DingTalkCalanderVM {
             self.rightDate = newRightDate
         }
         //change top txt
-        swipeChangeTopVwTxt(dateInfo: middleDate)
+        swipeChangeTopVwTxt()
         self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.rightDate)
@@ -223,19 +223,24 @@ extension DingTalkCalanderVM {
             self.leftDate = newLeftDate
         }
         //change top txt
-        swipeChangeTopVwTxt(dateInfo: middleDate)
+        swipeChangeTopVwTxt()
         self.changeDingModelToDingVM(left: leftDate, middle: middleDate, right: rightDate)
         
         return self.changeTrupleModelToTrupleVModel(model: self.leftDate)
     }
     
     /// swipe - change topvw text closure
-    private func swipeChangeTopVwTxt(dateInfo: dingTalkTrupleModel) {
+    private func swipeChangeTopVwTxt() {
         if self.swipeChangeTopTitleTxt == nil { return }
-        let realDate = dateInfo.dayArr[dateInfo.headerCount].dateInfo
-        if realDate == nil { self.swipeChangeTopTitleTxt("") }
-        let txt: String = "\(realDate!.year)年\(realDate!.month)月"
-        self.swipeChangeTopTitleTxt(txt)
+        var text = ""
+        var dateInfo:Date!
+        if self.uistate == .all {
+            dateInfo = self.middleDate.dayArr[self.middleDate.headerCount].dateInfo
+        }else{
+            dateInfo = self.smallMiddleDate[0].dateInfo
+        }
+        text = "\(dateInfo!.year)年\(dateInfo!.month)月"
+        self.swipeChangeTopTitleTxt(text)
     }
     
     /// get selected item in which line [ 1 ~ 6 ]
@@ -349,6 +354,8 @@ extension DingTalkCalanderVM {
         }
         self.smallRightDate = results
         self.smallCalendarCollectionSwipeChangeBigDates(withDate: self.smallMiddleDate[0].dateInfo)
+        //change top txt
+        swipeChangeTopVwTxt()
         
         return results
     }
@@ -369,6 +376,8 @@ extension DingTalkCalanderVM {
         }
         self.smallLeftDate = results
         self.smallCalendarCollectionSwipeChangeBigDates(withDate: self.smallMiddleDate[0].dateInfo)
+        //change top txt
+        swipeChangeTopVwTxt()
         
         return results
     }
