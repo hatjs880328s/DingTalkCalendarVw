@@ -22,18 +22,15 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
     ///   - mainThreadAction: eventAction[in main thread]
     func getEventsInGlobalQueue(from : Date,to: Date,mainThreadAction: @escaping (_ eventsArr: [EKEvent])->Void) {
         var eventsArrResult: [EKEvent] = []
-        GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
-            self.dal.getEventFromEventDB(startTime: from, endTime: to, resultAction: { (eventsArr) in
-                if eventsArr != nil {
-                    for eachItem in eventsArr! {
-                        eachItem.startDate = eachItem.startDate.dateFormate("yyyy-MM-dd")
-                        eachItem.endDate = eachItem.endDate.dateFormate("yyyy-MM-dd")
-                        eventsArrResult.append(eachItem)
-                    }
-                }else{}
-            })
-        }) {
+        self.dal.getEventFromEventDB(startTime: from, endTime: to, resultAction: { (eventsArr) in
+            if eventsArr != nil {
+                for eachItem in eventsArr! {
+                    eachItem.startDate = eachItem.startDate.dateFormate("yyyy-MM-dd")
+                    eachItem.endDate = eachItem.endDate.dateFormate("yyyy-MM-dd")
+                    eventsArrResult.append(eachItem)
+                }
+            }else{}
             mainThreadAction(eventsArrResult)
-        }
+        })
     }
 }

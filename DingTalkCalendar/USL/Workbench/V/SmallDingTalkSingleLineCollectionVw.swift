@@ -162,7 +162,7 @@ extension SmallDingTalkSingleLineCollectionVw {
         var resultArr = [Int: Bool]()
         let middleLogic = self.smallMiddleLogicVw
         GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
-            for eachItem in 0 ..< with.count - 1 {
+            for eachItem in 0 ... with.count - 1 {
                 if with[eachItem].isFireDay {
                     resultArr[eachItem] = true
                 }
