@@ -80,6 +80,7 @@ class DingTalkCalenderRectLabelView: UIView {
     /// setValue
     public func setParameters(item: DingTalkCalanderVModel) {
         self.circlePointVw.alpha = 0
+        // shouldn't save the param
         self.dateInfo = item
         self.backgroundColor = UIColor.white
         self.gregorionDayLb.text = item.gregorionDay
@@ -92,26 +93,21 @@ class DingTalkCalenderRectLabelView: UIView {
             self.gregorionDayLb.textColor = UIColor.black
             self.lunarDayLb.textColor = UIColor.gray
         }
-        //current day
-//        if item.isCurrentDay {
-//            self.gregorionDayLb.textColor = UIColor.blue
-//            self.lunarDayLb.textColor = UIColor.blue
-//        }
         //first day this month
-        if item.isCurrentMonthDay {
-            let dateInfo = Date().dateFormate("yyyy-MM-dd")
-            if item.dateInfo.year == dateInfo.year && item.dateInfo.month == dateInfo.month {
-                if item.dateInfo.days == dateInfo.days {
-                    beSelectedItem()
-                    changeToFirstDay(true)
-                }else{
-                    // donothing
-                }
-            }else{
-                beSelectedItem()
-                changeToFirstDay(true)
-            }
-        }
+//        if item.isCurrentMonthDay {
+//            let dateInfo = Date().dateFormate("yyyy-MM-dd")
+//            if item.dateInfo.year == dateInfo.year && item.dateInfo.month == dateInfo.month {
+//                if item.dateInfo.days == dateInfo.days {
+//                    beSelectedItem()
+//                    changeToFirstDay(true)
+//                }else{
+//                    // donothing
+//                }
+//            }else{
+//                beSelectedItem()
+//                changeToFirstDay(true)
+//            }
+//        }
     }
     
     /// this month first day ui progress  || beselected day
