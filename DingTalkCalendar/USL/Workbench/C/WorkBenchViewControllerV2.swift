@@ -39,7 +39,6 @@ class WorkBenchViewControllerV2: UIViewController {
         
         getMiddleDate()
         hiddenMiddleCalendarVw()
-        getTodayEvents()
         topTxtChange()
     }
 

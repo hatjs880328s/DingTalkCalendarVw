@@ -149,29 +149,29 @@ extension DingTalkCalanderVM {
             trupleInfo = (self.middleVMDate.trupleVM.dayArr.first!.dateInfo,middleVMDate.trupleVM.dayArr.last!.dateInfo)
         }
         self.eventCalendarIns.getEventsInGlobalQueue(from: trupleInfo.startDate, to: trupleInfo.endDate) { (events) in
-            for eachItem in events {
-                GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
-                    let dingTalkEvent = DingTalkCEvent(with: eachItem)
-                    if self.uistate == .single {
-                        eventsLoop:for eachItemVM in self.smallMiddleDate {
-                            if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
-                                eachItemVM.setEventDay(with: dingTalkEvent)
-                                break eventsLoop
-                            }
-                        }
-                    }else{
-                        eventsLoop:for eachItemVM in self.middleVMDate.trupleVM.dayArr {
-                            if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
-                                eachItemVM.setEventDay(with: dingTalkEvent)
-                                break eventsLoop
-                            }
+            GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
+                for eachItem in events {
+                let dingTalkEvent = DingTalkCEvent(with: eachItem)
+                if self.uistate == .single {
+                    eventsLoop:for eachItemVM in self.smallMiddleDate {
+                        if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
+                            eachItemVM.setEventDay(with: dingTalkEvent)
+                            break eventsLoop
                         }
                     }
-                }, endMainDispatchFunc: {
-                    action()
-                })
-            }
-        }
+                }else{
+                    eventsLoop:for eachItemVM in self.middleVMDate.trupleVM.dayArr {
+                        if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
+                            eachItemVM.setEventDay(with: dingTalkEvent)
+                            break eventsLoop
+                        }
+                    }
+                }
+                }
+            }, endMainDispatchFunc: {
+                action()
+            })
+        }  
     }
 }
 
