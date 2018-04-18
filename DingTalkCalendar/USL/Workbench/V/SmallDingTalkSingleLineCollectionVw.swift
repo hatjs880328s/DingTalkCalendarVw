@@ -182,3 +182,29 @@ extension SmallDingTalkSingleLineCollectionVw {
         }
     }
 }
+
+// MARK: - tb actions
+extension SmallDingTalkSingleLineCollectionVw {
+    /// tb-[cell number]
+    func getCellModelsCount()->Int {
+        let selectedIndex = self.smallMiddleLogicVw.selectedItemIndex
+        let count = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count
+        if count == 0 { return 0 }
+        return  count + 1
+    }
+    
+    /// tb-[select one calerdar item - use indexpath-row return dingtalkEvent]
+    func getCellModel(with indexRow:Int)->(eventModel: DingTalkCEvent?,dateInfo: String?) {
+        let selectedIndex = self.smallMiddleLogicVw.selectedItemIndex
+        if indexRow == 0 {
+            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].dateInfo.dateToString("MM月dd日")
+            return (nil,dateInfo)
+        }
+        if (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count >= indexRow {
+            let eventmodel =  (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo[indexRow - 1]
+            return (eventmodel,nil)
+        }
+        
+        return (nil,nil)
+    }
+}

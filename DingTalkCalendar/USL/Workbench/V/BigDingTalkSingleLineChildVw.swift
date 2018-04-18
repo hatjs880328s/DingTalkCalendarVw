@@ -61,7 +61,6 @@ class BigDingTalkSingleLineChildVw: UIView {
                 }
                 self.childsVwArr.append(smallView)
                 smallView.tapActionsGesture {
-                    print("dianjile ???")
                     self.tapAction(index: column + (line) * 7)
                 }
             }
@@ -89,5 +88,6 @@ extension BigDingTalkSingleLineChildVw {
         self.childsVwArr[self.beselectedItemIndex].deSelectedItem()
         self.beselectedItemIndex = index
         self.childsVwArr[index].beSelectedItem()
+        (self.viewController() as! WorkBenchViewControllerV2).botVw.tabVw.reloadData()
     }
 }

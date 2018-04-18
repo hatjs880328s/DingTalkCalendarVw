@@ -50,7 +50,15 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "noReuseid")
-            cell.textLabel?.text = (self.viewController() as! WorkBencehViewController).calendarVw.getCellModel(with: indexPath.row).dateInfo!
+            
+            let con = (self.viewController() as! WorkBenchViewControllerV2)
+            var resultDate: (eventModel: DingTalkCEvent?,dateInfo: String?)!
+            if con.vm.uistate == .all {
+                resultDate = (self.viewController() as! WorkBenchViewControllerV2).calendarVw.getCellModel(with: indexPath.row)
+            }else{
+                resultDate = (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.getCellModel(with: indexPath.row)
+            }
+            cell.textLabel?.text = resultDate.dateInfo!
             cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
             let botLine = UIView()
             cell.addSubview(botLine)
@@ -65,10 +73,17 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             return cell
         }else{
             let cell = WorkBenchTBCell(style: UITableViewCellStyle.default, reuseIdentifier: "workBenchReuseID")
-            let date = (self.viewController() as! WorkBencehViewController).calendarVw.getCellModel(with: indexPath.row)
-            if date.eventModel != nil{
-                cell.setDate(with: date.eventModel!)
+            let con = (self.viewController() as! WorkBenchViewControllerV2)
+            var resultDate: (eventModel: DingTalkCEvent?,dateInfo: String?)!
+            if con.vm.uistate == .all {
+                resultDate = (self.viewController() as! WorkBenchViewControllerV2).calendarVw.getCellModel(with: indexPath.row)
+            }else{
+                resultDate = (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.getCellModel(with: indexPath.row)
             }
+            if resultDate.eventModel != nil {
+                cell.setDate(with: resultDate.eventModel!)
+            }
+            
             return cell
         }
     }
@@ -82,9 +97,15 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-        let count = (self.viewController() as! WorkBencehViewController).calendarVw.getCellModelsCount()
-        changeHeight(cellCount: count)
+        let con = (self.viewController() as! WorkBenchViewControllerV2)
+        var count = 0
+        if con.vm.uistate == .all {
+            count = con.calendarVw.getCellModelsCount()
+        }else{
+            count = con.smallCalendarVw.getCellModelsCount()
+        }
+        //changeHeight(cellCount: count)
+        
         return count
     }
     
