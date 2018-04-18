@@ -18,12 +18,11 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var topLength: CGFloat = 10
     
-    let normalDayLineHeight: CGFloat = 46
+    let normalDayLineHeight: CGFloat = 49
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = APPDelStatic.lightGray
-        tabVw.backgroundColor = UIColor.gray
+        self.backgroundColor = UIColor.white
     }
     
     func createVw(topView:UIView,fatherView:UIView) {
@@ -35,6 +34,15 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.right.equalTo(0)
             make.bottom.equalTo(-0)
         }
+        let lightView: UIView = UIView(frame: CGRect.zero)
+        self.addSubview(lightView)
+        lightView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.height.equalTo(topLength)
+        }
+        lightView.backgroundColor = APPDelStatic.lightGray
         self.addSubview(tabVw)
         tabVw.snp.makeConstraints { (make) in
             make.left.equalTo(0)
@@ -134,22 +142,32 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     /// swipe up
-    func swipeUp() {
+    func swipeUp(withAnimation: Bool = false) {
         self.snp.remakeConstraints { (make) in
             make.top.equalTo(self.topView.snp.bottom).offset(normalDayLineHeight)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
         }
+        if withAnimation {
+            UIView.animate(withDuration: 0.5) {
+                self.layoutIfNeeded()
+            }
+        }
     }
     
     /// swipe down
-    func swipeDown() {
+    func swipeDown(withAnimation: Bool = false) {
         self.snp.remakeConstraints { (make) in
             make.top.equalTo(topView.snp.bottom).offset(normalDayLineHeight * 6)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(-0)
+        }
+        if withAnimation {
+        UIView.animate(withDuration: 0.5) {
+            self.layoutIfNeeded()
+        }
         }
     }
 }

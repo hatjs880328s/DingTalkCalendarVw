@@ -13,7 +13,7 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
     
     let width = UIScreen.main.bounds.width
     
-    let normalDayLineHeight: CGFloat = 46
+    let normalDayLineHeight: CGFloat = 49
     
     let eachItemWidth: CGFloat =  (UIScreen.main.bounds.width) / 7.0
     
@@ -75,9 +75,6 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
         let rightGsture = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightAction))
         rightGsture.direction = .right
         dateVw.addGestureRecognizer(rightGsture)
-        let topGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTopAction))
-        topGesture.direction = .up
-        dateVw.addGestureRecognizer(topGesture)
         let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDownAction))
         downGesture.direction = .down
         dateVw.addGestureRecognizer(downGesture)
@@ -152,14 +149,9 @@ extension SmallDingTalkSingleLineCollectionVw {
         }
     }
     
-    @objc func swipeTopAction() {
-        self.alpha = 1
-        
-    }
-    
     @objc func swipeDownAction() {
         self.alpha = 0
-        (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw()
+        (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw(animated: true)
     }
 }
 

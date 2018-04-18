@@ -35,11 +35,11 @@ class DingTalkCEvent: NSObject {
     private func setDate(with kevent: EKEvent) {
         // holiday
         self.id = kevent.eventIdentifier
-        if kevent.calendar.type == .subscription {
-            self.startTime = "全天"
-        }else if kevent.calendar.type == .local{
+        if kevent.calendar.type == .local {
             self.startTime = kevent.startDate.dateToString("HH:mm")
             self.endTime = kevent.endDate.dateToString("HH:mm")
+        }else{
+            self.startTime = "全天"
         }
         self.modelType = kevent.calendar.type
         self.title = kevent.title

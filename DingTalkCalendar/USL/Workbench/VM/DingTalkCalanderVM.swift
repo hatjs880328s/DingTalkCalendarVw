@@ -141,27 +141,6 @@ extension DingTalkCalanderVM {
         return (dateInfo.dayArr.first!.dateInfo,dateInfo.dayArr.last!.dateInfo)
     }
     
-    /// from calendar get events
-    func getEventDate(with currentPicDate: dingTalkTrupleViewModel,action: @escaping ()->Void) {
-        let dateArr = self.getCurrentPicFirstDayAndLastDay(dateInfo: currentPicDate)
-        if dateArr == nil { return }
-        self.eventCalendarIns.getEventsInGlobalQueue(from: dateArr!.startDate, to: dateArr!.endDate) { (events) in
-            for eachItem in events {
-                GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
-                    let dingTalkEvent = DingTalkCEvent(with: eachItem)
-                    eventsLoop:for eachItemVM in currentPicDate.dayArr {
-                        if eachItem.startDate.days == eachItemVM.dateInfo.days && eachItem.startDate.month == eachItemVM.dateInfo.month {
-                            eachItemVM.setEventDay(with: dingTalkEvent)
-                            break eventsLoop
-                        }
-                    }
-                }, endMainDispatchFunc: {
-                    action()
-                })
-            }
-        }
-    }
-    
     func getEventsFromVmDate(action: @escaping ()->Void) {
         var trupleInfo:(startDate: Date,endDate: Date)!
         if self.uistate == .single {

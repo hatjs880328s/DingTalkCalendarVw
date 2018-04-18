@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SnapKit
 
 class WorkBenchBannerVw: UIView {
     
@@ -53,7 +54,7 @@ class WorkBenchBannerVw: UIView {
             }
             txtVwArr.append(subVw)
             if eachItem == 0 {
-                subVw.textColor = UIColor.blue
+                subVw.textColor = APPDelStatic.dingtalkBlue
             }
         }
         //scroll line
@@ -64,7 +65,7 @@ class WorkBenchBannerVw: UIView {
             make.width.equalTo(50)
             make.height.equalTo(2)
         }
-        scrollLine.backgroundColor = UIColor.blue
+        scrollLine.backgroundColor = APPDelStatic.dingtalkBlue
         //bot line
         let botLine = UIView()
         self.addSubview(botLine)
@@ -88,7 +89,7 @@ class WorkBenchBannerVw: UIView {
             make.height.equalTo(2)
         }
         UIView.animate(withDuration: 0.3) {
-            vi.textColor = UIColor.blue
+            vi.textColor = APPDelStatic.dingtalkBlue
             self.layoutIfNeeded()
         }
     }

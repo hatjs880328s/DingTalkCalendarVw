@@ -15,8 +15,6 @@ class WorkBenchTopVw: UIView {
     
     var todayLb: UILabel = UILabel()
     
-    var todayLbBackgroundColor: UIColor = UIColor.gray
-    
     var todayTxt: String = ""
     
     override init(frame: CGRect) {
@@ -58,16 +56,16 @@ class WorkBenchTopVw: UIView {
         self.addSubview(todayLb)
         todayLb.snp.makeConstraints { (make) in
             make.left.equalTo(titleLb.snp.right).offset(5)
-            make.width.equalTo(15)
+            make.width.equalTo(18)
             make.centerY.equalTo(titleLb.snp.centerY)
-            make.height.equalTo(15)
+            make.height.equalTo(18)
         }
-        todayLb.layer.cornerRadius = 7.5
+        todayLb.layer.cornerRadius = 9
         todayLb.layer.masksToBounds = true
         todayLb.text = "今"
         todayLb.textAlignment = .center
         todayLb.textColor = UIColor.white
-        todayLb.backgroundColor = UIColor.blue
+        todayLb.backgroundColor = APPDelStatic.dingtalkBlue
         todayLb.font = UIFont.systemFont(ofSize: 10)
     }
     

@@ -13,7 +13,7 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     let width = UIScreen.main.bounds.width
     
-    let normalDayLineHeight: CGFloat = 46
+    let normalDayLineHeight: CGFloat = 49
     
     var middleChildVw =  BigDingTalkSingleLineChildVw(frame: CGRect.zero)
     
@@ -160,7 +160,7 @@ extension BigDingTalkSingleLineCollectionVw {
     }
     
     @objc func swipeTopAction() {
-        (self.viewController() as! WorkBenchViewControllerV2).hiddenMiddleCalendarVw()
+        (self.viewController() as! WorkBenchViewControllerV2).hiddenMiddleCalendarVw(animated: true)
     }
 }
 

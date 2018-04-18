@@ -27,7 +27,7 @@ class WorkBenchViewControllerV2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = APPDelStatic.lightGray
+        self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         
         createTopView()
@@ -38,7 +38,6 @@ class WorkBenchViewControllerV2: UIViewController {
         createBotTBVw()
         
         getMiddleDate()
-        
         hiddenMiddleCalendarVw()
         getTodayEvents()
     }
@@ -82,21 +81,28 @@ extension WorkBenchViewControllerV2 {
 extension WorkBenchViewControllerV2 {
     
     /// hide middle vw [swipe up]
-    func hiddenMiddleCalendarVw() {
-        self.botVw.swipeUp()
-        self.smallCalendarVw.alpha = 1
+    func hiddenMiddleCalendarVw(animated: Bool = false) {
+        self.botVw.swipeUp(withAnimation:animated)
+        if animated {
+            UIView.animate(withDuration: 1) {
+                self.smallCalendarVw.alpha = 1
+            }
+        }else{
+            self.smallCalendarVw.alpha = 1
+        }
         getSmallCalendarDate()
         self.vm.uistate = .single
+        self.smallCalendarVw.whenSwipeTapFistItem()
     }
     
     // show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
-    func showMiddleCalcendarVw() {
+    func showMiddleCalcendarVw(animated: Bool = false) {
         self.calendarVw.createOther2ChildVw()
-        self.botVw.swipeDown()
-        self.smallCalendarVw.alpha = 0
+        self.botVw.swipeDown(withAnimation:animated)
         self.vm.uistate = .all
         // events gets [special invoking..]
         self.getTodayEvents()
+        self.calendarVw.whenSwipeTapFistItem()
     }
     
     /// small calendar hor swipe - big calendar dates change

@@ -13,7 +13,7 @@ class BigDingTalkSingleLineChildVw: UIView {
     
     var childsVwArr: [DingTalkCalenderRectLabelView] = []
     
-    let normalDayLineHeight: CGFloat = 46
+    let normalDayLineHeight: CGFloat = 49
     
     let eachItemWidth: CGFloat =  (UIScreen.main.bounds.width) / 7.0
     
@@ -24,6 +24,10 @@ class BigDingTalkSingleLineChildVw: UIView {
     var firstDayItemIndex = 0
     
     var vms: [DingTalkCalanderVModel]!
+    
+    var rectVwPadding:CGFloat = 10
+    
+    var rectVwSPadding:CGFloat = 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,10 +58,10 @@ class BigDingTalkSingleLineChildVw: UIView {
             for column in 0 ... 6 {
                 let smallView = DingTalkCalenderRectLabelView(fatherView: self)
                 smallView.snp.remakeConstraints { (make) in
-                    make.left.equalTo((CGFloat(column) * eachItemWidth))
-                    make.width.equalTo(eachItemWidth)
-                    make.height.equalTo(normalDayLineHeight)
-                    make.top.equalTo(CGFloat(line) * normalDayLineHeight)
+                    make.left.equalTo(CGFloat(column) * eachItemWidth + rectVwPadding)
+                    make.width.equalTo(eachItemWidth - rectVwPadding * 2)
+                    make.height.equalTo(normalDayLineHeight - rectVwSPadding * 2)
+                    make.top.equalTo(CGFloat(line) * normalDayLineHeight + rectVwSPadding)
                 }
                 self.childsVwArr.append(smallView)
                 smallView.tapActionsGesture {

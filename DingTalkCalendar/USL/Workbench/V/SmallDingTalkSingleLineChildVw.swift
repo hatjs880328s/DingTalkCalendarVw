@@ -13,7 +13,7 @@ class SmallDingTalkSingleLineChildVw: UIView {
     
     let width = UIScreen.main.bounds.width
     
-    let normalDayLineHeight: CGFloat = 46
+    let normalDayLineHeight: CGFloat = 49
     
     let eachItemWidth: CGFloat =  (UIScreen.main.bounds.width) / 7.0
     
@@ -26,6 +26,10 @@ class SmallDingTalkSingleLineChildVw: UIView {
     var selectedItemIndex: Int = 0
     
     var vms:[DingTalkCalanderVModel]!
+    
+    var rectVwPadding:CGFloat = 10
+    
+    var rectVwSPadding:CGFloat = 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,10 +56,10 @@ class SmallDingTalkSingleLineChildVw: UIView {
         for column in 0 ... 6 {
             let smallView = DingTalkCalenderRectLabelView(fatherView: self)
             smallView.snp.remakeConstraints { (make) in
-                make.left.equalTo((CGFloat(column) * eachItemWidth))
-                make.width.equalTo(eachItemWidth)
-                make.height.equalTo(normalDayLineHeight)
-                make.top.equalTo(0)
+                make.left.equalTo((CGFloat(column) * eachItemWidth) + rectVwPadding)
+                make.width.equalTo(eachItemWidth - rectVwPadding * 2)
+                make.height.equalTo(normalDayLineHeight - rectVwSPadding * 2)
+                make.top.equalTo(rectVwSPadding)
             }
             smallView.backgroundColor = UIColor.gray
             self.childsVwArr.append(smallView)
