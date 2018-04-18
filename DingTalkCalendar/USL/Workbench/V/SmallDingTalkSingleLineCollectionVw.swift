@@ -97,7 +97,14 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
     
 }
 
+// MARK: - swipe actions
 extension SmallDingTalkSingleLineCollectionVw {
+    
+    func whenSwipeTapFistItem() {
+        self.smallMiddleLogicVw.tapAction(index: 0)
+        self.smallRightLogicVw.tapAction(index: 0)
+        self.smallLeftLogicVw.tapAction(index: 0)
+    }
     
     /// swipe left - get new right dates
     @objc func swipeLeftAction() {
@@ -116,6 +123,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallLeftLogicVw = changeMiddleParameter
                 self.smallRightLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeleft())
                 (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
+                self.whenSwipeTapFistItem()
             }
         }
     }
@@ -137,6 +145,7 @@ extension SmallDingTalkSingleLineCollectionVw {
                 self.smallRightLogicVw = changeMiddleParameter
                 self.smallLeftLogicVw.setDate(models: (self.viewController() as! WorkBenchViewControllerV2).vm.smallSwipeRight())
                 (self.viewController() as! WorkBenchViewControllerV2).smallCalendarSwipeHor()
+                self.whenSwipeTapFistItem()
             }
         }
     }

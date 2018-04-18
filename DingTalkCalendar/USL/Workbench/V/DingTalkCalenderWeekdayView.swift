@@ -24,7 +24,7 @@ class DingTalkCalenderWeekdayView: UIView {
     }
     
     func createView(added fatherView: UIView,topView: UIView) {
-        fatherView.insertSubview(self, belowSubview: topView)
+        fatherView.addSubview(self)
         self.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(-0)

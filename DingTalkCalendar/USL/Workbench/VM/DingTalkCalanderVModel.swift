@@ -30,6 +30,8 @@ class DingTalkCalanderVModel: NSObject {
     
     var dateInfo:Date!
     
+    var smallCalendarSingleFirstItem:Bool = false
+    
     init(with dingModel: DingTalkCalanderModel) {
         super.init()
         self.gregorionDay = dingModel.gregorionDay.description
@@ -40,6 +42,7 @@ class DingTalkCalanderVModel: NSObject {
         self.isRestDay = getRestTypeStr(with: dingModel.isRestDay)
         self.isCurrentMonthDay = dingModel.isCurrentMonthDay
         self.dateInfo = dingModel.dateInfo
+        
     }
     
     func setEventDay(with event: DingTalkCEvent){

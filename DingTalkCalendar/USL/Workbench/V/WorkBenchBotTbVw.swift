@@ -23,7 +23,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = APPDelStatic.lightGray
-        tabVw.backgroundColor = UIColor.white
+        tabVw.backgroundColor = UIColor.gray
     }
     
     func createVw(topView:UIView,fatherView:UIView) {

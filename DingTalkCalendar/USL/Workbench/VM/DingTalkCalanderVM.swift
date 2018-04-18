@@ -17,6 +17,11 @@ enum ModelPosition: String {
     case right
 }
 
+enum UIState: String {
+    case single
+    case all
+}
+
 class DingTalkCalanderVM: NSObject {
     
     /// big pic cache

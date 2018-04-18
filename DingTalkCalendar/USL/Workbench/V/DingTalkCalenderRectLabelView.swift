@@ -11,6 +11,8 @@ import Foundation
 
 class DingTalkCalenderRectLabelView: UIView {
     
+    var uistate: UIState!
+    
     var gregorionDayLb:UILabel = UILabel()
     
     var lunarDayLb: UILabel = UILabel()
@@ -27,10 +29,8 @@ class DingTalkCalenderRectLabelView: UIView {
         super.init(frame: CGRect.zero)
         fatherView.addSubview(self)
         self.backgroundColor = UIColor.yellow
+        self.isUserInteractionEnabled = true
         createView()
-        self.tapActionsGesture {[weak self]() in
-            self?.selectOneItem()
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -78,9 +78,9 @@ class DingTalkCalenderRectLabelView: UIView {
     }
     
     /// setValue
-    public func setParameters(item: DingTalkCalanderVModel) {
+    public func setParameters(item: DingTalkCalanderVModel,bigCalendarOrSamll: UIState) {
+        self.uistate = bigCalendarOrSamll
         self.circlePointVw.alpha = 0
-        // shouldn't save the param
         self.dateInfo = item
         self.backgroundColor = UIColor.white
         self.gregorionDayLb.text = item.gregorionDay
@@ -88,35 +88,58 @@ class DingTalkCalenderRectLabelView: UIView {
         self.restLb.text = item.isRestDay
         self.gregorionDayLb.textColor = UIColor.gray
         self.lunarDayLb.textColor = UIColor.gray
-        //current month day
+        // current month day
         if item.isCurrentMonthDay{
             self.gregorionDayLb.textColor = UIColor.black
             self.lunarDayLb.textColor = UIColor.gray
         }
-        //first day this month
-//        if item.isCurrentMonthDay {
-//            let dateInfo = Date().dateFormate("yyyy-MM-dd")
-//            if item.dateInfo.year == dateInfo.year && item.dateInfo.month == dateInfo.month {
-//                if item.dateInfo.days == dateInfo.days {
-//                    beSelectedItem()
-//                    changeToFirstDay(true)
-//                }else{
-//                    // donothing
-//                }
-//            }else{
-//                beSelectedItem()
-//                changeToFirstDay(true)
-//            }
-//        }
+        // today
+        if item.isCurrentDay {
+            self.gregorionDayLb.textColor = UIColor.blue
+            self.lunarDayLb.textColor = UIColor.blue
+            self.circlePointVw.backgroundColor = UIColor.blue
+        }
+        // single state
+        if bigCalendarOrSamll == .single {
+            // small calendar first day
+            if item.smallCalendarSingleFirstItem {
+                beSelectedItem()
+            }
+        }else{
+            // current month first day
+            if item.isFirstDayCurrentMonth {
+                beSelectedItem()
+            }
+        }
     }
     
-    /// this month first day ui progress  || beselected day
     func beSelectedItem() {
         self.backgroundColor = UIColor.gray
         self.gregorionDayLb.textColor = UIColor.white
         self.lunarDayLb.textColor = UIColor.white
         self.circlePointVw.backgroundColor = UIColor.white
         self.layer.cornerRadius = 2
+    }
+    
+    func deSelectedItem() {
+        self.backgroundColor = UIColor.white
+        self.gregorionDayLb.text = self.dateInfo.gregorionDay
+        self.lunarDayLb.text = self.dateInfo.lunarDay
+        self.restLb.text = self.dateInfo.isRestDay
+        self.gregorionDayLb.textColor = UIColor.gray
+        self.lunarDayLb.textColor = UIColor.gray
+        self.circlePointVw.backgroundColor = UIColor.gray
+        // current month day
+        if self.dateInfo.isCurrentMonthDay{
+            self.gregorionDayLb.textColor = UIColor.black
+            self.lunarDayLb.textColor = UIColor.gray
+        }
+        // today
+        if self.dateInfo.isCurrentDay {
+            self.gregorionDayLb.textColor = UIColor.blue
+            self.lunarDayLb.textColor = UIColor.blue
+            self.circlePointVw.backgroundColor = UIColor.blue
+        }
     }
     
     /// if the day have story [kcevent] set alpha = 1

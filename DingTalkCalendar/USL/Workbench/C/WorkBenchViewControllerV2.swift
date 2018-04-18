@@ -18,7 +18,7 @@ class WorkBenchViewControllerV2: UIViewController {
     
     let weekDayVw: DingTalkCalenderWeekdayView = DingTalkCalenderWeekdayView(frame: CGRect.zero)
     
-    let calendarVw: DingTalkSingleLineCalendarVw = DingTalkSingleLineCalendarVw(frame: CGRect.zero)
+    let calendarVw: BigDingTalkSingleLineCollectionVw = BigDingTalkSingleLineCollectionVw(frame: CGRect.zero)
     
     let smallCalendarVw: SmallDingTalkSingleLineCollectionVw =  SmallDingTalkSingleLineCollectionVw(frame: CGRect.zero)
     

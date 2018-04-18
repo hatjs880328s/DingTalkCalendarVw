@@ -23,10 +23,12 @@ class SmallDingTalkSingleLineChildVw: UIView {
     
     var animationActionEnd: (()->Void)!
     
+    var selectedItemIndex: Int = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.borderColor = UIColor.red
-        self.borderWidth = 0.6
+//        self.borderColor = UIColor.red
+//        self.borderWidth = 0.6
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,12 +59,16 @@ class SmallDingTalkSingleLineChildVw: UIView {
             }
             smallView.backgroundColor = UIColor.gray
             self.childsVwArr.append(smallView)
+            smallView.tapActionsGesture {
+                self.tapAction(index: column)
+            }
         }
     }
     
     func setDate(models :[DingTalkCalanderVModel]) {
         for i in 0 ... self.childsVwArr.count - 1 {
-            self.childsVwArr[i].setParameters(item: models[i])
+            if i == 0 { models[i].smallCalendarSingleFirstItem = true }
+            self.childsVwArr[i].setParameters(item: models[i], bigCalendarOrSamll: .single)
         }
     }
     
@@ -80,4 +86,14 @@ class SmallDingTalkSingleLineChildVw: UIView {
         self.frame.origin.x = left
     }
     
+}
+
+// MARK: - tap action
+extension SmallDingTalkSingleLineChildVw {
+    
+    func tapAction(index:Int) {
+        self.childsVwArr[self.selectedItemIndex].deSelectedItem()
+        self.childsVwArr[index].beSelectedItem()
+        self.selectedItemIndex = index
+    }
 }

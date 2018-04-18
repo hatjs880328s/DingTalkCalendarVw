@@ -156,7 +156,7 @@ extension DingTalkCalanderCollectionView {
     func setRectVwDate(with trupleVM: dingTalkTrupleViewModel,to fatherVw: UIView) {
         for i in self.viewTagCounter ... 41 + self.viewTagCounter {
             if let rectVw = fatherVw.viewWithTag(i) as? DingTalkCalenderRectLabelView {
-                rectVw.setParameters(item: trupleVM.dayArr[i - self.viewTagCounter])
+                //rectVw.setParameters(item: trupleVM.dayArr[i - self.viewTagCounter])
             }
         }
     }
