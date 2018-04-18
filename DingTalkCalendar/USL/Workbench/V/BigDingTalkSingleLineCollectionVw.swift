@@ -21,7 +21,6 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addGesture(to: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,34 +62,5 @@ class BigDingTalkSingleLineCollectionVw: UIView {
         for i in 0 ... self.childsVwArr.count - 1 {
             self.childsVwArr[i].setParameters(item: with[i])
         }
-    }
-    
-    func addGesture(to dateVw: UIView) {
-        let leftGsture = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeftAction))
-        leftGsture.direction = .left
-        dateVw.addGestureRecognizer(leftGsture)
-        let rightGsture = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightAction))
-        rightGsture.direction = .right
-        dateVw.addGestureRecognizer(rightGsture)
-        let topGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTopAction))
-        topGesture.direction = .up
-        dateVw.addGestureRecognizer(topGesture)
-        let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDownAction))
-        downGesture.direction = .down
-        dateVw.addGestureRecognizer(downGesture)
-    }
-    
-    @objc func swipeLeftAction() {
-    }
-    
-    @objc func swipeRightAction() {
-    }
-    
-    @objc func swipeTopAction() {
-        (self.viewController() as! WorkBenchViewControllerV2).hiddenMiddleCalendarVw()
-    }
-    
-    @objc func swipeDownAction() {
-        (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw()
     }
 }

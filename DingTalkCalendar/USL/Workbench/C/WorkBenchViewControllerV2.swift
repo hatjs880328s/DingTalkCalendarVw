@@ -74,24 +74,24 @@ extension WorkBenchViewControllerV2 {
     
     /// create tb vw
     func createBotTBVw() {
-        self.botVw.createVw(topView: calendarVw, fatherView: self.view)
+        self.botVw.createVw(topView: weekDayVw, fatherView: self.view)
     }
 }
 
 // MARK: - ui actions
 extension WorkBenchViewControllerV2 {
     
-    /// hide middle vw
+    /// hide middle vw [swipe up]
     func hiddenMiddleCalendarVw() {
-        let middleLineNumber = self.vm.getLineNumberWithTrupleModel(position: .middle)
-        self.calendarVw.hideTopAndBotVw(with: middleLineNumber)
-        self.vm.uiContainerState = .hidden
+        self.botVw.swipeUp()
+        self.smallCalendarVw.alpha = 1
     }
     
-    // show middle vw
+    // show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
     func showMiddleCalcendarVw() {
-        self.calendarVw.showTopAndeBotVw()
-        self.vm.uiContainerState = .show
+        self.calendarVw.createOther2ChildVw()
+        self.botVw.swipeDown()
+        self.smallCalendarVw.alpha = 0
     }
 }
 
@@ -112,6 +112,4 @@ extension WorkBenchViewControllerV2 {
         self.smallCalendarVw.setDates(date: self.vm.smallLeftDate, position: .left)
         self.smallCalendarVw.setDates(date: self.vm.smallRightDate, position: .right)
     }
-    
-    
 }

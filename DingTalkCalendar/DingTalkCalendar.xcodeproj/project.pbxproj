@@ -11,6 +11,7 @@
 		566B72982085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */; };
 		566B729C2085F5EB00A46FFE /* BigDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729B2085F5EB00A46FFE /* BigDingTalkSingleLineCollectionVw.swift */; };
 		566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */; };
+		56BD3B4D2086D03E00CDD81F /* WorkBencehViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B4C2086D03E00CDD81F /* WorkBencehViewController.swift */; };
 		56D92B792084C01A00379402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B782084C01A00379402 /* AppDelegate.swift */; };
 		56D92B7B2084C01A00379402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B7A2084C01A00379402 /* ViewController.swift */; };
 		56D92B7E2084C01A00379402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B7C2084C01A00379402 /* Main.storyboard */; };
@@ -27,7 +28,6 @@
 		56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */; };
 		56D92C042084C0B100379402 /* DingTalkCalanderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */; };
 		56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */; };
-		56D92C062084C0B100379402 /* WorkBencehViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */; };
 		56D92C072084C0B100379402 /* DingTalkCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAF2084C0B000379402 /* DingTalkCalenderView.swift */; };
 		56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB02084C0B000379402 /* DingTalkCalenderWeekdayView.swift */; };
 		56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BB12084C0B000379402 /* WorkBenchBannerVw.swift */; };
@@ -96,6 +96,7 @@
 		566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		566B729B2085F5EB00A46FFE /* BigDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
+		56BD3B4C2086D03E00CDD81F /* WorkBencehViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBencehViewController.swift; sourceTree = "<group>"; };
 		56D92B752084C01A00379402 /* DingTalkCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DingTalkCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D92B782084C01A00379402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D92B7A2084C01A00379402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVModel.swift; sourceTree = "<group>"; };
 		56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVM.swift; sourceTree = "<group>"; };
 		56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCEventVModel.swift; sourceTree = "<group>"; };
-		56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBencehViewController.swift; sourceTree = "<group>"; };
 		56D92BAF2084C0B000379402 /* DingTalkCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalenderView.swift; sourceTree = "<group>"; };
 		56D92BB02084C0B000379402 /* DingTalkCalenderWeekdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalenderWeekdayView.swift; sourceTree = "<group>"; };
 		56D92BB12084C0B000379402 /* WorkBenchBannerVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkBenchBannerVw.swift; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 		56D92BAC2084C0B000379402 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				56D92BAD2084C0B000379402 /* WorkBencehViewController.swift */,
+				56BD3B4C2086D03E00CDD81F /* WorkBencehViewController.swift */,
 				56D92C352084C2CE00379402 /* WorkBenchViewControllerV2.swift */,
 			);
 			path = C;
@@ -820,11 +820,11 @@
 				56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */,
 				56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */,
 				56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */,
-				56D92C062084C0B100379402 /* WorkBencehViewController.swift in Sources */,
 				56D92C172084C0B100379402 /* AOPCore.swift in Sources */,
 				56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */,
 				56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */,
 				56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */,
+				56BD3B4D2086D03E00CDD81F /* WorkBencehViewController.swift in Sources */,
 				56D92C2D2084C0B100379402 /* FMDatabase.m in Sources */,
 				56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */,
 				56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */,

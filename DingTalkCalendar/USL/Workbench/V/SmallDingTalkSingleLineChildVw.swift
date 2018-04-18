@@ -60,8 +60,6 @@ class SmallDingTalkSingleLineChildVw: UIView {
         }
     }
     
-    
-    
     func setDate(models :[DingTalkCalanderVModel]) {
         for i in 0 ... self.childsVwArr.count - 1 {
             self.childsVwArr[i].setParameters(item: models[i])
@@ -82,23 +80,4 @@ class SmallDingTalkSingleLineChildVw: UIView {
         self.frame.origin.x = left
     }
     
-}
-
-extension SmallDingTalkSingleLineChildVw {
-    
-    @objc func swipeLeftAction() {
-        
-    }
-    
-    @objc func swipeRightAction() {
-        
-    }
-    
-    @objc func swipeTopAction() {
-        
-    }
-    
-    @objc func swipeDownAction() {
-        
-    }
 }

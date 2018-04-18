@@ -17,12 +17,6 @@ enum ModelPosition: String {
     case right
 }
 
-/// hidden middle vw || show middle vw
-enum CalendarUIState: String {
-    case hidden
-    case show
-}
-
 class DingTalkCalanderVM: NSObject {
     
     /// big pic cache
@@ -58,8 +52,6 @@ class DingTalkCalanderVM: NSObject {
     // events & state
     
     var eventCalendarIns: IWorkBenchEventCalendar!
-    
-    var uiContainerState: CalendarUIState = .hidden
     
     /// swipe - change topvw text closure
     var swipeChangeTopTitleTxt: ((_ txt: String)->Void)!
@@ -181,6 +173,7 @@ extension DingTalkCalanderVM {
         }
         //change top txt
         swipeChangeTopVwTxt(dateInfo: middleDate)
+        
         
         return self.changeTrupleModelToTrupleVModel(model: self.rightDate)
     }

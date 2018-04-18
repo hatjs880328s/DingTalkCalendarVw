@@ -113,11 +113,9 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     /// swipe up
-    func changeHeightWhenSwipeUp(with lineNumber: Int) {
-        let topDistance: CGFloat = CGFloat(6 - lineNumber) * normalDayLineHeight
-        //self.layoutIfNeeded()
+    func swipeUp() {
         self.snp.remakeConstraints { (make) in
-            make.top.equalTo(self.topView.snp.bottom).offset(-topDistance)
+            make.top.equalTo(self.topView.snp.bottom).offset(normalDayLineHeight)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
@@ -127,7 +125,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     /// swipe down
     func swipeDown() {
         self.snp.remakeConstraints { (make) in
-            make.top.equalTo(topView.snp.bottom)
+            make.top.equalTo(topView.snp.bottom).offset(normalDayLineHeight * 6)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(-0)

@@ -138,10 +138,12 @@ extension SmallDingTalkSingleLineCollectionVw {
     }
     
     @objc func swipeTopAction() {
+        self.alpha = 1
         
     }
     
     @objc func swipeDownAction() {
-        
+        self.alpha = 0
+        (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw()
     }
 }
