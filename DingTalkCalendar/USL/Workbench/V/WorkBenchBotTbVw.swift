@@ -216,7 +216,6 @@ class WorkBenchTBCell: UITableViewCell {
             make.bottom.equalTo(dateStart.snp.bottom)
             make.height.equalTo(14)
         }
-        imagePic.backgroundColor = UIColor.gray
         imagePic.image = UIImage(named: "survey.png")
         //title
         titleLb.snp.makeConstraints { (make) in
