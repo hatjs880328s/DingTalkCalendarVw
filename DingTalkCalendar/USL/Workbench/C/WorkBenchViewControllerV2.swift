@@ -82,24 +82,19 @@ extension WorkBenchViewControllerV2 {
     
     /// hide middle vw [swipe up]
     func hiddenMiddleCalendarVw(animated: Bool = false) {
-        func endAction() {
-            getSmallCalendarDate()
-            self.vm.uistate = .single
-            // events gets [special invoking..]
-            self.getTodayEvents()
-            self.smallCalendarVw.whenSwipeTapFistItem()
-        }
         self.botVw.swipeUp(withAnimation:animated)
         if animated {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.5) {
                 self.smallCalendarVw.alpha = 1
-            }) { (completed) in
-                endAction()
             }
         }else{
             self.smallCalendarVw.alpha = 1
-            endAction()
         }
+        getSmallCalendarDate()
+        self.vm.uistate = .single
+        // events gets [special invoking..]
+        self.getTodayEvents()
+        self.smallCalendarVw.whenSwipeTapFistItem()
     }
     
     // show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
