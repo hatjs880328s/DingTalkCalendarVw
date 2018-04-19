@@ -249,14 +249,14 @@ extension DingTalkCalanderVM {
                 currentMonth = true
             }
         }
-        text = "\(dateInfo!.year)年\(dateInfo!.month)月"
+        text = getSerilizationDate(withDate: dateInfo!)
         self.swipeChangeTopTitleTxt(text,currentMonth)
     }
     
-    /// get selected item in which line [ 1 ~ 6 ]
-    func getLineNumWithVModel(dates: DingTalkCalenderView)->Int {
-        let selectedItem = dates.beSelectedTag
-        return selectedItem/7 + 1
+    func getSerilizationDate(withDate: Date)->String {
+        let dateInfo = withDate.dateFormate("yyyy-MM-dd")
+        return "\(dateInfo.year)年\(dateInfo.month)月"
+        
     }
     
     /// get selected item in which line [1 - 6]

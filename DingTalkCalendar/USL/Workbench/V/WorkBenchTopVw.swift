@@ -45,13 +45,9 @@ class WorkBenchTopVw: UIView {
         titleLb.textAlignment = .left
         titleLb.font = UIFont.systemFont(ofSize: 20)
         var dateTxt = ""
-        GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
-            let dateInfo = Date().dateFormate("yyyy-MM-dd")
-            dateTxt = "\(dateInfo.year)年\(dateInfo.month)月"
-            self.todayTxt = dateTxt
-        }) {
-            self.titleLb.text = dateTxt
-        }
+        dateTxt = (self.viewController() as! WorkBenchViewControllerV2).vm.getSerilizationDate(withDate: Date())
+        self.todayTxt = dateTxt
+        self.titleLb.text = dateTxt
         //today
         self.addSubview(todayLb)
         todayLb.snp.makeConstraints { (make) in
