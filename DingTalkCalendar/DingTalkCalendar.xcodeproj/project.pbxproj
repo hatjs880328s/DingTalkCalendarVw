@@ -13,6 +13,7 @@
 		566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */; };
 		56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */; };
 		56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */; };
+		56D01C0E20887511000C1BF0 /* WorkbenchBLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */; };
 		56D92B792084C01A00379402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B782084C01A00379402 /* AppDelegate.swift */; };
 		56D92B7B2084C01A00379402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B7A2084C01A00379402 /* ViewController.swift */; };
 		56D92B7E2084C01A00379402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B7C2084C01A00379402 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
+		56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchBLL.swift; sourceTree = "<group>"; };
 		56D92B752084C01A00379402 /* DingTalkCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DingTalkCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D92B782084C01A00379402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D92B7A2084C01A00379402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */,
+				56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */,
 				56D92B8F2084C01B00379402 /* Info.plist */,
 			);
 			path = DingTalkCalendarTests;
@@ -852,6 +855,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D01C0E20887511000C1BF0 /* WorkbenchBLL.swift in Sources */,
 				56D92B8E2084C01B00379402 /* DingTalkCalendarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,14 +27,6 @@ extension Foundation.Date{
         }
     
     }
-    
-    ///更换日期格式
-    func changeFormate(_ newFormate:String,oldFormate:String)->Foundation.Date{
-
-        let str = self.dateToString(oldFormate)
-        return str.dateValue(newFormate)!
-        
-    }
     ///提前几天
     func beforeDate(_ befor:Int)->Foundation.Date{
         let time = self.timeIntervalSince1970
@@ -52,7 +44,6 @@ extension Foundation.Date{
     func dateFormate(_ formate:String)->Foundation.Date{
         let formats = DateFormatter()
         formats.dateFormat = formate
-        formats.timeZone = .current
         let str = formats.string(from: self)
         let newStr = str.substringToIndex(formate.length)
         return newStr.dateValue(formate)!

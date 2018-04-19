@@ -30,7 +30,7 @@ extension Date {
     func dateToString(_ format:String)->String{
         let formats = DateFormatter()
         formats.dateFormat = format
-        formats.timeZone = TimeZone.current
+        //formats.timeZone = TimeZone.current
         let resultStr = formats.string(from: self) as NSString
         return resultStr.substring(to: (format as NSString).length)
     }

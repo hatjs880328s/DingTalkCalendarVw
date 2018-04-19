@@ -38,7 +38,7 @@ class WorkBench: NSObject,IWorkBench {
     
     let formatStr = "yyyy-MM-dd HH:mm:ss"
     
-    /// get gtm8 time
+    /// get gtm8 time [local timeZone]
     ///
     /// - Parameter date: date
     /// - Returns: date
