@@ -150,9 +150,12 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.bottom.equalTo(0)
         }
         if withAnimation {
+            (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.alpha = 1
             UIView.animate(withDuration: 0.5) {
                 self.layoutIfNeeded()
             }
+        }else{
+            (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.alpha = 1
         }
     }
     

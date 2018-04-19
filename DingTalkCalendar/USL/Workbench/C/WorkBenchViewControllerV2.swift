@@ -10,7 +10,7 @@ import UIKit
 
 class WorkBenchViewControllerV2: UIViewController {
 
-    let topView: WorkBenchTopVw = WorkBenchTopVw(frame: CGRect.zero)
+    let topVw: WorkBenchTopVw = WorkBenchTopVw(frame: CGRect.zero)
     
     let botVw: WorkBenchBotTbVw = WorkBenchBotTbVw(frame: CGRect.zero)
     
@@ -29,7 +29,6 @@ class WorkBenchViewControllerV2: UIViewController {
         
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
-        
         createTopView()
         createBannerVw()
         createWeekDay()
@@ -48,12 +47,12 @@ class WorkBenchViewControllerV2: UIViewController {
 extension WorkBenchViewControllerV2 {
     /// top vw
     func createTopView() {
-        self.topView.createView(fatherView: self.view)
+        self.topVw.createView(fatherView: self.view)
     }
     
     /// banner vw
     func createBannerVw() {
-        self.bannerVw.createVw(with: self.view, top: self.topView)
+        self.bannerVw.createVw(with: self.view, top: self.topVw)
     }
     
     /// weak day vw
@@ -83,13 +82,6 @@ extension WorkBenchViewControllerV2 {
     /// hide middle vw [swipe up]
     func hiddenMiddleCalendarVw(animated: Bool = false) {
         self.botVw.swipeUp(withAnimation:animated)
-        if animated {
-            UIView.animate(withDuration: 0.5) {
-                self.smallCalendarVw.alpha = 1
-            }
-        }else{
-            self.smallCalendarVw.alpha = 1
-        }
         getSmallCalendarDate()
         self.vm.uistate = .single
         // events gets [special invoking..]
@@ -97,7 +89,7 @@ extension WorkBenchViewControllerV2 {
         self.smallCalendarVw.whenSwipeTapFistItem()
     }
     
-    // show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
+    /// show middle vw [swipe down][invoking big calendar vw create 2 others vw once]
     func showMiddleCalcendarVw(animated: Bool = false) {
         self.calendarVw.createOther2ChildVw()
         self.botVw.swipeDown(withAnimation:animated)
@@ -117,7 +109,7 @@ extension WorkBenchViewControllerV2 {
     
     func topTxtChange() {
         self.vm.swipeChangeTopTitleTxt = { [weak self]text,isCurrentMonth in
-            self?.topView.setData(ifCalendar: isCurrentMonth, titleTxt: text)
+            self?.topVw.setData(ifCalendar: isCurrentMonth, titleTxt: text)
         }
     }
 }
