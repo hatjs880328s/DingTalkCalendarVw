@@ -136,7 +136,7 @@ public extension String{
     func dateValue(_ format:String)->Foundation.Date?{
         let formats = DateFormatter()
         formats.dateFormat = format
-        formats.timeZone = TimeZone(identifier: "UTC")
+        formats.timeZone = TimeZone.current
         return formats.date(from: self)
     }
     

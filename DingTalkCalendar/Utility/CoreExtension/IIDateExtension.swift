@@ -52,9 +52,10 @@ extension Foundation.Date{
     func dateFormate(_ formate:String)->Foundation.Date{
         let formats = DateFormatter()
         formats.dateFormat = formate
+        formats.timeZone = .current
         let str = formats.string(from: self)
         let newStr = str.substringToIndex(formate.length)
-        return  newStr.dateValue(formate)!
+        return newStr.dateValue(formate)!
     }
     
     
