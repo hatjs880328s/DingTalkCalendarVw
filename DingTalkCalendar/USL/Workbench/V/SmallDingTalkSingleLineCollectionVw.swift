@@ -152,6 +152,7 @@ extension SmallDingTalkSingleLineCollectionVw {
     @objc func swipeDownAction() {
         self.alpha = 0
         (self.viewController() as! WorkBenchViewControllerV2).showMiddleCalcendarVw(animated: true)
+        (self.viewController() as! WorkBenchViewControllerV2).swipeDownSelectedBigCalendarItem(with: self.smallMiddleLogicVw.vms![self.smallMiddleLogicVw.selectedItemIndex].dateInfo)
     }
 }
 

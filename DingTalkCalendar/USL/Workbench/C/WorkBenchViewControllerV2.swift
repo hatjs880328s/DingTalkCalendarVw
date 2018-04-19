@@ -151,3 +151,16 @@ extension WorkBenchViewControllerV2 {
         }
     }
 }
+
+// MARK: - swipe - down & up actions
+extension WorkBenchViewControllerV2 {
+    
+    func swipeUpSelectedSamllCalendarItem(with index:Int) {
+        self.smallCalendarVw.smallMiddleLogicVw.tapAction(index: index)
+    }
+    
+    func swipeDownSelectedBigCalendarItem(with date: Date) {
+        let index = self.vm.getBigItemIndexWithSamllSelectedItemIndex(with: date)
+        self.calendarVw.logicMiddleVw.tapAction(index: index)
+    }
+}

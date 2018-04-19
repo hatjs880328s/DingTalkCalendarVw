@@ -394,3 +394,22 @@ extension DingTalkCalanderVM {
     
     
 }
+
+// MARK: - swipe down & up SMALL VW
+extension DingTalkCalanderVM {
+    
+    /// when small calendar swipe down - get big should selected item index by small selected item
+    func getBigItemIndexWithSamllSelectedItemIndex(with date: Date)->Int {
+        let bigVmDates = self.middleVMDate.trupleVM.dayArr
+        var resultIndex = 0
+        for eachItem in 0 ... bigVmDates.count - 1 {
+            if bigVmDates[eachItem].dateInfo == date {
+                resultIndex = eachItem
+                break
+            }
+        }
+        return resultIndex
+    }
+    
+    
+}

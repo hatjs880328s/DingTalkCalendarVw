@@ -161,6 +161,7 @@ extension BigDingTalkSingleLineCollectionVw {
     
     @objc func swipeTopAction() {
         (self.viewController() as! WorkBenchViewControllerV2).hiddenMiddleCalendarVw(animated: true)
+        (self.viewController() as! WorkBenchViewControllerV2).swipeUpSelectedSamllCalendarItem(with: self.logicMiddleVw.beselectedItemIndex%7)
     }
 }
 
