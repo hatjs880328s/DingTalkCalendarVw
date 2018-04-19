@@ -27,12 +27,6 @@ protocol IWorkBench {
     /// - Returns: str-key
     func getDicKey(with dateInfo: dingTalkTrupleModel)->dingTalkTrupleKey
     
-    /// folow dingTalkTrupleViewModel create a key [string]
-    ///
-    /// - Parameter dateInfo: dingTalkTrupleModel
-    /// - Returns: str-key
-    func getDicKey(with dingTalkTrupleInfo: dingTalkTrupleViewModel)->dingTalkTrupleKey
-    
     /// get gtm8 time
     ///
     /// - Parameter date: date
@@ -56,18 +50,6 @@ protocol IWorkBench {
     /// - Parameter dateInfo: date info
     /// - Returns: str - key
     func getDicKey(with dateInfo : Date)->dingTalkTrupleKey
-    
-    /// get fefore month [] last day with vmodel
-    ///
-    /// - Parameter date: vmodel
-    /// - Returns: date
-    func getBeforeMonthLastDay(with date: dingTalkTrupleViewModel)->Date
-    
-    /// get after month [next month ] first day with vmodel
-    ///
-    /// - Parameter date: vmodel
-    /// - Returns: date
-    func getAfterMonthFirstDay(with date: dingTalkTrupleViewModel)->Date
     
     /// get 7 days [before or next]
     ///

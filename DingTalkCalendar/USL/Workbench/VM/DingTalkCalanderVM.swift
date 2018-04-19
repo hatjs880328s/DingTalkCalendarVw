@@ -135,12 +135,6 @@ class DingTalkCalanderVM: NSObject {
 // MARK: - global queue progress events
 extension DingTalkCalanderVM {
     
-    func getCurrentPicFirstDayAndLastDay(dateInfo: dingTalkTrupleViewModel)->(startDate: Date,endDate: Date)? {
-        if dateInfo.dayArr.count == 0 { return nil }
-        
-        return (dateInfo.dayArr.first!.dateInfo,dateInfo.dayArr.last!.dateInfo)
-    }
-    
     func getEventsFromVmDate(action: @escaping ()->Void) {
         var trupleInfo:(startDate: Date,endDate: Date)!
         if self.uistate == .single {

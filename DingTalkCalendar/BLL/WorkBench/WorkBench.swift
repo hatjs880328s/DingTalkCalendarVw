@@ -118,28 +118,6 @@ class WorkBench: NSObject,IWorkBench {
         return resultArr
     }
     
-    /// get beforeyear & month
-    func getBeforeMonthAndYear(with currentDate: Date)->(month: Int,year: Int) {
-        let year = currentDate.year
-        let month = currentDate.month
-        if month ==  1 {
-            return (year - 1,12)
-        }else{
-            return (year,month - 1)
-        }
-    }
-    
-    /// get afteryear * month
-    func getAfterMonthAndYear(with currentDate: Date)->(month: Int, year: Int) {
-        let year = currentDate.year
-        let month = currentDate.month
-        if month ==  12 {
-            return (year + 1,1)
-        }else{
-            return (year,month + 1)
-        }
-    }
-    
 }
 
 
@@ -174,16 +152,6 @@ extension WorkBench {
         return getDicKey(with: currentMonthDay!)
     }
     
-    /// folow dingTalkTrupleViewModel create a key [string]
-    ///
-    /// - Parameter dateInfo: dingTalkTrupleModel
-    /// - Returns: str-key
-    func getDicKey(with dingTalkTrupleInfo: dingTalkTrupleViewModel)->dingTalkTrupleKey {
-        let currentMonthDay = dingTalkTrupleInfo.dayArr[dingTalkTrupleInfo.headerCount + 1].dateInfo
-        if currentMonthDay == nil { return "" }
-        return getDicKey(with: currentMonthDay!)
-    }
-    
     /// follow date create a key [string]
     ///
     /// - Parameter dateInfo: date info
@@ -201,27 +169,11 @@ extension WorkBench {
         return date.dayArr[date.headerCount].dateInfo.nextDate(date.dayArr.count - date.headerCount - date.footerCount)
     }
     
-    /// get after month [next month ] first day with vmodel
-    ///
-    /// - Parameter date: vmodel
-    /// - Returns: date
-    func getAfterMonthFirstDay(with date: dingTalkTrupleViewModel)->Date {
-        return date.dayArr[date.headerCount].dateInfo.nextDate(date.dayArr.count - date.headerCount - date.footerCount)
-    }
-    
     /// get before month [] last day
     ///
     /// - Parameter date: truple info
     /// - Returns: date
     func getBeforeMonthLastDay(with date: dingTalkTrupleModel)->Date {
-        return date.dayArr[date.headerCount].dateInfo.beforeDate(1)
-    }
-    
-    /// get fefore month [] last day with vmodel
-    ///
-    /// - Parameter date: vmodel
-    /// - Returns: date
-    func getBeforeMonthLastDay(with date: dingTalkTrupleViewModel)->Date {
         return date.dayArr[date.headerCount].dateInfo.beforeDate(1)
     }
     
