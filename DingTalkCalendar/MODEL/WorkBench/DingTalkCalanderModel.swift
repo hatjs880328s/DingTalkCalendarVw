@@ -42,7 +42,10 @@ class DingTalkCalanderModel: NSObject {
         super.init()
     }
     
-    func setParameters(gregorionDay:Int,weekDay:Int,lunarDay:Int,isCurrentDay:Bool,isFirstDayCurrentMonty:Bool,dateInfo:Date,isCurrentMonthDay:Bool) {
+    func setParameters(gregorionDay:Int,weekDay:Int,
+                       lunarDay:Int,isCurrentDay:Bool,
+                       isFirstDayCurrentMonty:Bool,
+                       dateInfo:Date,isCurrentMonthDay:Bool) {
         self.gregorionDay = gregorionDay
         self.lunarDay = lunarDay
         self.weekDay = weekDay

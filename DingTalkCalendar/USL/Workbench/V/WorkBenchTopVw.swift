@@ -17,6 +17,8 @@ class WorkBenchTopVw: UIView {
     
     var todayTxt: String = ""
     
+    let todayStr = "今"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -40,7 +42,7 @@ class WorkBenchTopVw: UIView {
             make.left.equalTo(15)
             make.bottom.equalTo(-5)
             make.height.equalTo(25)
-            make.width.equalTo(100)
+            make.width.equalTo(120)
         }
         titleLb.textAlignment = .left
         titleLb.font = UIFont.systemFont(ofSize: 20)
@@ -58,7 +60,7 @@ class WorkBenchTopVw: UIView {
         }
         todayLb.layer.cornerRadius = 9
         todayLb.layer.masksToBounds = true
-        todayLb.text = "今"
+        todayLb.text = todayStr
         todayLb.textAlignment = .center
         todayLb.textColor = UIColor.white
         todayLb.backgroundColor = APPDelStatic.dingtalkBlue

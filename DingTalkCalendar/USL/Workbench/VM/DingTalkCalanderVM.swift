@@ -64,6 +64,8 @@ class DingTalkCalanderVM: NSObject {
     /// swipe - change topvw text closure
     var swipeChangeTopTitleTxt: ((_ txt: String,_ isCurrentMonth: Bool)->Void)!
     
+    let formatStr = "yyyy-MM-dd"
+    
     override init() {
         super.init()
         self.workBench = BeanFactory().create(with: "workBenchIns") as! IWorkBench
@@ -175,7 +177,7 @@ extension DingTalkCalanderVM {
     /// when small calendar vw swipe hor - big calendar vw dates should change also [true: should change false: shouldn't]
     @discardableResult
     func smallCalendarCollectionSwipeChangeBigDates(withDate: Date)->Bool {
-        let progressDate = withDate.dateFormate("yyyy-MM-dd")
+        let progressDate = withDate.dateFormate(formatStr)
         if progressDate.month == self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month { return false }
         self.getCurrentMonthDays(currentMonthDay: progressDate)
         return true
@@ -229,7 +231,7 @@ extension DingTalkCalanderVM {
         var text = ""
         var dateInfo:Date!
         var currentMonth:Bool = false
-        let currentDay = Date().dateFormate("yyyy-MM-dd")
+        let currentDay = Date().dateFormate(formatStr)
         if self.uistate == .all {
             dateInfo = self.middleDate.dayArr[self.middleDate.headerCount].dateInfo
             if (self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month == currentDay.month
@@ -248,7 +250,7 @@ extension DingTalkCalanderVM {
     }
     
     func getSerilizationDate(withDate: Date)->String {
-        let dateInfo = withDate.dateFormate("yyyy-MM-dd")
+        let dateInfo = withDate.dateFormate(formatStr)
         return "\(dateInfo.year)年\(dateInfo.month)月"
         
     }

@@ -27,24 +27,29 @@ class DingTalkCEvent: NSObject {
     
     var id: String = ""
     
+    let formatStrHM = "HH:mm"
+    
+    let normalFormatStr = "yyyy-MM-dd HH:mm:ss"
+    
+    let todayStr = "全天"
+    
     init(with kevent: EKEvent){
         super.init()
         self.setDate(with: kevent)
     }
     
     private func setDate(with kevent: EKEvent) {
-        // holiday
         self.id = kevent.eventIdentifier
         if kevent.calendar.type == .local {
-            self.startTime = kevent.startDate.dateToString("HH:mm")
-            self.endTime = kevent.endDate.dateToString("HH:mm")
+            self.startTime = kevent.startDate.dateToString(formatStrHM)
+            self.endTime = kevent.endDate.dateToString(formatStrHM)
         }else{
-            self.startTime = "全天"
+            self.startTime = todayStr
         }
         self.modelType = kevent.calendar.type
         self.title = kevent.title
-        realStartTime = kevent.startDate.dateToString("yyyy-MM-dd HH:mm:ss")
-        realEndTime = kevent.endDate.dateToString("yyyy-MM-dd HH:mm:ss")
+        realStartTime = kevent.startDate.dateToString(normalFormatStr)
+        realEndTime = kevent.endDate.dateToString(normalFormatStr)
     }
     
     func descriptions()->String {

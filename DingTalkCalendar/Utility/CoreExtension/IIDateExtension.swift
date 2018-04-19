@@ -10,26 +10,6 @@ import UIKit
 
 extension Foundation.Date{
     
-    // 转换成字符串 此方法会默认使用东八区的时间 时间相互转化可能会出问题， 请使用dateToString  
-    func toString(_ format: String = "yyyy-MM-dd HH:mm:ss") -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-    
-    /**
-     时间转换
-     
-     - parameter format: formatStr
-     
-     - returns: strValue
-     */
-    func toStringWithParams(_ format: String = "yyyy-MM-dd HH:mm") -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-    
     ///强制转换成字符串
     func toString()->String{
         return String(describing: self)
@@ -67,6 +47,7 @@ extension Foundation.Date{
         let newDate = Foundation.Date(timeIntervalSince1970: time + Double(befor * 3600 * 24))
         return newDate
     }
+    
     ///设置格式
     func dateFormate(_ formate:String)->Foundation.Date{
         let formats = DateFormatter()
@@ -426,13 +407,8 @@ extension Foundation.Date{
         c.month = month
         c.day = day
        let IdentifierGregorian = Calendar.Identifier.gregorian
-       var gregorianC = Calendar(identifier: IdentifierGregorian)
-        //gregorianC.timeZone = TimeZone(identifier: "GMT")!
-//        if let gregorian = gregorianC {
+        let gregorianC = Calendar(identifier: IdentifierGregorian)
         return gregorianC.date(from: c)
-//        } else {
-//            return .none
-//        }
     }
     
     /// 根据unix时间戳生成日期对象

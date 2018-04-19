@@ -16,6 +16,8 @@ class DingTalkCalendarTrupleVModel : NSObject {
     
     var firstDayTag:Int = 0
     
+    let formatStr = "yyyy-MM-dd"
+    
     init(with vm: dingTalkTrupleViewModel) {
         super.init()
         self.trupleVM = vm
@@ -27,7 +29,7 @@ class DingTalkCalendarTrupleVModel : NSObject {
     
     /// if today [true: firstSelected is today]
     func isCurrentDay() {
-        let dateInfo = Date().dateFormate("yyyy-MM-dd")
+        let dateInfo = Date().dateFormate(formatStr)
         let selfDateInfo = self.trupleVM.dayArr[self.trupleVM.headerCount].dateInfo!
         if selfDateInfo.year == dateInfo.year && selfDateInfo.month == dateInfo.month {
             for i in 0 ... self.trupleVM.dayArr.count - 1 {

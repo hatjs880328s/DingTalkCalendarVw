@@ -49,7 +49,6 @@
 		56D92C1A2084C0B100379402 /* AOPNotificationCenterProgressCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC82084C0B100379402 /* AOPNotificationCenterProgressCenter.swift */; };
 		56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BC92084C0B100379402 /* AOPDiskCache.swift */; };
 		56D92C1C2084C0B100379402 /* AOPEventsUploadCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */; };
-		56D92C1D2084C0B100379402 /* GCDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCC2084C0B100379402 /* GCDUtility.swift */; };
 		56D92C1E2084C0B100379402 /* IICoreExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCE2084C0B100379402 /* IICoreExtension.swift */; };
 		56D92C1F2084C0B100379402 /* IIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BCF2084C0B100379402 /* IIViewExtension.swift */; };
 		56D92C202084C0B100379402 /* IIDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BD02084C0B100379402 /* IIDateExtension.swift */; };
@@ -138,7 +137,6 @@
 		56D92BC82084C0B100379402 /* AOPNotificationCenterProgressCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPNotificationCenterProgressCenter.swift; sourceTree = "<group>"; };
 		56D92BC92084C0B100379402 /* AOPDiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPDiskCache.swift; sourceTree = "<group>"; };
 		56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOPEventsUploadCenter.swift; sourceTree = "<group>"; };
-		56D92BCC2084C0B100379402 /* GCDUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDUtility.swift; sourceTree = "<group>"; };
 		56D92BCE2084C0B100379402 /* IICoreExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IICoreExtension.swift; sourceTree = "<group>"; };
 		56D92BCF2084C0B100379402 /* IIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIViewExtension.swift; sourceTree = "<group>"; };
 		56D92BD02084C0B100379402 /* IIDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIDateExtension.swift; sourceTree = "<group>"; };
@@ -267,9 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				56D92B9E2084C0B000379402 /* XMLFactory.swift */,
+				56D92BA22084C0B000379402 /* BeanFactory.swift */,
 				56D92B9F2084C0B000379402 /* BeanDicCenter.swift */,
 				56D92BA02084C0B000379402 /* xmls */,
-				56D92BA22084C0B000379402 /* BeanFactory.swift */,
 				56D92BA32084C0B000379402 /* WorkBench */,
 			);
 			path = IBLLFactory;
@@ -382,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				56D92BBE2084C0B100379402 /* AOPNBPCore */,
-				56D92BCB2084C0B100379402 /* GCDUtility */,
 				56D92BCD2084C0B100379402 /* CoreExtension */,
 				56D92BD22084C0B100379402 /* IIRQueue */,
 				56D92BD52084C0B100379402 /* IIMergeSort */,
@@ -408,14 +405,6 @@
 				56D92BCA2084C0B100379402 /* AOPEventsUploadCenter.swift */,
 			);
 			path = AOPNBPCore;
-			sourceTree = "<group>";
-		};
-		56D92BCB2084C0B100379402 /* GCDUtility */ = {
-			isa = PBXGroup;
-			children = (
-				56D92BCC2084C0B100379402 /* GCDUtility.swift */,
-			);
-			path = GCDUtility;
 			sourceTree = "<group>";
 		};
 		56D92BCD2084C0B100379402 /* CoreExtension */ = {
@@ -830,7 +819,6 @@
 				56D92C1C2084C0B100379402 /* AOPEventsUploadCenter.swift in Sources */,
 				56D92C282084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				56D92C152084C0B100379402 /* AOPMemCacheV20.swift in Sources */,
-				56D92C1D2084C0B100379402 /* GCDUtility.swift in Sources */,
 				56D92C2C2084C0B100379402 /* FMDatabaseAdditions.m in Sources */,
 				56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */,
 				56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */,

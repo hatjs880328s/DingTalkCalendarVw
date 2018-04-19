@@ -39,14 +39,14 @@ class AOPNotificationCenterProgressCenter : NSObject {
     }
     
     func alertInfo(realInfo: GodfatherEvent) {
-        @discardableResult
-        func showAlert()->Bool {
-            let alert = UIAlertView(title: "AOPCore", message: realInfo.sourceName + realInfo.triggerDate!.description, delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-            return true
-        }
+//        @discardableResult
+//        func showAlert()->Bool {
+//            let alert = UIAlertView(title: "AOPCore", message: realInfo.sourceName + realInfo.triggerDate!.description, delegate: nil, cancelButtonTitle: "OK")
+//            alert.show()
+//            return true
+//        }
         
-        //assert(showAlert())
+//        assert(showAlert())
     }
 }
 

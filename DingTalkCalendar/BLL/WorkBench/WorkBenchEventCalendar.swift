@@ -13,6 +13,7 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
     
     var dal = DingTalkGetEventCalender()
     
+    static let formatStr = "yyyy-MM-dd"
     
     /// get evente from calendar
     ///
@@ -25,8 +26,8 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
         self.dal.getEventFromEventDB(startTime: from, endTime: to, resultAction: { (eventsArr) in
             if eventsArr != nil {
                 for eachItem in eventsArr! {
-                    eachItem.startDate = eachItem.startDate.dateFormate("yyyy-MM-dd")
-                    eachItem.endDate = eachItem.endDate.dateFormate("yyyy-MM-dd")
+                    eachItem.startDate = eachItem.startDate.dateFormate(WorkBenchEventCalendar.formatStr)
+                    eachItem.endDate = eachItem.endDate.dateFormate(WorkBenchEventCalendar.formatStr)
                     eventsArrResult.append(eachItem)
                 }
             }else{}

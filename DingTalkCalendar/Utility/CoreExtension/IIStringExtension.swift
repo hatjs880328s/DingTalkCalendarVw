@@ -25,55 +25,6 @@ public enum ObjectType{
 
 public extension String{
     
-    /// 将字符串前面的0去掉，后边的0去掉
-    ///
-    /// - Returns: st
-    func progressZeroStr()->String {
-        var result = ""
-        result = self.removeRightSpaces("0").removeLeftSpaces("0")
-        // .5 -> 0.5
-        if result.characters.first == "." {
-            result = "0" + result
-        }
-        // 10. -> 10.00
-        if result.characters.last == "." {
-            result += "00"
-        }
-        // 10 -> 10.00
-        if !result.contains(".") {
-            result += ".00"
-        }
-        //  0.1 -> 0.10
-        if result.substringFromIndex(result.indexOf(".")).characters.count == 2 {
-            result += "0"
-        }
-        return result
-    }
-    
-    /**
-     将字符串按字母排序升序(不考虑大小写)
-     
-     - returns:
-     */
-    func sortAsc() -> String {
-        var chars = [Character](self.characters)
-        chars.sort(by: {$0 < $1})
-        
-        return String(chars)
-    }
-    
-    /**
-     将字符串按字母排序降序(不考虑大小写)
-     
-     - returns:
-     */
-    func sortDesc() -> String {
-        var chars = [Character](self.characters)
-        chars.sort(by: {$0 > $1})
-        
-        return String(chars)
-    }
-    
     /**
      转化成base64
      
@@ -357,70 +308,8 @@ public extension String{
     /// :returns: 字符串长度
     public var length: Int {
         get {
-            return self.characters.count
+            return (self as NSString).length
         }
-    }
-    
-    /// 返回首字母
-    ///
-    /// :param: string 需要转换的字符串
-    /// :param: allFirst 是否需要所有的字符 false不需要(只要第一个字的首字母) true需要
-    /// :returns: 首字母
-    func GetTheFirstLetter(_ string:String?, allFirst:Bool=false)->String{
-        var py="#"
-        if let s = string {
-            if s == "" {
-                return py
-            }
-            let str = CFStringCreateMutableCopy(nil, 0, s as CFString!)
-            CFStringTransform(str, nil, kCFStringTransformToLatin, Bool(0))
-            CFStringTransform(str, nil, kCFStringTransformStripCombiningMarks, Bool(0))
-            
-            py = ""
-            
-            if allFirst { for x in str.debugDescription.components(separatedBy: " ") {
-                
-                py += GetTheFirstLetter(x)
-                
-                }
-            }
-            else {
-                py = (str.debugDescription as NSString).substring(to: 1).uppercased()
-            }
-        }
-        return py
-        
-    }
-    
-    
-    /// 返回拼音
-    ///
-    /// :param: string 需要转换的字符串
-    /// :param: allFirst 是否需要所有的字符 false不需要(只要第一个字的拼音) true需要
-    /// :returns: 首字母
-    func GetTheSpelling(_ string:String?, allFirst:Bool=false)->String{
-        var py="#"
-        if let s = string {
-            if s == "" {
-                return py
-            }
-            let str = CFStringCreateMutableCopy(nil, 0, s as CFString!)
-            CFStringTransform(str, nil, kCFStringTransformToLatin, Bool(0))
-            CFStringTransform(str, nil, kCFStringTransformStripCombiningMarks, Bool(0))
-            
-            py = ""
-            if allFirst { for x in str.debugDescription.components(separatedBy: " ") {
-                
-                py += GetTheSpelling(x)
-                
-                }
-            }
-            else {
-                py = (str! as NSString).uppercased
-            }
-        }
-        return py
-        
     }
     
     /**
@@ -650,42 +539,7 @@ public func * (str: String, n: Int) -> String {
     return ""
 }
 
-protocol StringType{
-    var characters: String.CharacterView { get }
-}
-
 extension String{
-    
-    public func subString(_ startIndex: Int, length: Int) -> String{
-        let start = self.characters.index(self.startIndex, offsetBy: startIndex)
-        
-        let end = self.characters.index(self.startIndex, offsetBy: startIndex + length)
-        return self.substring(with: (start ..< end))
-    }
-    
-    public func indexOf(_ target: String) -> Int{
-        let range = self.range(of: target)
-        if let tempRange = range {
-            return self.characters.distance(from: self.startIndex, to: tempRange.lowerBound)
-        } else {
-            return -1
-        }
-    }
-    
-    public func indexOf(_ target: String, startIndex: Int) -> Int{
-        let startRange = self.characters.index(self.startIndex, offsetBy: startIndex)
-        
-        let range = self.range(of: target, options: NSString.CompareOptions.literal, range: (startRange ..< self.endIndex))
-        
-        if let range = range {
-            return self.characters.distance(from: self.startIndex, to: range.lowerBound)
-        }
-        else {
-            return -1
-        }
-    }
-    
-    
     
     public func isMatch(_ regex: String, options: NSRegularExpression.Options) -> Bool{
         var exp : NSRegularExpression?
@@ -920,7 +774,7 @@ public extension String{
     func isNineKeyBoard()->Bool{
         let other : NSString = "➋➌➍➎➏➐➑➒"
         let len = self.length
-        for i in 0 ..< len {
+        for _ in 0 ..< len {
             if !(other.range(of: self).location != NSNotFound) {
                 return false
             }
@@ -1084,15 +938,6 @@ extension String{
         return false
     }
     
-    func iconUrlDivision()->String{
-        
-        return self
-        //        if(!self.contain(subStr: "?")){ return self }
-        //        let array =  self.componentsSeparatedByString("?")
-        //
-        //        return array[0]
-    }
-    
     /**
      转换成UTF8的数组
      
@@ -1101,107 +946,5 @@ extension String{
     func toUInt8Map()->[UInt8]{
         
         return self.utf8.lazy.map({ $0 as UInt8 })
-    }
-    
-    
-    /// 格式化时间
-    ///
-    /// - Parameter type: 1 默认(1: 今天 18:19 2: 今天(08/29))
-    /// - Returns: return value description
-    func ProcessTheDateFormat(type : String = "1")->String{
-        
-        var retultStr = ""
-        if self == ""{
-            return retultStr
-        }
-        
-        let nowDate = Date().toString("yyyy-MM-dd")
-        let yesterDate = Date().beforeDate(1).toString("yyyy-MM-dd")
-        let dayBeforeyesterDate = Date().beforeDate(2).toString("yyyy-MM-dd")
-        let tomorrowData = Date().nextDate(1).toString("yyyy-MM-dd")
-        let AftertomorrowDate = Date().nextDate(2).toString("yyyy-MM-dd")
-        
-        if(type == "1"){
-            
-            let tempArray = self.components(separatedBy: " ")
-            let minStr = tempArray.last?.subString(0, length: 5)
-            
-            if (self.contains(nowDate)){
-                retultStr = "今天 \(minStr ?? "")"
-                return retultStr
-            }
-            
-            if (self.contains(yesterDate)){
-                retultStr = "昨天 \(minStr ?? "")"
-                return retultStr
-            }
-            
-            if (self.contains(dayBeforeyesterDate)){
-                retultStr = "前天 \(minStr ?? "")"
-                return retultStr
-            }
-            
-            if (self.contains(tomorrowData)){
-                retultStr = "明天 \(minStr ?? "")"
-                return retultStr
-            }
-            
-            if (self.contains(AftertomorrowDate)){
-                retultStr = "后天 \(minStr ?? "")"
-                return retultStr
-            }
-            
-            let dataStr = (tempArray.first!).toDateTime("yyyy/MM/dd")?.toString("yyyy/MM/dd")
-            retultStr = dataStr!
-            
-            return retultStr
-        }else{
-            
-            let tempArray = self.components(separatedBy: " ")
-            let minStr = tempArray[0]
-            let dataStr = minStr.toDateTime("yyyy/MM/dd")?.toString("yyyy/MM/dd")
-            let dataTimeStr = minStr.toDateTime("yyyy/MM/dd")?.toString("MM/dd")
-            if (self.contains(nowDate)){
-                retultStr = "今天(\(dataTimeStr ?? ""))"
-                return retultStr
-            }
-            
-            if (self.contains(yesterDate)){
-                retultStr = "昨天(\(dataTimeStr ?? ""))"
-                return retultStr
-            }
-            
-            if (self.contains(dayBeforeyesterDate)){
-                retultStr = "前天(\(dataTimeStr ?? ""))"
-                return retultStr
-            }
-            
-            if (self.contains(tomorrowData)){
-                retultStr = "明天(\(dataTimeStr ?? ""))"
-                return retultStr
-            }
-            
-            if (self.contains(AftertomorrowDate)){
-                retultStr = "后天(\(dataTimeStr ?? ""))"
-                return retultStr
-            }
-            retultStr = dataStr!
-            
-            return retultStr
-        }
-    }
-    
-    /// 字符串截取小数点后面两位
-    ///
-    /// - Returns:
-    func stringSave2()->String{
-        if self.contains("."){
-            if self.substringFromIndex(self.indexOf(".")).length >= 3{
-                return self.substringToIndex(self.indexOf(".") + 3)
-            }else{
-                return self + "0"
-            }
-        }
-        return self + ".00"
     }
 }

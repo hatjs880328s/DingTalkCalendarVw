@@ -20,6 +20,8 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     let normalDayLineHeight: CGFloat = 49
     
+    let tbReuseID:String = "workBenchReuseID"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -57,7 +59,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "noReuseid")
+            let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: tbReuseID)
             
             let con = (self.viewController() as! WorkBenchViewControllerV2)
             var resultDate: (eventModel: DingTalkCEvent?,dateInfo: String?)!
@@ -80,7 +82,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             botLine.backgroundColor = APPDelStatic.lightGray
             return cell
         }else{
-            let cell = WorkBenchTBCell(style: UITableViewCellStyle.default, reuseIdentifier: "workBenchReuseID")
+            let cell = WorkBenchTBCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
             let con = (self.viewController() as! WorkBenchViewControllerV2)
             var resultDate: (eventModel: DingTalkCEvent?,dateInfo: String?)!
             if con.vm.uistate == .all {

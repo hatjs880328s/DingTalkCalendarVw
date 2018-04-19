@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// calendarVw position
+///
+/// - middle: middle
+/// - left: left
+/// - right: right
 enum DingTalkPosition {
     case middle
     case left
@@ -26,17 +31,19 @@ enum DayType {
 }
 
 typealias dingTalkTrupleModel = (dayArr: [DingTalkCalanderModel],headerCount:Int,footerCount:Int)
+
 typealias dingTalkTrupleKey = String
 
 class WorkBench: NSObject,IWorkBench {
     
+    let formatStr = "yyyy-MM-dd HH:mm:ss"
     
     /// get gtm8 time
     ///
     /// - Parameter date: date
     /// - Returns: date
     func getCurrentData(_ date:Date)->Date {
-        return date.dateFormate("yyyy-MM-dd HH:mm:ss")
+        return date.dateFormate(formatStr)
     }
     
     /// get 42 days with currentMonth-one day[couldn't be current day]

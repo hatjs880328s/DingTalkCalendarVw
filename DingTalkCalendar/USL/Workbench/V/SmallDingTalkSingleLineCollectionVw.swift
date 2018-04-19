@@ -35,6 +35,8 @@ class SmallDingTalkSingleLineCollectionVw: UIView {
     
     var smallCalendarCollectionSwipeHorEndAction: ((_ singleLineFirstDay: Date)->Void)!
     
+    let formatStr = "MM月dd日"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -190,7 +192,7 @@ extension SmallDingTalkSingleLineCollectionVw {
     func getCellModel(with indexRow:Int)->(eventModel: DingTalkCEvent?,dateInfo: String?) {
         let selectedIndex = self.smallMiddleLogicVw.selectedItemIndex
         if indexRow == 0 {
-            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].dateInfo.dateToString("MM月dd日")
+            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].dateInfo.dateToString(formatStr)
             return (nil,dateInfo)
         }
         if (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count >= indexRow {

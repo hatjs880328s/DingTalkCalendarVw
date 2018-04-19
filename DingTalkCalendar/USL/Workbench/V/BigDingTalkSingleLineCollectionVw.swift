@@ -33,6 +33,8 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     var onceUUID = NSUUID().uuidString
     
+    let formatStr = "MM月dd日"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -200,7 +202,7 @@ extension BigDingTalkSingleLineCollectionVw {
     func getCellModel(with indexRow:Int)->(eventModel: DingTalkCEvent?,dateInfo: String?) {
         let selectedIndex = self.logicMiddleVw.beselectedItemIndex
         if indexRow == 0 {
-            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.middleVMDate.trupleVM.dayArr[selectedIndex].dateInfo.dateToString("MM月dd日")
+            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.middleVMDate.trupleVM.dayArr[selectedIndex].dateInfo.dateToString(formatStr)
             return (nil,dateInfo)
         }
         if (self.viewController() as! WorkBenchViewControllerV2).vm.middleVMDate.trupleVM.dayArr[selectedIndex].fireDayInfo.count >= indexRow {
