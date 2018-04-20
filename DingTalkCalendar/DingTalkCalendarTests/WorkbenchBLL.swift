@@ -22,12 +22,19 @@ class WorkbenchBLL: XCTestCase {
     }
     
     func testGTM8IsCurrentTimeZone() {
-        let dateLocal = self.workbench.getCurrentData(Date())
-        let zone = Date()
-        dateLocal.distance(to: zone)
-        print(zone)
+        
     }
     
+    func testGet42Dates() {
+        let dates = workbench.getDate(position: DingTalkPosition.middle, middleDates: nil, middleFollowDate: Date())
+        //dates.dayArr
+        XCTAssert(dates.dayArr.count == 42, "天数计算错误！")
+        
+        //XCTAssert(dates., )
+        if Date().weekday == 0 {
+            //XCTAssert(dates.headerCount == 7, "如果今天是")
+        }
+    }
     
     
 }

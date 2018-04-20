@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
+		566B29E720896E0E0065A1C3 /* WorkbenchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */; };
 		566B72982085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */; };
 		566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */; };
 		56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */; };
@@ -92,6 +93,7 @@
 		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
+		566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchVM.swift; sourceTree = "<group>"; };
 		566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */,
 				56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */,
+				566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */,
 				56D92B8F2084C01B00379402 /* Info.plist */,
 			);
 			path = DingTalkCalendarTests;
@@ -856,6 +859,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D01C0E20887511000C1BF0 /* WorkbenchBLL.swift in Sources */,
+				566B29E720896E0E0065A1C3 /* WorkbenchVM.swift in Sources */,
 				56D92B8E2084C01B00379402 /* DingTalkCalendarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

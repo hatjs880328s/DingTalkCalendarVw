@@ -393,11 +393,15 @@ extension Foundation.Date{
     /// :param month
     /// :param day
     /// :return Date
-    public static func from(year: Int, month: Int, day: Int) -> Foundation.Date? {
+    public static func from(year: Int, month: Int, day: Int, hour:Int = 5,min: Int = 30, sec:Int = 30) -> Foundation.Date? {
         var c = DateComponents()
         c.year = year
         c.month = month
         c.day = day
+        
+        c.hour = hour
+        c.minute = min
+        c.second = sec
        let IdentifierGregorian = Calendar.Identifier.gregorian
         let gregorianC = Calendar(identifier: IdentifierGregorian)
         return gregorianC.date(from: c)
