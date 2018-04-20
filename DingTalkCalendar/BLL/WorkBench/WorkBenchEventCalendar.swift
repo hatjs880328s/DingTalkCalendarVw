@@ -26,8 +26,6 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
         self.dal.getEventFromEventDB(startTime: from, endTime: to, resultAction: { (eventsArr) in
             if eventsArr != nil {
                 for eachItem in eventsArr! {
-                    eachItem.startDate = eachItem.startDate.dateFormate(WorkBenchEventCalendar.formatStr)
-                    eachItem.endDate = eachItem.endDate.dateFormate(WorkBenchEventCalendar.formatStr)
                     eventsArrResult.append(eachItem)
                 }
             }else{}

@@ -41,7 +41,7 @@ extension Foundation.Date{
     }
     
     ///设置格式
-    func dateFormate(_ formate:String)->Foundation.Date{
+    func dateFormateCare(_ formate:String)->Foundation.Date{
         let formats = DateFormatter()
         formats.dateFormat = formate
         let str = formats.string(from: self)

@@ -177,7 +177,7 @@ extension DingTalkCalanderVM {
     /// when small calendar vw swipe hor - big calendar vw dates should change also [true: should change false: shouldn't]
     @discardableResult
     func smallCalendarCollectionSwipeChangeBigDates(withDate: Date)->Bool {
-        let progressDate = withDate.dateFormate(formatStr)
+        let progressDate = withDate
         if progressDate.month == self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month { return false }
         self.getCurrentMonthDays(currentMonthDay: progressDate)
         return true
@@ -231,7 +231,7 @@ extension DingTalkCalanderVM {
         var text = ""
         var dateInfo:Date!
         var currentMonth:Bool = false
-        let currentDay = Date().dateFormate(formatStr)
+        let currentDay = Date()
         if self.uistate == .all {
             dateInfo = self.middleDate.dayArr[self.middleDate.headerCount].dateInfo
             if (self.middleDate.dayArr[self.middleDate.headerCount].dateInfo.month == currentDay.month
@@ -250,7 +250,7 @@ extension DingTalkCalanderVM {
     }
     
     func getSerilizationDate(withDate: Date)->String {
-        let dateInfo = withDate.dateFormate(formatStr)
+        let dateInfo = withDate
         return "\(dateInfo.year)年\(dateInfo.month)月"
         
     }

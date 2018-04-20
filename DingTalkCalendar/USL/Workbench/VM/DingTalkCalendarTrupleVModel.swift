@@ -29,7 +29,7 @@ class DingTalkCalendarTrupleVModel : NSObject {
     
     /// if today [true: firstSelected is today]
     func isCurrentDay() {
-        let dateInfo = Date().dateFormate(formatStr)
+        let dateInfo = Date()
         let selfDateInfo = self.trupleVM.dayArr[self.trupleVM.headerCount].dateInfo!
         if selfDateInfo.year == dateInfo.year && selfDateInfo.month == dateInfo.month {
             for i in 0 ... self.trupleVM.dayArr.count - 1 {

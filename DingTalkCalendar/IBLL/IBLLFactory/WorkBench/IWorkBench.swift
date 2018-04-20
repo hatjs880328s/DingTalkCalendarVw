@@ -19,19 +19,12 @@ protocol IWorkBench {
     ///   - middleFollowDate: middleDates order to which day
     /// - Returns: trupleInfo
     func getDate(position: DingTalkPosition,middleDates: dingTalkTrupleModel!,middleFollowDate: Date?)->dingTalkTrupleModel
-    
-    
+
     /// folow dingTalkTrupleModel create a key [string]
     ///
     /// - Parameter dateInfo: dingTalkTrupleModel
     /// - Returns: str-key
     func getDicKey(with dateInfo: dingTalkTrupleModel)->dingTalkTrupleKey
-    
-    /// get gtm8 time
-    ///
-    /// - Parameter date: date
-    /// - Returns: date
-    func getCurrentData(_ date:Date)->Date
     
     /// get after month [next month] first day
     ///

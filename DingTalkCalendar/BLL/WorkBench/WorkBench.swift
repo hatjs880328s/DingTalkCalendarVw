@@ -38,17 +38,9 @@ class WorkBench: NSObject,IWorkBench {
     
     let formatStr = "yyyy-MM-dd HH:mm:ss"
     
-    /// get gtm8 time [local timeZone]
-    ///
-    /// - Parameter date: date
-    /// - Returns: date
-    func getCurrentData(_ date:Date)->Date {
-        return date.dateFormate(formatStr)
-    }
-    
     /// get 42 days with currentMonth-one day[couldn't be current day]
     private func getCurrent42Days(with dateInfo:Date)->(dayArr: [DingTalkCalanderModel],headerCount:Int,footerCount:Int) {
-        let formatDate = getCurrentData(dateInfo)
+        let formatDate = dateInfo
         let trupleInfo = self.getFirstDayThisMonth(formatDate.month,formatDate.year)
         let headerDays = self.getHeaderDays(with: trupleInfo.monthFirstDay)
         let footerDays = self.getFooterDays(with: trupleInfo.monthFirstDay,monthDaysCount:trupleInfo.monthCountDays,headerCout:headerDays.count)
@@ -58,9 +50,9 @@ class WorkBench: NSObject,IWorkBench {
             dingIns.setParameters(gregorionDay: eachItem.days, weekDay: eachItem.weekday, lunarDay: 3, isCurrentDay: false, isFirstDayCurrentMonty: false,dateInfo: eachItem,isCurrentMonthDay: false)
             resultArr.append(dingIns)
         }
-        let curentDayIndex = getCurrentData(Date())
+        let curentDayIndex = Date()
         for eachItem in 1 ... trupleInfo.monthCountDays {
-            let day = getCurrentData(Date.from(year: formatDate.year, month:formatDate.month, day: eachItem)!)
+            let day = Date.from(year: formatDate.year, month:formatDate.month, day: eachItem)!
             let dingIns = DingTalkCalanderModel()
             let isCurrentMonthFirstDay = eachItem == 1 ? true : false
             if day.days == curentDayIndex.days && day.year == curentDayIndex.year && day.month == curentDayIndex.month{
@@ -87,7 +79,7 @@ class WorkBench: NSObject,IWorkBench {
     ///   - year: year
     /// - Returns: Returns: turple - monthFirstDay,monthCountDays,weedday(1 = sunday start from 1)
     func getFirstDayThisMonth(_ month:Int,_ year:Int)->(monthFirstDay: Date,monthCountDays:Int,weekDay:Int) {
-        let currentDate = getCurrentData(Date.from(year: year, month:month, day: 1)!)
+        let currentDate = Date.from(year: year, month:month, day: 1)!
         let weedday:Int = currentDate.weekday
         let monthDaysCount = currentDate.numOfDayFormMouth()
         
@@ -141,7 +133,7 @@ extension WorkBench {
     func getDate(position: DingTalkPosition,middleDates: dingTalkTrupleModel!,middleFollowDate: Date?)->dingTalkTrupleModel {
         switch position {
         case .middle:
-            return self.getMiddleDate(with: getCurrentData(middleFollowDate!))
+            return self.getMiddleDate(with: middleFollowDate!)
         case .left:
             return self.getLeftPicDate(with: middleDates.dayArr[middleDates.headerCount].dateInfo)
         case .right:
@@ -164,7 +156,7 @@ extension WorkBench {
     /// - Parameter dateInfo: date info
     /// - Returns: str - key
     func getDicKey(with dateInfo : Date)->dingTalkTrupleKey {
-        let realDateInfo = self.getCurrentData(dateInfo)
+        let realDateInfo = dateInfo
         return "\(realDateInfo.year)-\(realDateInfo.month)"
     }
     
@@ -219,7 +211,7 @@ extension WorkBench {
                 day = dateInfo.beforeDate(eachItem)
             }
             let dingIns = DingTalkCalanderModel()
-            let curentDayIndex = getCurrentData(Date())
+            let curentDayIndex = Date()
             let isCurrentMonthFirstDay = day.days == 1 ? true : false
             if day.days == curentDayIndex.days && day.year == curentDayIndex.year && day.month == curentDayIndex.month{
                 dingIns.setParameters(gregorionDay: day.days, weekDay: day.weekday, lunarDay: 3, isCurrentDay: true, isFirstDayCurrentMonty: isCurrentMonthFirstDay,dateInfo: day,isCurrentMonthDay: true)
