@@ -144,8 +144,8 @@ extension DingTalkCalanderVM {
         }else{
             trupleInfo = (self.middleVMDate.trupleVM.dayArr.first!.dateInfo,middleVMDate.trupleVM.dayArr.last!.dateInfo)
         }
-        self.eventCalendarIns.getEventsInGlobalQueue(from: trupleInfo.startDate, to: trupleInfo.endDate) { (events) in
-            GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
+        GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
+            self.eventCalendarIns.getEventsInGlobalQueue(from: trupleInfo.startDate, to: trupleInfo.endDate) { (events) in
                 for eachItem in events {
                 let dingTalkEvent = DingTalkCEvent(with: eachItem)
                 if self.uistate == .single {
@@ -164,11 +164,11 @@ extension DingTalkCalanderVM {
                     }
                 }
                 }
-            }, endMainDispatchFunc: {
-                action()
-            })
-        }  
-    }
+            }
+        }, endMainDispatchFunc: {
+            action()
+        })
+        }
 }
 
 // MARK: - swipe left right & up down BIG VW
