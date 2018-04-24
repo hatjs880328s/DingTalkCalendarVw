@@ -55,6 +55,17 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         tabVw.delegate = self
         tabVw.dataSource = self
         tabVw.separatorStyle = .none
+        tabVw.isScrollEnabled = true
+        self.addGesture(fatherVw: tabVw)
+    }
+    
+    func addGesture(fatherVw: UIView) {
+        let gestureTop = UISwipeGestureRecognizer(target: self, action: #selector(innerSwipeUp))
+        gestureTop.direction = .up
+        fatherVw.addGestureRecognizer(gestureTop)
+        let gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(innerSwipeDown))
+        gestureDown.direction = .down
+        fatherVw.addGestureRecognizer(gestureDown)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,7 +153,10 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.height.equalTo(height)
         }
     }
-    
+}
+
+// MARK: - inner swipe up & down
+extension WorkBenchBotTbVw {
     /// swipe up
     func swipeUp(withAnimation: Bool = false) {
         self.snp.remakeConstraints { (make) in
@@ -159,6 +173,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         }else{
             (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.alpha = 1
         }
+        couldScrollTab(isCould:true)
     }
     
     /// swipe down
@@ -170,10 +185,24 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.bottom.equalTo(-0)
         }
         if withAnimation {
-        UIView.animate(withDuration: 0.5) {
-            self.layoutIfNeeded()
+            UIView.animate(withDuration: 0.5) {
+                self.layoutIfNeeded()
+            }
         }
-        }
+        couldScrollTab(isCould:false)
+    }
+    
+    /// out side swipe change self.tab could scroll [swipe down tab couldn't scroll ; swipe up tab could scroll]
+    func couldScrollTab(isCould:Bool) {
+        self.tabVw.isScrollEnabled = isCould
+    }
+    
+    @objc func innerSwipeUp() {
+        (self.viewController() as! WorkBenchViewControllerV2).calendarVw.swipeTopAction()
+    }
+    
+    @objc func innerSwipeDown() {
+        (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.swipeDownAction()
     }
 }
 
