@@ -75,5 +75,14 @@ class WorkBenchTopVw: UIView {
             self.todayLb.alpha = 1
         }
         self.titleLb.text = titleTxt
+        // re calculate str width 
+        let dateStrWidth = APPDelStatic.textLength(text: titleTxt, font: UIFont.systemFont(ofSize: 20))
+        titleLb.snp.remakeConstraints { (make) in
+                make.left.equalTo(15)
+                make.bottom.equalTo(-5)
+                make.height.equalTo(25)
+                make.width.equalTo(dateStrWidth)
+        }
+        
     }
 }
