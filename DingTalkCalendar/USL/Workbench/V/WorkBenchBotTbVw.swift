@@ -22,6 +22,8 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     let tbReuseID:String = "workBenchReuseID"
     
+    let footerTxt:String = "————————  今天努力奋斗  ————————"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -82,8 +84,9 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.height.equalTo(14)
         }
         txtLb.textAlignment = .center
-        txtLb.text = "--------  今天努力奋斗  --------"
+        txtLb.text = footerTxt
         txtLb.font = UIFont.systemFont(ofSize: 13)
+        txtLb.textColor = UIColor.gray
         return footerVw
     }
 
@@ -116,7 +119,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             botLine.backgroundColor = APPDelStatic.lightGray
             return cell
         }else{
-            let cell = WorkBenchTBCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
+            var cell:UITableViewCell!
             let con = (self.viewController() as! WorkBenchViewControllerV2)
             var resultDate: (eventModel: DingTalkCEvent?,dateInfo: String?)!
             if con.vm.uistate == .all {
@@ -125,7 +128,10 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
                 resultDate = (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.getCellModel(with: indexPath.row)
             }
             if resultDate.eventModel != nil {
-                cell.setDate(with: resultDate.eventModel!)
+                cell = WorkBenchTBCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
+                (cell as! WorkBenchTBCell).setDate(with: resultDate.eventModel!)
+            }else{
+                cell = WorkBenchNullCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
             }
             
             return cell
@@ -229,6 +235,7 @@ extension WorkBenchBotTbVw {
     }
 }
 
+/// events indexpath > 1
 class WorkBenchTBCell: UITableViewCell {
     
     let dateStart = UILabel()
@@ -314,6 +321,75 @@ class WorkBenchTBCell: UITableViewCell {
         self.dateStart.text = model.startTime
         self.dateEnd.text = model.endTime
         self.imagePic.image = UIImage(named: "survey.png")
+    }
+    
+}
+
+/// no events indexpath = 1
+class WorkBenchNullCell: UITableViewCell {
+    
+    let title = UILabel()
+    
+    let subBtn = UIButton()
+    
+    let imagePic = UIImageView()
+    
+    let titleTxt = "提升团队效率和执行力"
+    
+    let btnTxt = "创建日程"
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+        //ceateVW
+        self.addSubview(title)
+        self.addSubview(subBtn)
+        self.addSubview(imagePic)
+        //title
+        title.snp.makeConstraints { (make) in
+            make.right.equalTo(-18)
+            make.width.equalTo(500)
+            make.height.equalTo(14)
+            make.top.equalTo(5)
+        }
+        title.text = titleTxt
+        title.font = UIFont.systemFont(ofSize: 14)
+        title.textAlignment = .right
+        //subtitle
+        subBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(-18)
+            make.width.equalTo(70)
+            make.top.equalTo(title.snp.bottom).offset(7)
+            make.bottom.equalTo(-7)
+        }
+        subBtn.setTitle(btnTxt, for: UIControlState.normal)
+        subBtn.setTitleColor(APPDelStatic.dingtalkBlue, for: UIControlState.normal)
+        subBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        subBtn.layer.cornerRadius = 4
+        subBtn.layer.borderColor = UIColor.gray.cgColor
+        subBtn.layer.borderWidth = 0.5
+        //image
+        imagePic.snp.makeConstraints { (make) in
+            make.left.equalTo(40)
+            make.width.equalTo(50)
+            make.bottom.equalTo(-5)
+            make.top.equalTo(5)
+        }
+        imagePic.image = UIImage(named: "richengNew.png")
+        //bot line
+        let botLine = UIView()
+        self.addSubview(botLine)
+        botLine.snp.makeConstraints { (make) in
+            make.left.equalTo(imagePic.snp.left)
+            make.right.equalTo(0)
+            make.bottom.equalTo(-0.5)
+            make.height.equalTo(0.5)
+        }
+        botLine.backgroundColor = APPDelStatic.lightGray
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
