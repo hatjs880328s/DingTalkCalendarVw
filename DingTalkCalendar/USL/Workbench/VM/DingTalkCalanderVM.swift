@@ -410,3 +410,22 @@ extension DingTalkCalanderVM {
     
     
 }
+
+// MARK: - bottom -tb vw
+extension DingTalkCalanderVM {
+    
+    func getTxtFollowDate()->String {
+        let dateHours = Date().hours
+        if dateHours > 22 && dateHours <= 5 {
+            return "———————— 夜深了，注意休息啊 ————————"
+        }
+        if dateHours > 5 && dateHours <= 12 {
+            return "———————— 上午好，努力奋斗吧 ————————"
+        }
+        if dateHours > 12 && dateHours < 18 {
+            return "———————— 下午了，抖擞精神哈 ————————"
+        }else{
+            return "———————— 晚上好，休息休息吧 ————————"
+        }
+    }
+}

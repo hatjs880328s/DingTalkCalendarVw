@@ -22,8 +22,6 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     let tbReuseID:String = "workBenchReuseID"
     
-    let footerTxt:String = "————————  今天努力奋斗  ————————"
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -84,7 +82,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.height.equalTo(14)
         }
         txtLb.textAlignment = .center
-        txtLb.text = footerTxt
+        txtLb.text = (self.viewController() as! WorkBenchViewControllerV2).vm.getTxtFollowDate()
         txtLb.font = UIFont.systemFont(ofSize: 13)
         txtLb.textColor = UIColor.gray
         return footerVw
