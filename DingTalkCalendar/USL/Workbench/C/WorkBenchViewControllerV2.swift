@@ -27,7 +27,7 @@ class WorkBenchViewControllerV2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = APPDelStatic.lightGray
         self.navigationController?.isNavigationBarHidden = true
         createTopView()
         createBannerVw()

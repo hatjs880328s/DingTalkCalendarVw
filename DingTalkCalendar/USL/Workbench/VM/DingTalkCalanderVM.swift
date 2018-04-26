@@ -164,10 +164,11 @@ extension DingTalkCalanderVM {
                     }
                 }
                 }
+                DispatchQueue.main.async {
+                    action()
+                }
             }
-        }, endMainDispatchFunc: {
-            action()
-        })
+        }, endMainDispatchFunc: {})
         }
 }
 

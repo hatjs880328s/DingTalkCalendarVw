@@ -31,6 +31,7 @@ class BigDingTalkSingleLineChildVw: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.white
     }
     
     required init?(coder aDecoder: NSCoder) {

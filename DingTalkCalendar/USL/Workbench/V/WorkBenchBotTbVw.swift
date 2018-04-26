@@ -52,6 +52,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             make.bottom.equalTo(0)
             make.right.equalTo(0)
         }
+        tabVw.backgroundColor = APPDelStatic.lightGray
         tabVw.delegate = self
         tabVw.dataSource = self
         tabVw.separatorStyle = .none
@@ -66,6 +67,28 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         let gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(innerSwipeDown))
         gestureDown.direction = .down
         fatherVw.addGestureRecognizer(gestureDown)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerVw: UIView = UIView()
+        footerVw.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
+        footerVw.backgroundColor = APPDelStatic.lightGray
+        let txtLb = UILabel()
+        footerVw.addSubview(txtLb)
+        txtLb.snp.makeConstraints { (make) in
+            make.centerX.equalTo(footerVw.snp.centerX)
+            make.width.equalTo(500)
+            make.centerY.equalTo(footerVw.snp.centerY)
+            make.height.equalTo(14)
+        }
+        txtLb.textAlignment = .center
+        txtLb.text = "--------  今天努力奋斗  --------"
+        txtLb.font = UIFont.systemFont(ofSize: 13)
+        return footerVw
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -166,8 +189,8 @@ extension WorkBenchBotTbVw {
             make.bottom.equalTo(0)
         }
         if withAnimation {
-            (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.alpha = 1
             UIView.animate(withDuration: 0.5) {
+                (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.alpha = 1
                 self.layoutIfNeeded()
             }
         }else{
