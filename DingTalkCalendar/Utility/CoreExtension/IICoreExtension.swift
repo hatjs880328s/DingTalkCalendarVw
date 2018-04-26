@@ -22,7 +22,7 @@ class APPDelStatic {
         return leftNameSize.width + 5
     }
     
-    static let lightGray = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+    static let lightGray = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     
     /// rgb(0,150,246) 
     static let dingtalkBlue = UIColor(red: 0/255, green: 150/255, blue: 246/255, alpha: 1)
