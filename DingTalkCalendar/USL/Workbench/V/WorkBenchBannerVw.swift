@@ -35,8 +35,8 @@ class WorkBenchBannerVw: UIView {
             make.height.equalTo(45)
         }
         let leftAndRightPadding: CGFloat = 18
-        let eachWidth = (UIScreen.main.bounds.width - leftAndRightPadding * 2)/3
-        for eachItem in 0 ... 2 {
+        let eachWidth = (UIScreen.main.bounds.width - leftAndRightPadding * 2)/CGFloat(txtArr.count)
+        for eachItem in 0 ... txtArr.count - 1 {
             let subVw = UILabel()
             self.addSubview(subVw)
             subVw.snp.makeConstraints { (make) in
