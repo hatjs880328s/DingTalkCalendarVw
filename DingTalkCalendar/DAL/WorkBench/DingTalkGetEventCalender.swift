@@ -37,10 +37,9 @@ class DingTalkGetEventCalender: NSObject {
     }
     
     /// set event to calendar
-    func addEvents(with event: DingTalkCEvent,successAction: @escaping ()->Void,failAction:@escaping ()->Void) {
+    func addEvents(with ekEvent: EKEvent,successAction: @escaping ()->Void,failAction:@escaping ()->Void) {
         self.eventDB.requestAccess(to: EKEntityType.event) { [weak self](isOk, errors) in
             if errors == nil && isOk && self != nil {
-                let ekEvent = EKEvent.changeEventFromDingTalkEvent(with: event, store: self!.eventDB)
                 do {
                     ekEvent.calendar = self!.eventDB.defaultCalendarForNewEvents
                     try self!.eventDB.save(ekEvent, span: EKSpan.thisEvent)

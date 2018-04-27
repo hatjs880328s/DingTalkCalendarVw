@@ -20,6 +20,6 @@ protocol IWorkBenchEventCalendar {
     func getEventsInGlobalQueue(from : Date,to: Date,mainThreadAction: @escaping (_ eventsArr: [EKEvent])->Void)
     
     /// set event
-    func setEvent(with event: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void)
+    func setEvent(with: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void)
     
 }

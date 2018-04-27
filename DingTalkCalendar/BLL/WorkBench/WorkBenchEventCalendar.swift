@@ -34,7 +34,13 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
     }
     
     /// set event
-    func setEvent(with event: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void) {
+    func setEvent(with: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void) {
+        let event: EKEvent = EKEvent(eventStore: dal.eventDB)
+        event.title = with.title
+        event.startDate = with.realStartTime.toDate("yyyy-MM-dd HH:mm")
+        event.endDate = with.realEndTime.toDate("yyyy-MM-dd HH:mm")
+        event.addAlarm(EKAlarm(relativeOffset: (-with.relativeOffset)))
+        event.isAllDay = with.isAllDay
         dal.addEvents(with: event, successAction: successAction, failAction: failAction)
     }
 }
