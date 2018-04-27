@@ -22,6 +22,8 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     let tbReuseID:String = "workBenchReuseID"
     
+    var numberOfRowInSection:Int = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -69,29 +71,6 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         fatherVw.addGestureRecognizer(gestureDown)
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerVw: UIView = UIView()
-        footerVw.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
-        footerVw.backgroundColor = APPDelStatic.lightGray
-        let txtLb = UILabel()
-        footerVw.addSubview(txtLb)
-        txtLb.snp.makeConstraints { (make) in
-            make.centerX.equalTo(footerVw.snp.centerX)
-            make.width.equalTo(500)
-            make.centerY.equalTo(footerVw.snp.centerY)
-            make.height.equalTo(14)
-        }
-        txtLb.textAlignment = .center
-        txtLb.text = (self.viewController() as! WorkBenchViewControllerV2).vm.getTxtFollowDate()
-        txtLb.font = UIFont.systemFont(ofSize: 13)
-        txtLb.textColor = UIColor.gray
-        return footerVw
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: tbReuseID)
@@ -115,6 +94,10 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             }
             cell.selectionStyle = .none
             botLine.backgroundColor = APPDelStatic.lightGray
+            return cell
+        }else if indexPath.row == self.numberOfRowInSection - 1 {
+            let cell = LastCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
+            cell.setDate(txt: self.getTxtWithDate())
             return cell
         }else{
             var cell:UITableViewCell!
@@ -152,7 +135,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
         }else{
             count = con.smallCalendarVw.getCellModelsCount()
         }
-        //changeHeight(cellCount: count)
+        self.numberOfRowInSection = count
         
         return count
     }
@@ -230,6 +213,10 @@ extension WorkBenchBotTbVw {
     
     @objc func innerSwipeDown() {
         (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.swipeDownAction()
+    }
+    
+    func getTxtWithDate()->String {
+        return (self.viewController() as! WorkBenchViewControllerV2).vm.getTxtFollowDate()
     }
 }
 
@@ -319,6 +306,41 @@ class WorkBenchTBCell: UITableViewCell {
         self.dateStart.text = model.startTime
         self.dateEnd.text = model.endTime
         self.imagePic.image = UIImage(named: "survey.png")
+    }
+    
+}
+
+class LastCell: UITableViewCell {
+    
+    let txtLb = UILabel()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+        let footerVw: UIView = UIView()
+        self.addSubview(footerVw)
+        footerVw.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
+        self.backgroundColor = APPDelStatic.lightGray
+        
+        footerVw.addSubview(txtLb)
+        txtLb.snp.makeConstraints { (make) in
+            make.centerX.equalTo(footerVw.snp.centerX)
+            make.width.equalTo(500)
+            make.centerY.equalTo(footerVw.snp.centerY)
+            make.height.equalTo(14)
+        }
+        txtLb.textAlignment = .center
+        txtLb.text = ""
+        txtLb.font = UIFont.systemFont(ofSize: 13)
+        txtLb.textColor = UIColor.gray
+    }
+    
+    func setDate(txt: String) {
+        txtLb.text = txt
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

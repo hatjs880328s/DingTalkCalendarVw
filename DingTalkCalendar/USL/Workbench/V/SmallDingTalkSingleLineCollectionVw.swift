@@ -186,9 +186,9 @@ extension SmallDingTalkSingleLineCollectionVw {
         let count = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count
         //if count == 0 { return 0 }
         if count == 0 {
-            return 2
+            return 3
         }
-        return  count + 1
+        return  count + 2
     }
     
     /// tb-[select one calerdar item - use indexpath-row return dingtalkEvent]
