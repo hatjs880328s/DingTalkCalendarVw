@@ -62,7 +62,7 @@ class DingTalkCEvent: NSObject {
     
     private func setDate(with kevent: EKEvent) {
         self.id = kevent.eventIdentifier
-        if kevent.calendar.type == .local {
+        if !kevent.isAllDay {
             self.startTime = kevent.startDate.dateToString(formatStrHM)
             self.endTime = kevent.endDate.dateToString(formatStrHM)
         }else{
