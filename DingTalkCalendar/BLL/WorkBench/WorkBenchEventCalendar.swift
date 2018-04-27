@@ -32,4 +32,9 @@ class WorkBenchEventCalendar: NSObject,IWorkBenchEventCalendar {
             mainThreadAction(eventsArrResult)
         })
     }
+    
+    /// set event
+    func setEvent(with event: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void) {
+        dal.addEvents(with: event, successAction: successAction, failAction: failAction)
+    }
 }

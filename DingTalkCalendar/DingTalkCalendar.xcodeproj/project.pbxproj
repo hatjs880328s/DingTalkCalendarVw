@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
+		563088372092AA1A00B85874 /* IICalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563088362092AA1A00B85874 /* IICalendarExtension.swift */; };
 		566B29E720896E0E0065A1C3 /* WorkbenchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */; };
 		566B51072091ECA20062C6AF /* richeng.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B51062091ECA20062C6AF /* richeng.png */; };
 		566B510B2091EDBB0062C6AF /* richengNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B510A2091EDBB0062C6AF /* richengNew.png */; };
@@ -95,6 +96,7 @@
 		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
+		563088362092AA1A00B85874 /* IICalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IICalendarExtension.swift; sourceTree = "<group>"; };
 		566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchVM.swift; sourceTree = "<group>"; };
 		566B51062091ECA20062C6AF /* richeng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = richeng.png; sourceTree = "<group>"; };
 		566B510A2091EDBB0062C6AF /* richengNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = richengNew.png; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				56D92BCE2084C0B100379402 /* IICoreExtension.swift */,
+				563088362092AA1A00B85874 /* IICalendarExtension.swift */,
 				56D92BCF2084C0B100379402 /* IIViewExtension.swift */,
 				56D92BD02084C0B100379402 /* IIDateExtension.swift */,
 				56D92BD12084C0B100379402 /* IIStringExtension.swift */,
@@ -825,6 +828,7 @@
 				56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */,
 				56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */,
 				56D92C2D2084C0B100379402 /* FMDatabase.m in Sources */,
+				563088372092AA1A00B85874 /* IICalendarExtension.swift in Sources */,
 				56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */,
 				56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */,
 				56D92C212084C0B100379402 /* IIStringExtension.swift in Sources */,

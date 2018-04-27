@@ -94,10 +94,12 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
             }
             cell.selectionStyle = .none
             botLine.backgroundColor = APPDelStatic.lightGray
+            
             return cell
         }else if indexPath.row == self.numberOfRowInSection - 1 {
             let cell = LastCell(style: UITableViewCellStyle.default, reuseIdentifier: tbReuseID)
             cell.setDate(txt: self.getTxtWithDate())
+            
             return cell
         }else{
             var cell:UITableViewCell!
@@ -388,6 +390,7 @@ class WorkBenchNullCell: UITableViewCell {
         subBtn.layer.cornerRadius = 4
         subBtn.layer.borderColor = UIColor.gray.cgColor
         subBtn.layer.borderWidth = 0.5
+        subBtn.addTarget(self, action: #selector(targetAction), for: UIControlEvents.touchUpInside)
         //image
         imagePic.snp.makeConstraints { (make) in
             make.left.equalTo(40)
@@ -406,6 +409,10 @@ class WorkBenchNullCell: UITableViewCell {
             make.height.equalTo(0.5)
         }
         botLine.backgroundColor = APPDelStatic.lightGray
+    }
+    
+    @objc func targetAction() {
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -26,16 +26,16 @@ class WorkBenchViewControllerV2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = APPDelStatic.lightGray
         self.navigationController?.isNavigationBarHidden = true
+        // create ui
         createTopView()
         createBannerVw()
         createWeekDay()
         createCalendarVw()
         createSmallCalendarVw()
         createBotTBVw()
-        
+        // progress data & change ui
         getMiddleDate()
         hiddenMiddleCalendarVw()
         topTxtChange()
@@ -84,7 +84,6 @@ extension WorkBenchViewControllerV2 {
         self.botVw.swipeUp(withAnimation:animated)
         getSmallCalendarDate()
         self.vm.uistate = .single
-        // events gets [special invoking..]
         self.getTodayEvents()
         self.smallCalendarVw.whenSwipeTapFistItem()
     }
@@ -94,7 +93,6 @@ extension WorkBenchViewControllerV2 {
         self.calendarVw.createOther2ChildVw()
         self.botVw.swipeDown(withAnimation:animated)
         self.vm.uistate = .all
-        // events gets [special invoking..]
         self.getTodayEvents()
         self.calendarVw.whenSwipeTapFistItem()
     }
@@ -140,6 +138,7 @@ extension WorkBenchViewControllerV2 {
 // MARK: - eventProgress
 extension WorkBenchViewControllerV2 {
     
+    /// get events [global queue & async]
     func getTodayEvents() {
         self.vm.getEventsFromVmDate {[weak self]() in
             if self?.vm.uistate == .all {

@@ -19,4 +19,7 @@ protocol IWorkBenchEventCalendar {
     ///   - mainThreadAction: eventAction[in main thread]
     func getEventsInGlobalQueue(from : Date,to: Date,mainThreadAction: @escaping (_ eventsArr: [EKEvent])->Void)
     
+    /// set event
+    func setEvent(with event: DingTalkCEvent,successAction:@escaping ()->Void , failAction:@escaping ()->Void)
+    
 }

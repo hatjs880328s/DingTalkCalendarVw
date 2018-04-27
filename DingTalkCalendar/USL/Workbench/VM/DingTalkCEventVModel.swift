@@ -27,15 +27,37 @@ class DingTalkCEvent: NSObject {
     
     var id: String = ""
     
+    /// create dingtalkEvent manual
+    var isAllDay:Bool = false
+    
+    /// create dingtalkEvent manual [sec]
+    var relativeOffset:TimeInterval = 0
+    
     let formatStrHM = "HH:mm"
     
     let normalFormatStr = "yyyy-MM-dd HH:mm:ss"
+    
+    let formatFullStr = "yyyy-MM-dd HH:mm"
     
     let todayStr = "全天"
     
     init(with kevent: EKEvent){
         super.init()
         self.setDate(with: kevent)
+    }
+    
+    /// change self to EKEvent
+    override init() {
+        super.init()
+    }
+    
+    /// create dingtalk model
+    public func createDingTalkEventManual(startTime: Date,endTime: Date,title: String,isAllDay:Bool,relativeOffset:TimeInterval) {
+        self.realStartTime = startTime.dateToString(formatFullStr)
+        self.realEndTime = endTime.dateToString(formatFullStr)
+        self.isAllDay = isAllDay
+        self.title = title
+        self.relativeOffset = relativeOffset
     }
     
     private func setDate(with kevent: EKEvent) {

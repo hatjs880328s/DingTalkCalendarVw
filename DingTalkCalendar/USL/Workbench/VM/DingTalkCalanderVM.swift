@@ -429,3 +429,16 @@ extension DingTalkCalanderVM {
         }
     }
 }
+
+// MARK: - set calendarEvent with dingtalkEvent
+extension DingTalkCalanderVM {
+    
+    /// set dingEvent to calendar
+    func setDingtalkEventToCalendar(with event: DingTalkCEvent,successAction:@escaping ()->Void,failAction:@escaping ()->Void) {
+        eventCalendarIns.setEvent(with: event, successAction: {
+            successAction()
+        }) {
+            successAction()
+        }
+    }
+}

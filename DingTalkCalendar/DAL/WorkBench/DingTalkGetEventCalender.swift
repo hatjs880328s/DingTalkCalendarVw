@@ -23,6 +23,7 @@ class DingTalkGetEventCalender: NSObject {
          self.eventDB = EKEventStore()
     }
     
+    /// get events from datea ~ dateb
     func getEventFromEventDB(eventType: EKEntityType = EKEntityType.event,startTime: Date,endTime: Date,resultAction: @escaping (_ event: [EKEvent]?)->Void) {
         if self.eventDB == nil { return }
         self.eventDB.requestAccess(to: eventType) { (flag, errorInfo) in
@@ -32,6 +33,22 @@ class DingTalkGetEventCalender: NSObject {
             let predicate = self.eventDB.predicateForEvents(withStart: startTime, end: endTime, calendars: calender)
             let eVArr = self.eventDB.events(matching: predicate)
             resultAction(eVArr)
+        }
+    }
+    
+    /// set event to calendar
+    func addEvents(with event: DingTalkCEvent,successAction: @escaping ()->Void,failAction:@escaping ()->Void) {
+        self.eventDB.requestAccess(to: EKEntityType.event) { [weak self](isOk, errors) in
+            if errors == nil && isOk && self != nil {
+                let ekEvent = EKEvent.changeEventFromDingTalkEvent(with: event, store: self!.eventDB)
+                do {
+                    ekEvent.calendar = self!.eventDB.defaultCalendarForNewEvents
+                    try self!.eventDB.save(ekEvent, span: EKSpan.thisEvent)
+                    successAction()
+                }catch{
+                    failAction()
+                }
+            }
         }
     }
 }
