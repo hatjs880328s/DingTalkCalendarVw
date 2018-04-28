@@ -171,6 +171,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
 extension WorkBenchBotTbVw {
     /// swipe up
     func swipeUp(withAnimation: Bool = false) {
+        self.tabVw.contentOffset = CGPoint(x: 0, y: 0)
         self.snp.remakeConstraints { (make) in
             make.top.equalTo(self.topView.snp.bottom).offset(normalDayLineHeight)
             make.left.equalTo(0)
@@ -190,6 +191,7 @@ extension WorkBenchBotTbVw {
     
     /// swipe down
     func swipeDown(withAnimation: Bool = false) {
+        self.tabVw.contentOffset = CGPoint(x: 0, y: 0)
         self.snp.remakeConstraints { (make) in
             make.top.equalTo(topView.snp.bottom).offset(normalDayLineHeight * 6)
             make.left.equalTo(0)
