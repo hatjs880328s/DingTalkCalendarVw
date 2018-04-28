@@ -41,38 +41,38 @@ class DingTalkCalenderRectLabelView: UIView {
     func createView() {
         self.addSubview(gregorionDayLb)
         gregorionDayLb.snp.makeConstraints { (make) in
-            make.top.equalTo(2)
+            make.top.equalTo(2 * APPDelStatic.sizeScale)
             make.centerX.equalTo(self.snp.centerX)
-            make.height.equalTo(15)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
         }
         gregorionDayLb.textAlignment = .center
-        gregorionDayLb.font = UIFont.systemFont(ofSize: 15)
+        gregorionDayLb.font = UIFont.systemFont(ofSize: 14 * APPDelStatic.sizeScale)
         self.addSubview(lunarDayLb)
         lunarDayLb.snp.makeConstraints { (make) in
-            make.top.equalTo(gregorionDayLb.snp.bottom).offset(2)
+            make.top.equalTo(gregorionDayLb.snp.bottom).offset(2 * APPDelStatic.sizeScale)
             make.centerX.equalTo(self.snp.centerX)
-            make.height.equalTo(15)
+            make.height.equalTo(12 * APPDelStatic.sizeScale)
         }
         lunarDayLb.textAlignment = .center
-        lunarDayLb.font = UIFont.systemFont(ofSize: 11)
+        lunarDayLb.font = UIFont.systemFont(ofSize: 11 * APPDelStatic.sizeScale)
         self.addSubview(circlePointVw)
         circlePointVw.alpha = 0
         circlePointVw.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(lunarDayLb.snp.bottom).offset(2)
-            make.width.equalTo(5)
-            make.height.equalTo(5)
+            make.top.equalTo(lunarDayLb.snp.bottom).offset(2 * APPDelStatic.sizeScale)
+            make.width.equalTo(5 * APPDelStatic.sizeScale)
+            make.height.equalTo(5 * APPDelStatic.sizeScale)
         }
-        circlePointVw.layer.cornerRadius = 2.5
+        circlePointVw.layer.cornerRadius = 2.5 * APPDelStatic.sizeScale
         circlePointVw.backgroundColor = APPDelStatic.dingtalkBlue
         self.addSubview(restLb)
         restLb.snp.makeConstraints { (make) in
             make.right.equalTo(0)
-            make.width.equalTo(12)
-            make.height.equalTo(12)
-            make.top.equalTo(2)
+            make.width.equalTo(12 * APPDelStatic.sizeScale)
+            make.height.equalTo(12 * APPDelStatic.sizeScale)
+            make.top.equalTo(2 * APPDelStatic.sizeScale)
         }
-        restLb.font = UIFont.systemFont(ofSize: 9)
+        restLb.font = UIFont.systemFont(ofSize: 9 * APPDelStatic.sizeScale)
         restLb.textAlignment = .right
         restLb.textColor = UIColor.orange
     }

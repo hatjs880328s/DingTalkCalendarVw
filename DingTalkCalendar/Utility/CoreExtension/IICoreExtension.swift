@@ -26,4 +26,7 @@ class APPDelStatic {
     
     /// rgb(0,150,246) 
     static let dingtalkBlue = UIColor(red: 0/255, green: 150/255, blue: 246/255, alpha: 1)
+    
+    /// 缩放
+    static let sizeScale = UIScreen.main.bounds.width / 375.0
 }

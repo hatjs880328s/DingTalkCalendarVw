@@ -13,7 +13,7 @@ class BigDingTalkSingleLineCollectionVw: UIView {
     
     let width = UIScreen.main.bounds.width
     
-    let normalDayLineHeight: CGFloat = 49
+    let normalDayLineHeight: CGFloat = 45 * APPDelStatic.sizeScale
     
     var middleChildVw =  BigDingTalkSingleLineChildVw(frame: CGRect.zero)
     

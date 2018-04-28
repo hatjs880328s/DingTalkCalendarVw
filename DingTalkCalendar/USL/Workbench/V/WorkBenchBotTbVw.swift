@@ -18,7 +18,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var topLength: CGFloat = 10
     
-    let normalDayLineHeight: CGFloat = 49
+    let normalDayLineHeight: CGFloat = 45 * APPDelStatic.sizeScale
     
     let tbReuseID:String = "workBenchReuseID"
     
