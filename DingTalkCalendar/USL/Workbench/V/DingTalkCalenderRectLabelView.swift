@@ -28,7 +28,7 @@ class DingTalkCalenderRectLabelView: UIView {
     init(fatherView: UIView) {
         super.init(frame: CGRect.zero)
         fatherView.addSubview(self)
-        self.backgroundColor = UIColor.yellow
+        self.backgroundColor = UIColor.white
         self.isUserInteractionEnabled = true
         createView()
     }
