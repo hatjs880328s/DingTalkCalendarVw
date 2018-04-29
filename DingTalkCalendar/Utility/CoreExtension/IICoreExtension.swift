@@ -29,4 +29,11 @@ class APPDelStatic {
     
     /// 缩放
     static let sizeScale = UIScreen.main.bounds.width / 375.0
+    
+    /// 顶部导状态栏高度
+    static var noNaviTopDistance: CGFloat {
+        var dis: CGFloat = 0
+        dis = UIApplication.shared.statusBarFrame.size.height
+        return dis
+    }
 }

@@ -32,9 +32,9 @@ class WorkBenchBannerVw: UIView {
             make.top.equalTo(topVw.snp.bottom)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(45)
+            make.height.equalTo(40 * APPDelStatic.sizeScale)
         }
-        let leftAndRightPadding: CGFloat = 18
+        let leftAndRightPadding: CGFloat = 18 * APPDelStatic.sizeScale
         let eachWidth = (UIScreen.main.bounds.width - leftAndRightPadding * 2)/CGFloat(txtArr.count)
         for eachItem in 0 ... txtArr.count - 1 {
             let subVw = UILabel()
@@ -43,11 +43,11 @@ class WorkBenchBannerVw: UIView {
                 make.left.equalTo(CGFloat(eachItem) * eachWidth + leftAndRightPadding)
                 make.bottom.equalTo(-5)
                 make.width.equalTo(eachWidth)
-                make.height.equalTo(25)
+                make.height.equalTo(25 * APPDelStatic.sizeScale)
             }
             subVw.text = txtArr[eachItem]
             subVw.textAlignment = .center
-            subVw.font = UIFont.systemFont(ofSize: 13)
+            subVw.font = UIFont.systemFont(ofSize: 13 * APPDelStatic.sizeScale)
             subVw.tapActionsGesture {[weak self]() in
                 //tap action
                 self?.eachItemTap(vi: subVw)
@@ -62,8 +62,8 @@ class WorkBenchBannerVw: UIView {
         scrollLine.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.txtVwArr[0].snp.centerX)
             make.bottom.equalTo(-0.5)
-            make.width.equalTo(50)
-            make.height.equalTo(2)
+            make.width.equalTo(50 * APPDelStatic.sizeScale)
+            make.height.equalTo(2 * APPDelStatic.sizeScale)
         }
         scrollLine.backgroundColor = APPDelStatic.dingtalkBlue
         //bot line
@@ -73,7 +73,7 @@ class WorkBenchBannerVw: UIView {
             make.left.equalTo(0)
             make.bottom.equalTo(-0.5)
             make.right.equalTo(0)
-            make.height.equalTo(0.5)
+            make.height.equalTo(0.5 * APPDelStatic.sizeScale)
         }
         botLine.backgroundColor = APPDelStatic.lightGray
     }
@@ -85,8 +85,8 @@ class WorkBenchBannerVw: UIView {
         self.scrollLine.snp.remakeConstraints { (make) in
             make.centerX.equalTo(vi.snp.centerX)
             make.bottom.equalTo(-0.5)
-            make.width.equalTo(50)
-            make.height.equalTo(2)
+            make.width.equalTo(50 * APPDelStatic.sizeScale)
+            make.height.equalTo(2 * APPDelStatic.sizeScale)
         }
         UIView.animate(withDuration: 0.3) {
             vi.textColor = APPDelStatic.dingtalkBlue

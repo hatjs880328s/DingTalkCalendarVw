@@ -16,7 +16,7 @@ class DingTalkCalenderWeekdayView: UIView {
     
     let eachItemWidth: CGFloat =  (UIScreen.main.bounds.width) / 7.0
     
-    let heightNormal: CGFloat = 30
+    let heightNormal: CGFloat = 30 * APPDelStatic.sizeScale
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +39,7 @@ class DingTalkCalenderWeekdayView: UIView {
     }
     
     func createView() {
-        let font = UIFont.systemFont(ofSize: 10)
+        let font = UIFont.systemFont(ofSize: 10 * APPDelStatic.sizeScale)
         let color = UIColor.gray
         let center = NSTextAlignment.center
         for eachItem in 0 ... 6 {
@@ -51,8 +51,8 @@ class DingTalkCalenderWeekdayView: UIView {
             weekVw.textColor = color
             weekVw.snp.makeConstraints { (make) in
                 make.left.equalTo(CGFloat(eachItem) * eachItemWidth)
-                make.top.equalTo(5)
-                make.height.equalTo(15)
+                make.top.equalTo(5 * APPDelStatic.sizeScale)
+                make.height.equalTo(15 * APPDelStatic.sizeScale)
                 make.width.equalTo(eachItemWidth)
             }
         }

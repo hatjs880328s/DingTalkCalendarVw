@@ -34,18 +34,18 @@ class WorkBenchTopVw: UIView {
             make.left.equalTo(0)
             make.top.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(80)
+            make.height.equalTo((40 + APPDelStatic.noNaviTopDistance) * APPDelStatic.sizeScale)
         }
         //titlelab
         self.addSubview(titleLb)
         titleLb.snp.makeConstraints { (make) in
-            make.left.equalTo(15)
-            make.bottom.equalTo(-5)
-            make.height.equalTo(25)
-            make.width.equalTo(120)
+            make.left.equalTo(15 * APPDelStatic.sizeScale)
+            make.bottom.equalTo(0)
+            make.height.equalTo(25 * APPDelStatic.sizeScale)
+            make.width.equalTo(120 * APPDelStatic.sizeScale)
         }
         titleLb.textAlignment = .left
-        titleLb.font = UIFont.systemFont(ofSize: 20)
+        titleLb.font = UIFont.systemFont(ofSize: 20 * APPDelStatic.sizeScale)
         var dateTxt = ""
         dateTxt = (self.viewController() as! WorkBenchViewControllerV2).vm.getSerilizationDate(withDate: Date())
         self.todayTxt = dateTxt
@@ -54,17 +54,17 @@ class WorkBenchTopVw: UIView {
         self.addSubview(todayLb)
         todayLb.snp.makeConstraints { (make) in
             make.left.equalTo(titleLb.snp.right).offset(5)
-            make.width.equalTo(18)
+            make.width.equalTo(18 * APPDelStatic.sizeScale)
             make.centerY.equalTo(titleLb.snp.centerY)
-            make.height.equalTo(18)
+            make.height.equalTo(18 * APPDelStatic.sizeScale)
         }
-        todayLb.layer.cornerRadius = 9
+        todayLb.layer.cornerRadius = 9 * APPDelStatic.sizeScale
         todayLb.layer.masksToBounds = true
         todayLb.text = todayStr
         todayLb.textAlignment = .center
         todayLb.textColor = UIColor.white
         todayLb.backgroundColor = APPDelStatic.dingtalkBlue
-        todayLb.font = UIFont.systemFont(ofSize: 10)
+        todayLb.font = UIFont.systemFont(ofSize: 10 * APPDelStatic.sizeScale)
         todayLb.alpha = 0
     }
     
@@ -76,12 +76,12 @@ class WorkBenchTopVw: UIView {
         }
         self.titleLb.text = titleTxt
         // re calculate str width 
-        let dateStrWidth = APPDelStatic.textLength(text: titleTxt, font: UIFont.systemFont(ofSize: 20))
+        let dateStrWidth = APPDelStatic.textLength(text: titleTxt, font: UIFont.systemFont(ofSize: 20)) * APPDelStatic.sizeScale
         titleLb.snp.remakeConstraints { (make) in
-                make.left.equalTo(15)
-                make.bottom.equalTo(-5)
-                make.height.equalTo(25)
-                make.width.equalTo(dateStrWidth)
+            make.left.equalTo(15 * APPDelStatic.sizeScale)
+            make.bottom.equalTo(0)
+            make.height.equalTo(25 * APPDelStatic.sizeScale)
+            make.width.equalTo(dateStrWidth)
         }
         
     }
