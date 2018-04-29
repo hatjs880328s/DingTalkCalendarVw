@@ -45,7 +45,7 @@ class WorkBenchTopVw: UIView {
             make.width.equalTo(120 * APPDelStatic.sizeScale)
         }
         titleLb.textAlignment = .left
-        titleLb.font = UIFont.systemFont(ofSize: 20 * APPDelStatic.sizeScale)
+        titleLb.font = APPDelStatic.uiFont(with: 20)
         var dateTxt = ""
         dateTxt = (self.viewController() as! WorkBenchViewControllerV2).vm.getSerilizationDate(withDate: Date())
         self.todayTxt = dateTxt
@@ -64,7 +64,7 @@ class WorkBenchTopVw: UIView {
         todayLb.textAlignment = .center
         todayLb.textColor = UIColor.white
         todayLb.backgroundColor = APPDelStatic.dingtalkBlue
-        todayLb.font = UIFont.systemFont(ofSize: 10 * APPDelStatic.sizeScale)
+        todayLb.font = APPDelStatic.uiFont(with: 10)
         todayLb.alpha = 0
     }
     
@@ -76,7 +76,7 @@ class WorkBenchTopVw: UIView {
         }
         self.titleLb.text = titleTxt
         // re calculate str width 
-        let dateStrWidth = APPDelStatic.textLength(text: titleTxt, font: UIFont.systemFont(ofSize: 20)) * APPDelStatic.sizeScale
+        let dateStrWidth = APPDelStatic.textLength(text: titleTxt, font: APPDelStatic.uiFont(with: 20))
         titleLb.snp.remakeConstraints { (make) in
             make.left.equalTo(15 * APPDelStatic.sizeScale)
             make.bottom.equalTo(0)

@@ -184,7 +184,6 @@ extension SmallDingTalkSingleLineCollectionVw {
     func getCellModelsCount()->Int {
         let selectedIndex = self.smallMiddleLogicVw.selectedItemIndex
         let count = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count
-        //if count == 0 { return 0 }
         if count == 0 {
             return 3
         }

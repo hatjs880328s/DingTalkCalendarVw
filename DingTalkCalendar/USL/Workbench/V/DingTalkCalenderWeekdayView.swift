@@ -39,7 +39,7 @@ class DingTalkCalenderWeekdayView: UIView {
     }
     
     func createView() {
-        let font = UIFont.systemFont(ofSize: 10 * APPDelStatic.sizeScale)
+        let font = APPDelStatic.uiFont(with: 10)
         let color = UIColor.gray
         let center = NSTextAlignment.center
         for eachItem in 0 ... 6 {

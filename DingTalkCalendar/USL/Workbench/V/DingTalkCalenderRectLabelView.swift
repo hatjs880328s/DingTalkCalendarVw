@@ -46,7 +46,7 @@ class DingTalkCalenderRectLabelView: UIView {
             make.height.equalTo(15 * APPDelStatic.sizeScale)
         }
         gregorionDayLb.textAlignment = .center
-        gregorionDayLb.font = UIFont.systemFont(ofSize: 15 * APPDelStatic.sizeScale)
+        gregorionDayLb.font = APPDelStatic.uiFont(with: 15)
         self.addSubview(lunarDayLb)
         lunarDayLb.snp.makeConstraints { (make) in
             make.top.equalTo(gregorionDayLb.snp.bottom).offset(2 * APPDelStatic.sizeScale)
@@ -54,7 +54,7 @@ class DingTalkCalenderRectLabelView: UIView {
             make.height.equalTo(10 * APPDelStatic.sizeScale)
         }
         lunarDayLb.textAlignment = .center
-        lunarDayLb.font = UIFont.systemFont(ofSize: 9 * APPDelStatic.sizeScale)
+        lunarDayLb.font = APPDelStatic.uiFont(with: 9)
         self.addSubview(circlePointVw)
         circlePointVw.alpha = 0
         circlePointVw.snp.makeConstraints { (make) in
@@ -72,7 +72,7 @@ class DingTalkCalenderRectLabelView: UIView {
             make.height.equalTo(12 * APPDelStatic.sizeScale)
             make.top.equalTo(2 * APPDelStatic.sizeScale)
         }
-        restLb.font = UIFont.systemFont(ofSize: 9 * APPDelStatic.sizeScale)
+        restLb.font = APPDelStatic.uiFont(with: 9)
         restLb.textAlignment = .right
         restLb.textColor = UIColor.orange
     }

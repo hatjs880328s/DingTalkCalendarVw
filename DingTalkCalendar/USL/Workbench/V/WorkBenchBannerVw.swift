@@ -47,7 +47,7 @@ class WorkBenchBannerVw: UIView {
             }
             subVw.text = txtArr[eachItem]
             subVw.textAlignment = .center
-            subVw.font = UIFont.systemFont(ofSize: 13 * APPDelStatic.sizeScale)
+            subVw.font = APPDelStatic.uiFont(with: 13)
             subVw.tapActionsGesture {[weak self]() in
                 //tap action
                 self?.eachItemTap(vi: subVw)

@@ -136,13 +136,15 @@ class DingTalkCalanderVM: NSObject {
 
 // MARK: - global queue progress events
 extension DingTalkCalanderVM {
-    
+    /// get day's events
     func getEventsFromVmDate(action: @escaping ()->Void) {
         var trupleInfo:(startDate: Date,endDate: Date)!
         if self.uistate == .single {
-            trupleInfo = (self.smallMiddleDate.first!.dateInfo,self.smallMiddleDate.last!.dateInfo)
+            // 9 days
+            trupleInfo = (self.smallMiddleDate.first!.dateInfo.beforeDate(1),self.smallMiddleDate.last!.dateInfo.nextDate(1))
         }else{
-            trupleInfo = (self.middleVMDate.trupleVM.dayArr.first!.dateInfo,middleVMDate.trupleVM.dayArr.last!.dateInfo)
+            // 42 + 2 days
+            trupleInfo = (self.middleVMDate.trupleVM.dayArr.first!.dateInfo.beforeDate(1),middleVMDate.trupleVM.dayArr.last!.dateInfo.nextDate(1))
         }
         GCDUtils.asyncProgress(dispatchLevel: 1, asyncDispathchFunc: {
             self.eventCalendarIns.getEventsInGlobalQueue(from: trupleInfo.startDate, to: trupleInfo.endDate) { (events) in

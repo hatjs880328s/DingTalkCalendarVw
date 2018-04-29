@@ -36,4 +36,9 @@ class APPDelStatic {
         dis = UIApplication.shared.statusBarFrame.size.height
         return dis
     }
+    
+    /// 根据字号和宽度比例来处理字体
+    static func uiFont(with size: CGFloat) ->UIFont {
+        return UIFont.systemFont(ofSize:size * sizeScale)
+    }
 }

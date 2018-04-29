@@ -194,7 +194,6 @@ extension BigDingTalkSingleLineCollectionVw {
     func getCellModelsCount()->Int {
         let selectedIndex = self.logicMiddleVw.beselectedItemIndex
         let count = (self.viewController() as! WorkBenchViewControllerV2).vm.middleVMDate.trupleVM.dayArr[selectedIndex].fireDayInfo.count
-        //if count == 0 { return 0 }
         if count == 0 {
             return 3
         }

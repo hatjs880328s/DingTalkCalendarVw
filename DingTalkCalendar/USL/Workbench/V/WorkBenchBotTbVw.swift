@@ -16,7 +16,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var topView: UIView!
     
-    var topLength: CGFloat = 10
+    var topLength: CGFloat = 10 * APPDelStatic.sizeScale
     
     let normalDayLineHeight: CGFloat = 45 * APPDelStatic.sizeScale
     
@@ -83,7 +83,7 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
                 resultDate = (self.viewController() as! WorkBenchViewControllerV2).smallCalendarVw.getCellModel(with: indexPath.row)
             }
             cell.textLabel?.text = resultDate.dateInfo!
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
+            cell.textLabel?.font = APPDelStatic.uiFont(with: 12)
             let botLine = UIView()
             cell.addSubview(botLine)
             botLine.snp.makeConstraints { (make) in
@@ -123,9 +123,9 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 30
+            return 30 * APPDelStatic.sizeScale
         }else{
-            return 60
+            return 60 * APPDelStatic.sizeScale
         }
     }
     
@@ -144,26 +144,6 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    /// didSelected  One item chagne tb frame
-    func changeHeight(cellCount: Int) {
-        let maxHeight = UIScreen.main.bounds.size.height - self.topView.frame.origin.y - self.topView.frame.size.height - self.viewController()!.tabBarController!.tabBar.frame.height - topLength
-        if cellCount == 0 {
-            self.alpha = 0
-            return
-        }
-        self.alpha = 1
-        var height: CGFloat = (CGFloat(cellCount) * 60) - 30.0
-        if height > maxHeight {
-            height = maxHeight
-        }
-        self.snp.remakeConstraints { (make) in
-            make.top.equalTo(self.topView.snp.bottom).offset(10)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.height.equalTo(height)
-        }
     }
 }
 
@@ -247,46 +227,46 @@ class WorkBenchTBCell: UITableViewCell {
         self.addSubview(subTitleLb)
         //start date
         dateStart.snp.makeConstraints { (make) in
-            make.left.equalTo(18)
-            make.width.equalTo(50)
-            make.height.equalTo(14)
-            make.top.equalTo(15)
+            make.left.equalTo(18 * APPDelStatic.sizeScale)
+            make.width.equalTo(50 * APPDelStatic.sizeScale)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
+            make.top.equalTo(15 * APPDelStatic.sizeScale)
         }
-        dateStart.font = UIFont.systemFont(ofSize: 13)
+        dateStart.font = APPDelStatic.uiFont(with: 13)
         //end date
         dateEnd.snp.makeConstraints { (make) in
             make.left.equalTo(dateStart.snp.left)
-            make.width.equalTo(70)
-            make.height.equalTo(14)
-            make.top.equalTo(dateStart.snp.bottom).offset(5)
+            make.width.equalTo(70 * APPDelStatic.sizeScale)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
+            make.top.equalTo(dateStart.snp.bottom).offset(5 * APPDelStatic.sizeScale)
         }
-        dateEnd.font = UIFont.systemFont(ofSize: 11)
+        dateEnd.font = APPDelStatic.uiFont(with: 11)
         dateEnd.textColor = UIColor.gray
         //image
         imagePic.snp.makeConstraints { (make) in
-            make.left.equalTo(dateStart.snp.right).offset(4)
-            make.width.equalTo(10)
+            make.left.equalTo(dateStart.snp.right).offset(4 * APPDelStatic.sizeScale)
+            make.width.equalTo(10 * APPDelStatic.sizeScale)
             make.bottom.equalTo(dateStart.snp.bottom)
-            make.height.equalTo(14)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
         }
         imagePic.image = UIImage(named: "survey.png")
         //title
         titleLb.snp.makeConstraints { (make) in
-            make.left.equalTo(imagePic.snp.right).offset(10)
+            make.left.equalTo(imagePic.snp.right).offset(10 * APPDelStatic.sizeScale)
             make.top.equalTo(dateStart.snp.top)
-            make.height.equalTo(18)
-            make.width.equalTo(200)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
+            make.width.equalTo(200 * APPDelStatic.sizeScale)
         }
-        titleLb.font = UIFont.systemFont(ofSize: 16)
+        titleLb.font = APPDelStatic.uiFont(with: 13)
         //subtitle
         subTitleLb.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-5)
-            make.right.equalTo(-18)
-            make.width.equalTo(200)
-            make.height.equalTo(15)
+            make.bottom.equalTo(-5 * APPDelStatic.sizeScale)
+            make.right.equalTo(-18 * APPDelStatic.sizeScale)
+            make.width.equalTo(200 * APPDelStatic.sizeScale)
+            make.height.equalTo(15 * APPDelStatic.sizeScale)
         }
         subTitleLb.textAlignment = .right
-        subTitleLb.font = UIFont.systemFont(ofSize: 11)
+        subTitleLb.font = APPDelStatic.uiFont(with: 11)
         subTitleLb.textColor = UIColor.gray
         //bot line
         let botLine = UIView()
@@ -323,7 +303,7 @@ class LastCell: UITableViewCell {
         self.selectionStyle = .none
         let footerVw: UIView = UIView()
         self.addSubview(footerVw)
-        footerVw.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
+        footerVw.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40 * APPDelStatic.sizeScale)
         self.backgroundColor = APPDelStatic.lightGray
         
         footerVw.addSubview(txtLb)
@@ -331,11 +311,11 @@ class LastCell: UITableViewCell {
             make.centerX.equalTo(footerVw.snp.centerX)
             make.width.equalTo(500)
             make.centerY.equalTo(footerVw.snp.centerY)
-            make.height.equalTo(14)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
         }
         txtLb.textAlignment = .center
         txtLb.text = ""
-        txtLb.font = UIFont.systemFont(ofSize: 13)
+        txtLb.font = APPDelStatic.uiFont(with: 13)
         txtLb.textColor = UIColor.gray
     }
     
@@ -371,32 +351,32 @@ class WorkBenchNullCell: UITableViewCell {
         self.addSubview(imagePic)
         //title
         title.snp.makeConstraints { (make) in
-            make.right.equalTo(-18)
-            make.width.equalTo(500)
-            make.height.equalTo(14)
-            make.top.equalTo(5)
+            make.right.equalTo(-18 * APPDelStatic.sizeScale)
+            make.width.equalTo(500 * APPDelStatic.sizeScale)
+            make.height.equalTo(14 * APPDelStatic.sizeScale)
+            make.top.equalTo(5 * APPDelStatic.sizeScale)
         }
         title.text = titleTxt
-        title.font = UIFont.systemFont(ofSize: 14)
+        title.font = APPDelStatic.uiFont(with: 14)
         title.textAlignment = .right
         //subtitle
         subBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(-18)
-            make.width.equalTo(70)
-            make.top.equalTo(title.snp.bottom).offset(7)
-            make.bottom.equalTo(-7)
+            make.right.equalTo(-18 * APPDelStatic.sizeScale)
+            make.width.equalTo(70 * APPDelStatic.sizeScale)
+            make.top.equalTo(title.snp.bottom).offset(7 * APPDelStatic.sizeScale)
+            make.bottom.equalTo(-7 * APPDelStatic.sizeScale)
         }
         subBtn.setTitle(btnTxt, for: UIControlState.normal)
         subBtn.setTitleColor(APPDelStatic.dingtalkBlue, for: UIControlState.normal)
-        subBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        subBtn.titleLabel?.font = APPDelStatic.uiFont(with: 12)
         subBtn.layer.cornerRadius = 4
         subBtn.layer.borderColor = UIColor.gray.cgColor
         subBtn.layer.borderWidth = 0.5
         subBtn.addTarget(self, action: #selector(targetAction), for: UIControlEvents.touchUpInside)
         //image
         imagePic.snp.makeConstraints { (make) in
-            make.left.equalTo(40)
-            make.width.equalTo(50)
+            make.left.equalTo(40 * APPDelStatic.sizeScale)
+            make.width.equalTo(50 * APPDelStatic.sizeScale)
             make.bottom.equalTo(-5)
             make.top.equalTo(5)
         }
