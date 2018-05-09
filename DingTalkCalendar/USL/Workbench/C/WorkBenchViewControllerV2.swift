@@ -115,6 +115,29 @@ extension WorkBenchViewControllerV2 {
             self?.topVw.setData(ifCalendar: isCurrentMonth, titleTxt: text)
         }
     }
+    
+    /// banner index change
+    func bannerChange() {
+        func changeUI(with index:Int) {
+            if index == 1 {
+                if self.taskContainerVw == nil {
+                    self.taskContainerVwInit()
+                }else{
+                    self.taskContainerVw?.showSelf()
+                }
+            }
+            if index == 0 {
+                self.taskContainerVw?.hideSelf()
+            }
+            if index == 2 {
+                self.taskContainerVw?.hideSelf()
+            }
+        }
+        
+        self.bannerVw.tapAction = { index in
+            changeUI(with: index)
+        }
+    }
 }
 
 // MARK: - calendar progress date
@@ -176,28 +199,5 @@ extension WorkBenchViewControllerV2 {
     func taskContainerVwInit() {
         self.taskContainerVw = TaskContainerVw(frame: CGRect.zero, fatherVw: self.view, topView: self.bannerVw)
         self.taskVM.getVMWithPage(page: 0)
-    }
-    
-    /// banner index change
-    func bannerChange() {
-        func changeUI(with index:Int) {
-            if index == 1 {
-                if self.taskContainerVw == nil {
-                    self.taskContainerVwInit()
-                }else{
-                    self.taskContainerVw?.showSelf()
-                }
-            }
-            if index == 0 {
-                self.taskContainerVw?.hideSelf()
-            }
-            if index == 2 {
-                self.taskContainerVw?.hideSelf()
-            }
-        }
-        
-        self.bannerVw.tapAction = { index in
-             changeUI(with: index)
-        }
     }
 }

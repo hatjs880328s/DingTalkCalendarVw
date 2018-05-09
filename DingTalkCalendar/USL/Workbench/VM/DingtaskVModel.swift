@@ -11,8 +11,6 @@ import Foundation
 
 class DingtaskVModel: NSObject {
     var formatStr = "MM月dd日 HH:mm"
-    
-    
     var startTime: String = ""
     var endTime: String = ""
     var title: String = ""
