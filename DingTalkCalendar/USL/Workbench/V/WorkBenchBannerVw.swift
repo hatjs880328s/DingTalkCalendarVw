@@ -17,6 +17,8 @@ class WorkBenchBannerVw: UIView {
     
     let scrollLine = UIView()
     
+    var tapAction: ((_ index: Int)->Void)!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -91,6 +93,12 @@ class WorkBenchBannerVw: UIView {
         UIView.animate(withDuration: 0.3) {
             vi.textColor = APPDelStatic.dingtalkBlue
             self.layoutIfNeeded()
+        }
+        // action
+        for eachItem in 0 ... self.txtVwArr.count - 1 {
+            if vi === self.txtVwArr[eachItem] && self.tapAction != nil  {
+                self.tapAction(eachItem)
+            }
         }
     }
 }

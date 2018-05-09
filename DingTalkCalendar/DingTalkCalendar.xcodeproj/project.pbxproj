@@ -14,6 +14,16 @@
 		566B510B2091EDBB0062C6AF /* richengNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B510A2091EDBB0062C6AF /* richengNew.png */; };
 		566B72982085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */; };
 		566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */; };
+		56B7249920A2CD0F00A5EAE7 /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B7249720A2CD0E00A5EAE7 /* arrowDown.png */; };
+		56B7249A20A2CD0F00A5EAE7 /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B7249820A2CD0F00A5EAE7 /* arrowUp.png */; };
+		56B7249C20A2DA1100A5EAE7 /* FilterDetailVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7249B20A2DA1100A5EAE7 /* FilterDetailVw.swift */; };
+		56B8070820A293290018C773 /* FilterVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070720A293290018C773 /* FilterVw.swift */; };
+		56B8070A20A296E50018C773 /* TaskContainerVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070920A296E50018C773 /* TaskContainerVw.swift */; };
+		56B8070C20A297990018C773 /* TaskTabVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070B20A297990018C773 /* TaskTabVw.swift */; };
+		56B8070E20A29AA20018C773 /* DingtalkGetTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070D20A29AA20018C773 /* DingtalkGetTask.swift */; };
+		56B8071020A29B370018C773 /* DingtalkTaskVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070F20A29B370018C773 /* DingtalkTaskVM.swift */; };
+		56B8071220A29B700018C773 /* DingtaskVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8071120A29B700018C773 /* DingtaskVModel.swift */; };
+		56B8071420A29C8A0018C773 /* DingtalkTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */; };
 		56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */; };
 		56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */; };
 		56D01C0E20887511000C1BF0 /* WorkbenchBLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */; };
@@ -100,6 +110,16 @@
 		566B510A2091EDBB0062C6AF /* richengNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = richengNew.png; sourceTree = "<group>"; };
 		566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
+		56B7249720A2CD0E00A5EAE7 /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown.png; sourceTree = "<group>"; };
+		56B7249820A2CD0F00A5EAE7 /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
+		56B7249B20A2DA1100A5EAE7 /* FilterDetailVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailVw.swift; sourceTree = "<group>"; };
+		56B8070720A293290018C773 /* FilterVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVw.swift; sourceTree = "<group>"; };
+		56B8070920A296E50018C773 /* TaskContainerVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContainerVw.swift; sourceTree = "<group>"; };
+		56B8070B20A297990018C773 /* TaskTabVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTabVw.swift; sourceTree = "<group>"; };
+		56B8070D20A29AA20018C773 /* DingtalkGetTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkGetTask.swift; sourceTree = "<group>"; };
+		56B8070F20A29B370018C773 /* DingtalkTaskVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkTaskVM.swift; sourceTree = "<group>"; };
+		56B8071120A29B700018C773 /* DingtaskVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtaskVModel.swift; sourceTree = "<group>"; };
+		56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkTaskModel.swift; sourceTree = "<group>"; };
 		56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		56D01C0D20887511000C1BF0 /* WorkbenchBLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchBLL.swift; sourceTree = "<group>"; };
@@ -242,6 +262,8 @@
 				566B510A2091EDBB0062C6AF /* richengNew.png */,
 				56D92B7A2084C01A00379402 /* ViewController.swift */,
 				566B51062091ECA20062C6AF /* richeng.png */,
+				56B7249720A2CD0E00A5EAE7 /* arrowDown.png */,
+				56B7249820A2CD0F00A5EAE7 /* arrowUp.png */,
 				561EEE9120875E8E0006F513 /* survey.png */,
 				56D92B992084C05300379402 /* empty.h */,
 				56D92B9A2084C05300379402 /* empty.c */,
@@ -327,6 +349,8 @@
 				56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */,
 				562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */,
 				56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */,
+				56B8070F20A29B370018C773 /* DingtalkTaskVM.swift */,
+				56B8071120A29B700018C773 /* DingtaskVModel.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -351,6 +375,10 @@
 				56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */,
 				566B72972085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift */,
 				566B729D2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift */,
+				56B8070720A293290018C773 /* FilterVw.swift */,
+				56B7249B20A2DA1100A5EAE7 /* FilterDetailVw.swift */,
+				56B8070920A296E50018C773 /* TaskContainerVw.swift */,
+				56B8070B20A297990018C773 /* TaskTabVw.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -367,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				56D92BB82084C0B000379402 /* DingTalkGetEventCalender.swift */,
+				56B8070D20A29AA20018C773 /* DingtalkGetTask.swift */,
 			);
 			path = WorkBench;
 			sourceTree = "<group>";
@@ -384,6 +413,7 @@
 			children = (
 				56D92BBB2084C0B100379402 /* DingTalkCalanderModel.swift */,
 				56D92BBC2084C0B100379402 /* DingTalkCalendarEventModel.swift */,
+				56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */,
 			);
 			path = WorkBench;
 			sourceTree = "<group>";
@@ -669,7 +699,9 @@
 			files = (
 				56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */,
 				56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */,
+				56B7249A20A2CD0F00A5EAE7 /* arrowUp.png in Resources */,
 				566B51072091ECA20062C6AF /* richeng.png in Resources */,
+				56B7249920A2CD0F00A5EAE7 /* arrowDown.png in Resources */,
 				561EEE9220875E8E0006F513 /* survey.png in Resources */,
 				56D92B802084C01B00379402 /* Assets.xcassets in Resources */,
 				56D92B7E2084C01A00379402 /* Main.storyboard in Resources */,
@@ -800,16 +832,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B8070820A293290018C773 /* FilterVw.swift in Sources */,
 				56D92C0B2084C0B100379402 /* WorkBenchBotTbVw.swift in Sources */,
 				56D92C262084C0B100379402 /* SQLite3Go.swift in Sources */,
 				56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */,
 				56D92C2B2084C0B100379402 /* FMDatabaseQueue.m in Sources */,
 				56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */,
 				56D92C322084C0B100379402 /* WorkBench.swift in Sources */,
+				56B8070E20A29AA20018C773 /* DingtalkGetTask.swift in Sources */,
 				56D92C1A2084C0B100379402 /* AOPNotificationCenterProgressCenter.swift in Sources */,
 				56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */,
 				56D92C012084C0B100379402 /* IWorkBenchEventCalendar.swift in Sources */,
 				56D92C112084C0B100379402 /* AOPEvents.swift in Sources */,
+				56B8071420A29C8A0018C773 /* DingtalkTaskModel.swift in Sources */,
 				56D92C242084C0B100379402 /* IIMergeSort.swift in Sources */,
 				56D92C0D2084C0B100379402 /* DingTalkCalenderRectLabelView.swift in Sources */,
 				56D92C002084C0B100379402 /* BeanFactory.swift in Sources */,
@@ -817,19 +852,23 @@
 				56D92C2F2084C0B100379402 /* FMResultSet.m in Sources */,
 				56D92C292084C0B100379402 /* FMDatabase+FTS3.m in Sources */,
 				56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */,
+				56B8071020A29B370018C773 /* DingtalkTaskVM.swift in Sources */,
 				56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */,
 				56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */,
 				56D92C172084C0B100379402 /* AOPCore.swift in Sources */,
 				56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */,
 				56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */,
+				56B8070A20A296E50018C773 /* TaskContainerVw.swift in Sources */,
 				56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */,
 				56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */,
 				56D92C2D2084C0B100379402 /* FMDatabase.m in Sources */,
+				56B8070C20A297990018C773 /* TaskTabVw.swift in Sources */,
 				56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */,
 				56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */,
 				56D92C212084C0B100379402 /* IIStringExtension.swift in Sources */,
 				56D92C312084C0B100379402 /* WorkBenchEventCalendar.swift in Sources */,
 				56D92C202084C0B100379402 /* IIDateExtension.swift in Sources */,
+				56B7249C20A2DA1100A5EAE7 /* FilterDetailVw.swift in Sources */,
 				56D92C1C2084C0B100379402 /* AOPEventsUploadCenter.swift in Sources */,
 				56D92C282084C0B100379402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				56D92C152084C0B100379402 /* AOPMemCacheV20.swift in Sources */,
@@ -838,6 +877,7 @@
 				56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */,
 				56D92B9B2084C05300379402 /* empty.c in Sources */,
 				56D92C302084C0B100379402 /* XMLDictionary.m in Sources */,
+				56B8071220A29B700018C773 /* DingtaskVModel.swift in Sources */,
 				56D92C122084C0B100379402 /* AOPMemCache.swift in Sources */,
 				56D92C272084C0B100379402 /* SQLite3.swift in Sources */,
 				56D92B7B2084C01A00379402 /* ViewController.swift in Sources */,

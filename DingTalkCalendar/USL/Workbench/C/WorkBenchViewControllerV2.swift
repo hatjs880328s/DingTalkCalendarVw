@@ -22,7 +22,11 @@ class WorkBenchViewControllerV2: UIViewController {
     
     let smallCalendarVw: SmallDingTalkSingleLineCollectionVw =  SmallDingTalkSingleLineCollectionVw(frame: CGRect.zero)
     
+    var taskContainerVw: TaskContainerVw?
+    
     let vm = DingTalkCalanderVM()
+    
+    let taskVM = DingtalkTaskVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,7 @@ class WorkBenchViewControllerV2: UIViewController {
         getMiddleDate()
         hiddenMiddleCalendarVw()
         topTxtChange()
+        bannerChange()
     }
 
 }
@@ -161,5 +166,38 @@ extension WorkBenchViewControllerV2 {
     func swipeDownSelectedBigCalendarItem(with date: Date) {
         let index = self.vm.getBigItemIndexWithSamllSelectedItemIndex(with: date)
         self.calendarVw.logicMiddleVw.tapAction(index: index)
+    }
+}
+
+
+// MARK: - Task container view init & actions
+extension WorkBenchViewControllerV2 {
+    
+    func taskContainerVwInit() {
+        self.taskContainerVw = TaskContainerVw(frame: CGRect.zero, fatherVw: self.view, topView: self.bannerVw)
+        self.taskVM.getVMWithPage(page: 0)
+    }
+    
+    /// banner index change
+    func bannerChange() {
+        func changeUI(with index:Int) {
+            if index == 1 {
+                if self.taskContainerVw == nil {
+                    self.taskContainerVwInit()
+                }else{
+                    self.taskContainerVw?.showSelf()
+                }
+            }
+            if index == 0 {
+                self.taskContainerVw?.hideSelf()
+            }
+            if index == 2 {
+                self.taskContainerVw?.hideSelf()
+            }
+        }
+        
+        self.bannerVw.tapAction = { index in
+             changeUI(with: index)
+        }
     }
 }
