@@ -26,7 +26,7 @@ class DingtaskVModel: NSObject {
         self.title = with.title
         let formatDateStr = with.endTime.dateToString(formatStr)
         let splitInfo = formatDateStr.split(" ")
-        self.endTime = splitInfo[0] + " " + "\(with.endTime.week)" + " " + splitInfo[1] + " " + "截止"
+        self.endTime = splitInfo[0] + " " + "周\(with.endTime.week)" + " " + splitInfo[1] + " " + "截止"
         self.toPerson = "我分配的"
         self.completedInfo = "\(with.completeCount!)/\(with.completedCount!)人已完成"
         self.picUrl = with.picUrl

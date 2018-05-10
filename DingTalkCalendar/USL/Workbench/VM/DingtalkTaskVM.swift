@@ -14,7 +14,7 @@ class DingtalkTaskVM: NSObject {
     
     var taskModels: [DingtaskVModel] = []
     
-    var taskFilterSelectedIndex: Int = 0
+    var taskFilterSelectedIndex: Int = 1
     
     override init() {
         super.init()

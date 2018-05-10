@@ -24,6 +24,8 @@ class WorkBenchViewControllerV2: UIViewController {
     
     var taskContainerVw: TaskContainerVw?
     
+    var meetingContainerVw: MeetingContainerVw?
+    
     let vm = DingTalkCalanderVM()
     
     let taskVM = DingtalkTaskVM()
@@ -120,6 +122,7 @@ extension WorkBenchViewControllerV2 {
     func bannerChange() {
         func changeUI(with index:Int) {
             if index == 1 {
+                self.meetingContainerVw?.hideSelf()
                 if self.taskContainerVw == nil {
                     self.taskContainerVwInit()
                 }else{
@@ -128,9 +131,15 @@ extension WorkBenchViewControllerV2 {
             }
             if index == 0 {
                 self.taskContainerVw?.hideSelf()
+                self.meetingContainerVw?.hideSelf()
             }
             if index == 2 {
                 self.taskContainerVw?.hideSelf()
+                if self.meetingContainerVw == nil {
+                    self.meetingContainerVwInit()
+                }else{
+                    self.meetingContainerVw?.showSelf()
+                }
             }
         }
         
@@ -193,11 +202,15 @@ extension WorkBenchViewControllerV2 {
 }
 
 
-// MARK: - Task container view init & actions
+// MARK: - Task container view init & meeting container view init
 extension WorkBenchViewControllerV2 {
     
     func taskContainerVwInit() {
         self.taskContainerVw = TaskContainerVw(frame: CGRect.zero, fatherVw: self.view, topView: self.bannerVw)
         self.taskVM.getVMWithPage(page: 0)
+    }
+    
+    func meetingContainerVwInit() {
+        self.meetingContainerVw = MeetingContainerVw(frame: CGRect.zero, fatherVw: self.view, topVw: self.bannerVw)
     }
 }
