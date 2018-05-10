@@ -120,7 +120,7 @@ extension WorkBenchViewControllerV2 {
     
     /// banner index change
     func bannerChange() {
-        func changeUI(with index:Int) {
+        func changeUI(with index:Int,txt strInfo:String) {
             if index == 1 {
                 self.meetingContainerVw?.hideSelf()
                 if self.taskContainerVw == nil {
@@ -128,10 +128,12 @@ extension WorkBenchViewControllerV2 {
                 }else{
                     self.taskContainerVw?.showSelf()
                 }
+                self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
             }
             if index == 0 {
                 self.taskContainerVw?.hideSelf()
                 self.meetingContainerVw?.hideSelf()
+                self.vm.swipeChangeTopVwTxt()
             }
             if index == 2 {
                 self.taskContainerVw?.hideSelf()
@@ -140,11 +142,12 @@ extension WorkBenchViewControllerV2 {
                 }else{
                     self.meetingContainerVw?.showSelf()
                 }
+                self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
             }
         }
         
-        self.bannerVw.tapAction = { index in
-            changeUI(with: index)
+        self.bannerVw.tapAction = { index,txt in
+            changeUI(with: index,txt: txt)
         }
     }
 }

@@ -68,11 +68,14 @@ class WorkBenchTopVw: UIView {
         todayLb.alpha = 0
     }
     
-    func setData(ifCalendar: Bool, titleTxt: String) {
+    func setData(ifCalendar: Bool, titleTxt: String,isCalendarVw:Bool = true) {
         if ifCalendar && titleTxt == self.todayTxt {
             self.todayLb.alpha = 0
         }else{
             self.todayLb.alpha = 1
+        }
+        if !isCalendarVw {
+            self.todayLb.alpha = 0
         }
         self.titleLb.text = titleTxt
         // re calculate str width 

@@ -17,7 +17,7 @@ class WorkBenchBannerVw: UIView {
     
     let scrollLine = UIView()
     
-    var tapAction: ((_ index: Int)->Void)!
+    var tapAction: ((_ index: Int,_ txt:String)->Void)!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -97,7 +97,7 @@ class WorkBenchBannerVw: UIView {
         // action
         for eachItem in 0 ... self.txtVwArr.count - 1 {
             if vi === self.txtVwArr[eachItem] && self.tapAction != nil  {
-                self.tapAction(eachItem)
+                self.tapAction(eachItem,txtArr[eachItem])
             }
         }
     }

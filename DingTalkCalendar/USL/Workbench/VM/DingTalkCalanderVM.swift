@@ -229,7 +229,7 @@ extension DingTalkCalanderVM {
     }
     
     /// swipe - change topvw text closure
-    private func swipeChangeTopVwTxt() {
+    func swipeChangeTopVwTxt() {
         if self.swipeChangeTopTitleTxt == nil { return }
         var text = ""
         var dateInfo:Date!
