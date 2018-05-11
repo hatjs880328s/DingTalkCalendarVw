@@ -16,7 +16,7 @@ class DingtalkGetMeeting: NSObject {
     
     func getDataWithPage(page:Int)->[DingtalkMeetingModel] {
         var result: [DingtalkMeetingModel] = []
-        for eachItem in 0 ... 9 {
+        for _ in 0 ... 9 {
             let item = DingtalkMeetingModel()
             item.setData(startTime: Date(), endTime: Date(), title: "meeting测试数据", createPerson: "我", createTime: Date(), completedCount: 9, completeCount: 8, address: "南侧会议室", taskCount: 2)
             result.append(item)
