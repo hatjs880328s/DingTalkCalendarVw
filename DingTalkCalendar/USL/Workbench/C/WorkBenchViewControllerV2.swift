@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkBenchViewControllerV2: UIViewController {
+class WorkBenchViewControllerV2: IIBaseViewController {
 
     let topVw: WorkBenchTopVw = WorkBenchTopVw(frame: CGRect.zero)
     

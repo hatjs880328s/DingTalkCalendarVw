@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
+		56314FEC20A5202900008D43 /* IIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56314FEB20A5202900008D43 /* IIBaseViewController.swift */; };
 		566B29E720896E0E0065A1C3 /* WorkbenchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */; };
 		566B51072091ECA20062C6AF /* richeng.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B51062091ECA20062C6AF /* richeng.png */; };
 		566B510B2091EDBB0062C6AF /* richengNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B510A2091EDBB0062C6AF /* richengNew.png */; };
@@ -110,6 +111,7 @@
 		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
+		56314FEB20A5202900008D43 /* IIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIBaseViewController.swift; sourceTree = "<group>"; };
 		566B29E620896E0E0065A1C3 /* WorkbenchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchVM.swift; sourceTree = "<group>"; };
 		566B51062091ECA20062C6AF /* richeng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = richeng.png; sourceTree = "<group>"; };
 		566B510A2091EDBB0062C6AF /* richengNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = richengNew.png; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				56D92BD82084C0B100379402 /* IIBaseView.swift */,
+				56314FEB20A5202900008D43 /* IIBaseViewController.swift */,
 			);
 			path = BaseComponent;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				56D92C302084C0B100379402 /* XMLDictionary.m in Sources */,
 				56B8071220A29B700018C773 /* DingtaskVModel.swift in Sources */,
 				56BEFB7D20A3D38A00EF3B3B /* DingtalkGetMeeting.swift in Sources */,
+				56314FEC20A5202900008D43 /* IIBaseViewController.swift in Sources */,
 				56D92C122084C0B100379402 /* AOPMemCache.swift in Sources */,
 				56D92C272084C0B100379402 /* SQLite3.swift in Sources */,
 				56D92B7B2084C01A00379402 /* ViewController.swift in Sources */,
