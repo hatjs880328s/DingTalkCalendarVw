@@ -24,6 +24,8 @@ class WorkBenchBotTbVw: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var numberOfRowInSection:Int = 0
     
+    var endScrollToTop:Bool = true
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -201,6 +203,25 @@ extension WorkBenchBotTbVw {
     
     func getTxtWithDate()->String {
         return (self.viewController() as! WorkBenchViewControllerV2).vm.getTxtFollowDate()
+    }
+    
+    /*
+     use didscroll & didenddecelerating delegate funcs progress [hidden] state swipe down
+    */
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == 0 {
+            self.endScrollToTop = true
+        }else{
+            self.endScrollToTop = false
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !self.endScrollToTop { return }
+        if scrollView.contentOffset.y < 0 {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            self.innerSwipeDown()
+        }
     }
 }
 
