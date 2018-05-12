@@ -254,6 +254,9 @@ extension DingTalkCalanderVM {
     
     func getSerilizationDate(withDate: Date)->String {
         let dateInfo = withDate
+        if APPDelStatic.internationalProgress {
+            return "\(dateInfo.getEuMonth(month: dateInfo.month)) \(dateInfo.year)"
+        }
         return "\(dateInfo.year)年\(dateInfo.month)月"
         
     }

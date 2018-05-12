@@ -66,6 +66,7 @@ class DingTalkCalanderVModel: NSObject {
     }
     
     func changeIntToLunarInfo(intValue: Int)->String{
+        if APPDelStatic.internationalProgress { return "" }
         switch intValue {
         case 1:
             return "初一"

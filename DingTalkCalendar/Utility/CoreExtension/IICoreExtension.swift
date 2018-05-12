@@ -41,4 +41,9 @@ class APPDelStatic {
     static func uiFont(with size: CGFloat) ->UIFont {
         return UIFont.systemFont(ofSize:size * sizeScale)
     }
+    
+    /// 是否是英文
+    static var internationalProgress:Bool {
+        return true
+    }
 }

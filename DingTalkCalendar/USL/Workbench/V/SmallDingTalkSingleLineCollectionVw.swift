@@ -194,7 +194,14 @@ extension SmallDingTalkSingleLineCollectionVw {
     func getCellModel(with indexRow:Int)->(eventModel: DingTalkCEvent?,dateInfo: String?) {
         let selectedIndex = self.smallMiddleLogicVw.selectedItemIndex
         if indexRow == 0 {
-            let dateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].dateInfo.dateToString(formatStr)
+            let realDateInfo = (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].dateInfo
+            var dateInfo = ""
+            if APPDelStatic.internationalProgress {
+                dateInfo = "\(realDateInfo!.getEuMonth(month: realDateInfo!.month)) \(realDateInfo!.days)"
+            }else{
+                dateInfo = realDateInfo!.dateToString(formatStr)
+            }
+            
             return (nil,dateInfo)
         }
         if (self.viewController() as! WorkBenchViewControllerV2).vm.smallMiddleDate[selectedIndex].fireDayInfo.count >= indexRow {
