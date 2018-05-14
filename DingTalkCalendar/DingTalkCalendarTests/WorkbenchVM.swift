@@ -69,7 +69,12 @@ class WorkbenchVM: XCTestCase {
         
         XCTAssert(vm.smallMiddleDate.first?.dateInfo.days == 15, "算出来第一天应该是 2018-4-15，星期天")
         
-        XCTAssert(vm.smallMiddleDate.first?.lunarDay == "三十", "算出来第一天应该是 2018-4-15，星期天,农历三十")
+        if APPDelStatic.internationalProgress {
+            XCTAssert(vm.smallMiddleDate.first?.lunarDay == "", "国际化没有阴历")
+        }else{
+            XCTAssert(vm.smallMiddleDate.first?.lunarDay == "三十", "算出来第一天应该是 2018-4-15，星期天,农历三十")
+        }
+        
     }
     
     func testSwipeLeftWith20180420() {
@@ -95,14 +100,21 @@ class WorkbenchVM: XCTestCase {
         
         XCTAssert(vm.smallLeftDate.first?.dateInfo.days == 15, "算出来第一天应该是 2018-4-15，星期天")
         
-        XCTAssert(vm.smallLeftDate.first?.lunarDay == "三十", "算出来第一天应该是 2018-4-15，星期天,农历三十")
+        if APPDelStatic.internationalProgress {
+            XCTAssert(vm.smallLeftDate.first?.lunarDay == "", "国际化没有阴历")
+        }else{
+            XCTAssert(vm.smallLeftDate.first?.lunarDay == "三十", "算出来第一天应该是 2018-4-15，星期天,农历三十")
+        }
         
         // 新中间数据是 2018-4-22 ~ 28
         XCTAssert(vm.smallMiddleDate.first?.dateInfo.weekday == 1, "算出来第一天应该是 2018-4-22，星期天")
         
         XCTAssert(vm.smallMiddleDate.first?.dateInfo.days == 22, "算出来第一天应该是 2018-4-22，星期天")
-        
-        XCTAssert(vm.smallMiddleDate.first?.lunarDay == "初七", "算出来第一天应该是 2018-4-22，星期天,农历初七")
+                if APPDelStatic.internationalProgress {
+            XCTAssert(vm.smallMiddleDate.first?.lunarDay == "", "国际化没有阴历")
+        }else{
+            XCTAssert(vm.smallMiddleDate.first?.lunarDay == "初七", "算出来第一天应该是 2018-4-22，星期天,农历初七")
+        }
         
         //新的右边数据第一天应该是 2018-4-29 十四 星期天
         XCTAssert(newRightDates[0].dateInfo.days == 29, "老铁，看注释")
