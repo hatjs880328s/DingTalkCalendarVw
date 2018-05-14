@@ -47,6 +47,10 @@ class WorkBenchViewControllerV2: IIBaseViewController {
         topTxtChange()
         bannerChange()
     }
+    
+    deinit {
+        print("workbenchV2VcDeinit")
+    }
 
 }
 
@@ -120,34 +124,34 @@ extension WorkBenchViewControllerV2 {
     
     /// banner index change
     func bannerChange() {
-        func changeUI(with index:Int,txt strInfo:String) {
-            if index == 1 {
-                self.meetingContainerVw?.hideSelf()
-                if self.taskContainerVw == nil {
-                    self.taskContainerVwInit()
-                }else{
-                    self.taskContainerVw?.showSelf()
-                }
-                self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
-            }
-            if index == 0 {
-                self.taskContainerVw?.hideSelf()
-                self.meetingContainerVw?.hideSelf()
-                self.vm.swipeChangeTopVwTxt()
-            }
-            if index == 2 {
-                self.taskContainerVw?.hideSelf()
-                if self.meetingContainerVw == nil {
-                    self.meetingContainerVwInit()
-                }else{
-                    self.meetingContainerVw?.showSelf()
-                }
-                self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
-            }
+        self.bannerVw.tapAction = { [weak self]index,txt in
+            self?.changeUI(with: index,txt: txt)
         }
-        
-        self.bannerVw.tapAction = { index,txt in
-            changeUI(with: index,txt: txt)
+    }
+    
+    private func changeUI(with index:Int,txt strInfo:String) {
+        if index == 1 {
+            self.meetingContainerVw?.hideSelf()
+            if self.taskContainerVw == nil {
+                self.taskContainerVwInit()
+            }else{
+                self.taskContainerVw?.showSelf()
+            }
+            self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
+        }
+        if index == 0 {
+            self.taskContainerVw?.hideSelf()
+            self.meetingContainerVw?.hideSelf()
+            self.vm.swipeChangeTopVwTxt()
+        }
+        if index == 2 {
+            self.taskContainerVw?.hideSelf()
+            if self.meetingContainerVw == nil {
+                self.meetingContainerVwInit()
+            }else{
+                self.meetingContainerVw?.showSelf()
+            }
+            self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
         }
     }
 }
