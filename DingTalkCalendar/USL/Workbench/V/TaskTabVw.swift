@@ -205,7 +205,7 @@ class TaskTBCell: UITableViewCell {
         self.stateBtn.text = with.state
         self.titleLab.text = with.title
         self.endTime.text = with.endTime
-        self.pic.image = UIImage(named: "richengNew.png")
+        self.pic.sd_setImage(with: nil, placeholderImage: UIImage(named: "richengNew.png"), options: SDWebImageOptions.lowPriority, completed: nil)
         self.toPerson.text = with.toPerson
         self.createTime.text = with.createTime
         self.completedPersonCount.text = with.completedInfo
@@ -368,7 +368,7 @@ class MeetingTBCell: UITableViewCell {
         self.stateBtn.text = with.state
         self.titleLab.text = with.title
         self.durationTime.text = with.durationTime
-        self.pic.image = UIImage(named: "richengNew.png")
+        self.pic.sd_setImage(with: nil, placeholderImage: UIImage(named: "richengNew.png"), options: SDWebImageOptions.lowPriority, completed: nil)
         self.createPerson.text = with.createPerson
         self.createTime.text = with.createTime
         self.completedPersonCount.text = with.completedInfo

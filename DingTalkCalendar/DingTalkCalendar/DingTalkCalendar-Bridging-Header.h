@@ -13,3 +13,5 @@
 #import "dlfcn.h"
 
 #import "XMLDictionary.h"
+
+#import "SDWebImage/UIImageView+WebCache.h"

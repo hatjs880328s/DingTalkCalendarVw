@@ -8,6 +8,8 @@ target 'DingTalkCalendar' do
      pod 'Aspects', '~> 1.4.1'
      
      pod 'SnapKit', '~> 4.0.0'
+     
+     pod 'SDWebImage', '~> 4.3.2'
     
 end
 
@@ -16,5 +18,7 @@ target 'DingTalkCalendarTests' do
     pod 'Aspects', '~> 1.4.1'
     
     pod 'SnapKit', '~> 4.0.0'
+    
+    pod 'SDWebImage', '~> 4.3.2'
     
 end
