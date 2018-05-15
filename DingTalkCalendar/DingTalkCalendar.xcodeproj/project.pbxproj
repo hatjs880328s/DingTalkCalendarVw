@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56180F7020AA8F0B009AA7C5 /* XMLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F6820AA8F0B009AA7C5 /* XMLFactory.swift */; };
+		56180F7120AA8F0B009AA7C5 /* BeanDicCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */; };
+		56180F7220AA8F0B009AA7C5 /* SourceBean.xml in Resources */ = {isa = PBXBuildFile; fileRef = 56180F6B20AA8F0B009AA7C5 /* SourceBean.xml */; };
+		56180F7320AA8F0B009AA7C5 /* BeanFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */; };
+		56180F7920AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */; };
+		56180F7A20AA8F47009AA7C5 /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F7820AA8F47009AA7C5 /* IWorkBench.swift */; };
 		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
 		56314FEC20A5202900008D43 /* IIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56314FEB20A5202900008D43 /* IIBaseViewController.swift */; };
@@ -40,12 +46,6 @@
 		56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D92B812084C01B00379402 /* LaunchScreen.storyboard */; };
 		56D92B8E2084C01B00379402 /* DingTalkCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B8D2084C01B00379402 /* DingTalkCalendarTests.swift */; };
 		56D92B9B2084C05300379402 /* empty.c in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9A2084C05300379402 /* empty.c */; };
-		56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9E2084C0B000379402 /* XMLFactory.swift */; };
-		56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92B9F2084C0B000379402 /* BeanDicCenter.swift */; };
-		56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */ = {isa = PBXBuildFile; fileRef = 56D92BA12084C0B000379402 /* SourceBean.xml */; };
-		56D92C002084C0B100379402 /* BeanFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA22084C0B000379402 /* BeanFactory.swift */; };
-		56D92C012084C0B100379402 /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */; };
-		56D92C022084C0B100379402 /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA52084C0B000379402 /* IWorkBench.swift */; };
 		56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */; };
 		56D92C042084C0B100379402 /* DingTalkCalanderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */; };
 		56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */; };
@@ -109,6 +109,12 @@
 /* Begin PBXFileReference section */
 		46A6CC10F27F308B044CF525 /* Pods-DingTalkCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingTalkCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-DingTalkCalendar/Pods-DingTalkCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		55FE38DEB194D4D2BB5E5A5E /* Pods_DingTalkCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DingTalkCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56180F6820AA8F0B009AA7C5 /* XMLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLFactory.swift; sourceTree = "<group>"; };
+		56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanDicCenter.swift; sourceTree = "<group>"; };
+		56180F6B20AA8F0B009AA7C5 /* SourceBean.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SourceBean.xml; sourceTree = "<group>"; };
+		56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanFactory.swift; sourceTree = "<group>"; };
+		56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
+		56180F7820AA8F47009AA7C5 /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
 		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
 		56314FEB20A5202900008D43 /* IIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIBaseViewController.swift; sourceTree = "<group>"; };
@@ -148,12 +154,6 @@
 		56D92B982084C05200379402 /* DingTalkCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DingTalkCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
 		56D92B992084C05300379402 /* empty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = empty.h; sourceTree = "<group>"; };
 		56D92B9A2084C05300379402 /* empty.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = empty.c; sourceTree = "<group>"; };
-		56D92B9E2084C0B000379402 /* XMLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLFactory.swift; sourceTree = "<group>"; };
-		56D92B9F2084C0B000379402 /* BeanDicCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanDicCenter.swift; sourceTree = "<group>"; };
-		56D92BA12084C0B000379402 /* SourceBean.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SourceBean.xml; sourceTree = "<group>"; };
-		56D92BA22084C0B000379402 /* BeanFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanFactory.swift; sourceTree = "<group>"; };
-		56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
-		56D92BA52084C0B000379402 /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
 		56D92BA92084C0B000379402 /* DingTalkCalanderVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVModel.swift; sourceTree = "<group>"; };
 		56D92BAA2084C0B000379402 /* DingTalkCalanderVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCalanderVM.swift; sourceTree = "<group>"; };
 		56D92BAB2084C0B000379402 /* DingTalkCEventVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DingTalkCEventVModel.swift; sourceTree = "<group>"; };
@@ -239,6 +239,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56180F6720AA8F0B009AA7C5 /* IBLLFactory */ = {
+			isa = PBXGroup;
+			children = (
+				56180F6820AA8F0B009AA7C5 /* XMLFactory.swift */,
+				56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */,
+				56180F6A20AA8F0B009AA7C5 /* xmls */,
+				56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */,
+			);
+			path = IBLLFactory;
+			sourceTree = "<group>";
+		};
+		56180F6A20AA8F0B009AA7C5 /* xmls */ = {
+			isa = PBXGroup;
+			children = (
+				56180F6B20AA8F0B009AA7C5 /* SourceBean.xml */,
+			);
+			path = xmls;
+			sourceTree = "<group>";
+		};
+		56180F7620AA8F47009AA7C5 /* WorkBench */ = {
+			isa = PBXGroup;
+			children = (
+				56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */,
+				56180F7820AA8F47009AA7C5 /* IWorkBench.swift */,
+			);
+			path = WorkBench;
+			sourceTree = "<group>";
+		};
 		56D92B6C2084C01A00379402 = {
 			isa = PBXGroup;
 			children = (
@@ -302,38 +330,10 @@
 		56D92B9C2084C0B000379402 /* IBLL */ = {
 			isa = PBXGroup;
 			children = (
-				56D92B9D2084C0B000379402 /* IBLLFactory */,
+				56180F6720AA8F0B009AA7C5 /* IBLLFactory */,
+				56180F7620AA8F47009AA7C5 /* WorkBench */,
 			);
 			path = IBLL;
-			sourceTree = "<group>";
-		};
-		56D92B9D2084C0B000379402 /* IBLLFactory */ = {
-			isa = PBXGroup;
-			children = (
-				56D92B9E2084C0B000379402 /* XMLFactory.swift */,
-				56D92BA22084C0B000379402 /* BeanFactory.swift */,
-				56D92B9F2084C0B000379402 /* BeanDicCenter.swift */,
-				56D92BA02084C0B000379402 /* xmls */,
-				56D92BA32084C0B000379402 /* WorkBench */,
-			);
-			path = IBLLFactory;
-			sourceTree = "<group>";
-		};
-		56D92BA02084C0B000379402 /* xmls */ = {
-			isa = PBXGroup;
-			children = (
-				56D92BA12084C0B000379402 /* SourceBean.xml */,
-			);
-			path = xmls;
-			sourceTree = "<group>";
-		};
-		56D92BA32084C0B000379402 /* WorkBench */ = {
-			isa = PBXGroup;
-			children = (
-				56D92BA42084C0B000379402 /* IWorkBenchEventCalendar.swift */,
-				56D92BA52084C0B000379402 /* IWorkBench.swift */,
-			);
-			path = WorkBench;
 			sourceTree = "<group>";
 		};
 		56D92BA62084C0B000379402 /* USL */ = {
@@ -715,8 +715,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D92BFF2084C0B100379402 /* SourceBean.xml in Resources */,
 				56D92B832084C01B00379402 /* LaunchScreen.storyboard in Resources */,
+				56180F7220AA8F0B009AA7C5 /* SourceBean.xml in Resources */,
 				56B7249A20A2CD0F00A5EAE7 /* arrowUp.png in Resources */,
 				566B51072091ECA20062C6AF /* richeng.png in Resources */,
 				56B7249920A2CD0F00A5EAE7 /* arrowDown.png in Resources */,
@@ -857,6 +857,7 @@
 				56B8070820A293290018C773 /* FilterVw.swift in Sources */,
 				56D92C0B2084C0B100379402 /* WorkBenchBotTbVw.swift in Sources */,
 				56D92C262084C0B100379402 /* SQLite3Go.swift in Sources */,
+				56180F7A20AA8F47009AA7C5 /* IWorkBench.swift in Sources */,
 				56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */,
 				56D92C2B2084C0B100379402 /* FMDatabaseQueue.m in Sources */,
 				56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */,
@@ -864,22 +865,20 @@
 				56B8070E20A29AA20018C773 /* DingtalkGetTask.swift in Sources */,
 				56D92C1A2084C0B100379402 /* AOPNotificationCenterProgressCenter.swift in Sources */,
 				56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */,
-				56D92C012084C0B100379402 /* IWorkBenchEventCalendar.swift in Sources */,
 				56D92C112084C0B100379402 /* AOPEvents.swift in Sources */,
 				56B8071420A29C8A0018C773 /* DingtalkTaskModel.swift in Sources */,
 				56D92C242084C0B100379402 /* IIMergeSort.swift in Sources */,
 				56D92C0D2084C0B100379402 /* DingTalkCalenderRectLabelView.swift in Sources */,
-				56D92C002084C0B100379402 /* BeanFactory.swift in Sources */,
+				56180F7120AA8F0B009AA7C5 /* BeanDicCenter.swift in Sources */,
 				56D92C2A2084C0B100379402 /* FMTokenizers.m in Sources */,
 				56D92C2F2084C0B100379402 /* FMResultSet.m in Sources */,
 				56D92C292084C0B100379402 /* FMDatabase+FTS3.m in Sources */,
 				56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */,
 				56B8071020A29B370018C773 /* DingtalkTaskVM.swift in Sources */,
 				56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */,
-				56D92BFD2084C0B100379402 /* XMLFactory.swift in Sources */,
+				56180F7920AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift in Sources */,
 				56D92C172084C0B100379402 /* AOPCore.swift in Sources */,
 				56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */,
-				56D92BFE2084C0B100379402 /* BeanDicCenter.swift in Sources */,
 				56BEFB7B20A3D19800EF3B3B /* DingtalkMeetingVM.swift in Sources */,
 				56B8070A20A296E50018C773 /* TaskContainerVw.swift in Sources */,
 				56D92C182084C0B100379402 /* AOPNotificationCenter.swift in Sources */,
@@ -900,6 +899,7 @@
 				56D92C152084C0B100379402 /* AOPMemCacheV20.swift in Sources */,
 				56D92C2C2084C0B100379402 /* FMDatabaseAdditions.m in Sources */,
 				56D92C052084C0B100379402 /* DingTalkCEventVModel.swift in Sources */,
+				56180F7320AA8F0B009AA7C5 /* BeanFactory.swift in Sources */,
 				56D92C082084C0B100379402 /* DingTalkCalenderWeekdayView.swift in Sources */,
 				56D92B9B2084C05300379402 /* empty.c in Sources */,
 				56D92C302084C0B100379402 /* XMLDictionary.m in Sources */,
@@ -915,13 +915,13 @@
 				56D92C1F2084C0B100379402 /* IIViewExtension.swift in Sources */,
 				56D92C2E2084C0B100379402 /* FMDatabasePool.m in Sources */,
 				566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */,
+				56180F7020AA8F0B009AA7C5 /* XMLFactory.swift in Sources */,
 				56D92C042084C0B100379402 /* DingTalkCalanderVM.swift in Sources */,
 				56D92C342084C0D500379402 /* TabbarViewController.swift in Sources */,
 				56D92C252084C0B100379402 /* IIBaseView.swift in Sources */,
 				56D92C0F2084C0B100379402 /* DingTalkCalanderModel.swift in Sources */,
 				56D92C222084C0B100379402 /* IITaskModel.swift in Sources */,
 				562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */,
-				56D92C022084C0B100379402 /* IWorkBench.swift in Sources */,
 				56D92C1E2084C0B100379402 /* IICoreExtension.swift in Sources */,
 				56D92C132084C0B100379402 /* AOPEventFilter.swift in Sources */,
 				56D92C192084C0B100379402 /* AOPGCDExtension.swift in Sources */,
@@ -1094,7 +1094,10 @@
 				DEVELOPMENT_TEAM = P466F9M6G6;
 				INFOPLIST_FILE = DingTalkCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DingTalkCalendar/DingTalkCalendar-Bridging-Header.h";
@@ -1114,7 +1117,10 @@
 				DEVELOPMENT_TEAM = P466F9M6G6;
 				INFOPLIST_FILE = DingTalkCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DingTalkCalendar/DingTalkCalendar-Bridging-Header.h";
@@ -1132,7 +1138,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P466F9M6G6;
 				INFOPLIST_FILE = DingTalkCalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1150,7 +1160,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P466F9M6G6;
 				INFOPLIST_FILE = DingTalkCalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Inspur.DingTalkCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
