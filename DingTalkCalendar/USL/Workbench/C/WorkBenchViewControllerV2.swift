@@ -163,7 +163,7 @@ extension WorkBenchViewControllerV2 {
     func getMiddleDate() {
         vm.getCurrentMonthDays(currentMonthDay: Date())
         let middleVM = self.vm.getDingVModel(with: .middle).trupleVM!
-        self.calendarVw.setDates(with: middleVM.dayArr, which: calendarVw.middleChildVw)
+        self.calendarVw.setDates(with: middleVM.dayArr, which: calendarVw.logicMiddleVw)
     }
     
     /// small left & right calendar date
