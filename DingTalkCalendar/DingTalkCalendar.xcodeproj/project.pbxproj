@@ -11,8 +11,6 @@
 		56180F7120AA8F0B009AA7C5 /* BeanDicCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */; };
 		56180F7220AA8F0B009AA7C5 /* SourceBean.xml in Resources */ = {isa = PBXBuildFile; fileRef = 56180F6B20AA8F0B009AA7C5 /* SourceBean.xml */; };
 		56180F7320AA8F0B009AA7C5 /* BeanFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */; };
-		56180F7920AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */; };
-		56180F7A20AA8F47009AA7C5 /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56180F7820AA8F47009AA7C5 /* IWorkBench.swift */; };
 		561EEE9220875E8E0006F513 /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 561EEE9120875E8E0006F513 /* survey.png */; };
 		562BABD8208581AA0004058A /* DingTalkCalendarTrupleVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */; };
 		56314FEC20A5202900008D43 /* IIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56314FEB20A5202900008D43 /* IIBaseViewController.swift */; };
@@ -34,6 +32,8 @@
 		56B8071020A29B370018C773 /* DingtalkTaskVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8070F20A29B370018C773 /* DingtalkTaskVM.swift */; };
 		56B8071220A29B700018C773 /* DingtaskVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8071120A29B700018C773 /* DingtaskVModel.swift */; };
 		56B8071420A29C8A0018C773 /* DingtalkTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */; };
+		56B8F5CF20AC0844007FB25A /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8F5CD20AC0844007FB25A /* IWorkBenchEventCalendar.swift */; };
+		56B8F5D020AC0844007FB25A /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8F5CE20AC0844007FB25A /* IWorkBench.swift */; };
 		56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */; };
 		56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */; };
 		56BEFB7B20A3D19800EF3B3B /* DingtalkMeetingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFB7A20A3D19800EF3B3B /* DingtalkMeetingVM.swift */; };
@@ -113,8 +113,6 @@
 		56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanDicCenter.swift; sourceTree = "<group>"; };
 		56180F6B20AA8F0B009AA7C5 /* SourceBean.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SourceBean.xml; sourceTree = "<group>"; };
 		56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanFactory.swift; sourceTree = "<group>"; };
-		56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
-		56180F7820AA8F47009AA7C5 /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
 		561EEE9120875E8E0006F513 /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
 		562BABD7208581AA0004058A /* DingTalkCalendarTrupleVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingTalkCalendarTrupleVModel.swift; sourceTree = "<group>"; };
 		56314FEB20A5202900008D43 /* IIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIBaseViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		56B8070F20A29B370018C773 /* DingtalkTaskVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkTaskVM.swift; sourceTree = "<group>"; };
 		56B8071120A29B700018C773 /* DingtaskVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtaskVModel.swift; sourceTree = "<group>"; };
 		56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkTaskModel.swift; sourceTree = "<group>"; };
+		56B8F5CD20AC0844007FB25A /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
+		56B8F5CE20AC0844007FB25A /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
 		56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		56BEFB7A20A3D19800EF3B3B /* DingtalkMeetingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkMeetingVM.swift; sourceTree = "<group>"; };
@@ -244,8 +244,9 @@
 			children = (
 				56180F6820AA8F0B009AA7C5 /* XMLFactory.swift */,
 				56180F6920AA8F0B009AA7C5 /* BeanDicCenter.swift */,
-				56180F6A20AA8F0B009AA7C5 /* xmls */,
 				56180F6C20AA8F0B009AA7C5 /* BeanFactory.swift */,
+				56180F6A20AA8F0B009AA7C5 /* xmls */,
+				56B8F5CC20AC0844007FB25A /* WorkBench */,
 			);
 			path = IBLLFactory;
 			sourceTree = "<group>";
@@ -258,11 +259,11 @@
 			path = xmls;
 			sourceTree = "<group>";
 		};
-		56180F7620AA8F47009AA7C5 /* WorkBench */ = {
+		56B8F5CC20AC0844007FB25A /* WorkBench */ = {
 			isa = PBXGroup;
 			children = (
-				56180F7720AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift */,
-				56180F7820AA8F47009AA7C5 /* IWorkBench.swift */,
+				56B8F5CD20AC0844007FB25A /* IWorkBenchEventCalendar.swift */,
+				56B8F5CE20AC0844007FB25A /* IWorkBench.swift */,
 			);
 			path = WorkBench;
 			sourceTree = "<group>";
@@ -331,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				56180F6720AA8F0B009AA7C5 /* IBLLFactory */,
-				56180F7620AA8F47009AA7C5 /* WorkBench */,
 			);
 			path = IBLL;
 			sourceTree = "<group>";
@@ -857,7 +857,6 @@
 				56B8070820A293290018C773 /* FilterVw.swift in Sources */,
 				56D92C0B2084C0B100379402 /* WorkBenchBotTbVw.swift in Sources */,
 				56D92C262084C0B100379402 /* SQLite3Go.swift in Sources */,
-				56180F7A20AA8F47009AA7C5 /* IWorkBench.swift in Sources */,
 				56D92C092084C0B100379402 /* WorkBenchBannerVw.swift in Sources */,
 				56D92C2B2084C0B100379402 /* FMDatabaseQueue.m in Sources */,
 				56D92C1B2084C0B100379402 /* AOPDiskCache.swift in Sources */,
@@ -876,7 +875,6 @@
 				56D92C032084C0B100379402 /* DingTalkCalanderVModel.swift in Sources */,
 				56B8071020A29B370018C773 /* DingtalkTaskVM.swift in Sources */,
 				56D92C102084C0B100379402 /* DingTalkCalendarEventModel.swift in Sources */,
-				56180F7920AA8F47009AA7C5 /* IWorkBenchEventCalendar.swift in Sources */,
 				56D92C172084C0B100379402 /* AOPCore.swift in Sources */,
 				56D92C232084C0B100379402 /* IISlinkManager.swift in Sources */,
 				56BEFB7B20A3D19800EF3B3B /* DingtalkMeetingVM.swift in Sources */,
@@ -888,6 +886,7 @@
 				56B8070C20A297990018C773 /* TaskTabVw.swift in Sources */,
 				56D92C0C2084C0B100379402 /* WorkBenchTopVw.swift in Sources */,
 				56B724A020A2FA5300A5EAE7 /* DingMeetingVModel.swift in Sources */,
+				56B8F5CF20AC0844007FB25A /* IWorkBenchEventCalendar.swift in Sources */,
 				56D92C142084C0B100379402 /* AOPSwiftExtension.swift in Sources */,
 				56D92C212084C0B100379402 /* IIStringExtension.swift in Sources */,
 				56D92C312084C0B100379402 /* WorkBenchEventCalendar.swift in Sources */,
@@ -927,6 +926,7 @@
 				56D92C192084C0B100379402 /* AOPGCDExtension.swift in Sources */,
 				56D92C362084C2CE00379402 /* WorkBenchViewControllerV2.swift in Sources */,
 				56D92C162084C0B100379402 /* AOPCoreExtension.swift in Sources */,
+				56B8F5D020AC0844007FB25A /* IWorkBench.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

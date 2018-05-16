@@ -154,6 +154,18 @@ extension WorkBenchViewControllerV2 {
             self.topVw.setData(ifCalendar: true, titleTxt: strInfo,isCalendarVw: false)
         }
     }
+    
+    /// ui change today - big cal & small cal & events & selected today [big]
+    func changeToday() {
+        self.getMiddleDate()
+        self.calendarVw.setDates(with: self.vm.getDingVModel(with: .left).trupleVM!.dayArr, which: calendarVw.logicLeftVw)
+        self.calendarVw.setDates(with: self.vm.getDingVModel(with: .right).trupleVM!.dayArr, which: calendarVw.logicRightVw)
+        self.getSmallCalendarDate()
+        self.getTodayEvents()
+        self.vm.swipeChangeTopVwTxt()
+        if self.vm.uistate == .single { return }
+        self.calendarVw.logicMiddleVw.tapAction(index: self.vm.getIndexFromLogicMiddleVM())
+    }
 }
 
 // MARK: - calendar progress date

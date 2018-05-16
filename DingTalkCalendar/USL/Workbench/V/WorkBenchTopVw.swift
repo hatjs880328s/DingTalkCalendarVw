@@ -66,6 +66,9 @@ class WorkBenchTopVw: UIView {
         todayLb.backgroundColor = APPDelStatic.dingtalkBlue
         todayLb.font = APPDelStatic.uiFont(with: 10)
         todayLb.alpha = 0
+        todayLb.tapActionsGesture {[weak self]() in
+            self?.labTapAction()
+        }
     }
     
     func setData(ifCalendar: Bool, titleTxt: String,isCalendarVw:Bool = true) {
@@ -87,5 +90,9 @@ class WorkBenchTopVw: UIView {
             make.width.equalTo(dateStrWidth)
         }
         
+    }
+    
+    func labTapAction() {
+        (self.viewController() as! WorkBenchViewControllerV2).changeToday()
     }
 }

@@ -447,3 +447,19 @@ extension DingTalkCalanderVM {
         }
     }
 }
+
+// MARK: - change today
+extension DingTalkCalanderVM {
+    
+    /// get today index from middleDate
+    func getIndexFromLogicMiddleVM()->Int {
+        var index = 0
+        for indexs in 0 ... self.middleDate.dayArr.count - 1 {
+            if self.middleDate.dayArr[indexs].isCurrentDay {
+                index = indexs
+                break
+            }
+        }
+        return index
+    }
+}
