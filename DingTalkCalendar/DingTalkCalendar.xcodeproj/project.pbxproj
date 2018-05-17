@@ -34,6 +34,7 @@
 		56B8071420A29C8A0018C773 /* DingtalkTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */; };
 		56B8F5CF20AC0844007FB25A /* IWorkBenchEventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8F5CD20AC0844007FB25A /* IWorkBenchEventCalendar.swift */; };
 		56B8F5D020AC0844007FB25A /* IWorkBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8F5CE20AC0844007FB25A /* IWorkBench.swift */; };
+		56B8F5D220AC2FA2007FB25A /* IIBaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8F5D120AC2FA2007FB25A /* IIBaseVM.swift */; };
 		56BD3B512086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */; };
 		56BD3B572086E0FB00CDD81F /* BigDingTalkSingleLineCollectionVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */; };
 		56BEFB7B20A3D19800EF3B3B /* DingtalkMeetingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFB7A20A3D19800EF3B3B /* DingtalkMeetingVM.swift */; };
@@ -136,6 +137,7 @@
 		56B8071320A29C8A0018C773 /* DingtalkTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkTaskModel.swift; sourceTree = "<group>"; };
 		56B8F5CD20AC0844007FB25A /* IWorkBenchEventCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBenchEventCalendar.swift; sourceTree = "<group>"; };
 		56B8F5CE20AC0844007FB25A /* IWorkBench.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWorkBench.swift; sourceTree = "<group>"; };
+		56B8F5D120AC2FA2007FB25A /* IIBaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIBaseVM.swift; sourceTree = "<group>"; };
 		56BD3B502086E05E00CDD81F /* BigDingTalkSingleLineChildVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineChildVw.swift; sourceTree = "<group>"; };
 		56BD3B562086E0FA00CDD81F /* BigDingTalkSingleLineCollectionVw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDingTalkSingleLineCollectionVw.swift; sourceTree = "<group>"; };
 		56BEFB7A20A3D19800EF3B3B /* DingtalkMeetingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DingtalkMeetingVM.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			children = (
 				56D92BD82084C0B100379402 /* IIBaseView.swift */,
 				56314FEB20A5202900008D43 /* IIBaseViewController.swift */,
+				56B8F5D120AC2FA2007FB25A /* IIBaseVM.swift */,
 			);
 			path = BaseComponent;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				566B72982085E18A00A46FFE /* SmallDingTalkSingleLineChildVw.swift in Sources */,
 				56D92B792084C01A00379402 /* AppDelegate.swift in Sources */,
 				56D92C0E2084C0B100379402 /* DingTalkGetEventCalender.swift in Sources */,
+				56B8F5D220AC2FA2007FB25A /* IIBaseVM.swift in Sources */,
 				56D92C1F2084C0B100379402 /* IIViewExtension.swift in Sources */,
 				56D92C2E2084C0B100379402 /* FMDatabasePool.m in Sources */,
 				566B729E2085F63900A46FFE /* SmallDingTalkSingleLineCollectionVw.swift in Sources */,
